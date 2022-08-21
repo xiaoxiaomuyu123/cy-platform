@@ -1,0 +1,213 @@
+body {
+    background: #E5E5E5;
+   min-width: 1200px;
+}
+.target-detail-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.target-detail-container .left-operation-container {
+    width: 138px;
+    height: 100%;
+    padding-top: 24px;
+    font-family: 'Source Han Sans SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: #828282;
+
+    box-shadow: 1px 0px 4px rgba(106, 69, 31, 0.2);
+}
+.layer-list {
+    width: 89px;
+    height: 89px;
+    margin: 0 auto;
+    padding-top: 22.5px;
+    text-align: center;
+    background: url("../../../public/images/backgrounds/pic_navigation_layer_list_bg.png") no-repeat;
+}
+
+.operation-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.operation-list .operation {
+    width: 60px;
+    height: 40px;
+    margin-bottom: 26px;
+    ;
+}
+.operation.ecology {
+    margin-top: 32px;
+}
+
+.operation-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 5px;
+}
+
+.operation-icon.layer-normal {
+    margin-bottom: 0px;
+    background: url("../../../public/images/icons/icon_layer_list_normal.png") no-repeat;
+}
+
+.operation-icon.ecology-checked {
+    background: url("../../../public/images/icons/icon_navigation_shengtai_checked.png") no-repeat;
+}
+.operation-icon.health-normal {
+    background: url("../../../public/images/icons/icon_navigation_anquan_normal.png") no-repeat;
+}
+
+.operation-icon.safety-normal {
+    background: url("../../../public/images/icons/icon_navigation_jiankang_normal.png") no-repeat;
+}
+
+.operation-icon.traffic-normal {
+    background: url("../../../public/images/icons/icon_navigation_jiaotong_normal.png") no-repeat;
+}
+.operation-icon.scene-normal {
+    background: url("../../../public/images/icons/icon_navigation_jiankang_normal.png") no-repeat;
+}
+.operation-icon.tidy-normal {
+    background: url("../../../public/images/icons/icon_navigation_zhengjie_normal.png") no-repeat;
+}
+.operation-icon.diversity-normal {
+    background: url("../../../public/images/icons/icon_navigation_fengmao_normal.png") no-repeat;
+}
+.operation-icon.innovation-normal {
+    background: url("../../../public/images/icons/icon_navigation_chuangxin_normal.png") no-repeat;
+}
+.target-detail-container .middle-map-container {
+    flex: 1;
+}
+.right-data-chart-container {
+    width: 600px;
+    /*height: 920px;*/
+    margin-right: 24px;
+    padding: 16px;
+    font-family: 'Source Han Sans SC';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: #4F4F4F;
+    /*box-sizing: border-box;*/
+    background: url("../../../public/images/backgrounds/pic_zhibiaoxiangqing_bg.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.operation-list {
+    margin: 0 auto;
+    width: 89px;
+    /*height: 579px;*/
+    margin-top: 82px;
+    background: url("../../../public/images/backgrounds/pic_navigation_shengtai_bg.png") no-repeat;
+}
+
+.right-data-chart-container .data-chart-container {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #D8A77A;
+}
+
+.right-data-chart-container .data-chart-container:last-child {
+    border: none;
+}
+
+.left-chart-content,.right-chart-content {
+    width: 50%;
+    padding-right: 27px;
+    box-sizing: border-box;
+}
+
+.left-chart-content {
+    padding-left: 8px;
+    border-right: 1px solid #D8A77A;
+}
+
+.right-chart-content {
+    padding-left: 24px;
+}
+.chart-title {
+    padding-top: 20px;
+}
+
+.right-data-chart-container .chart-title:first-child {
+    padding-top: 12px;
+}
+
+.chart-title-icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    background: url("../../../public/images/icons/icon_chart.png") no-repeat;
+}
+
+.chart-content {
+    /*width: 112px;*/
+    /*height: 112px;*/
+    /*background-color: greenyellow;*/
+    margin: 50px auto 53px;
+}
+
+.chart-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chart-content .region-item {
+    width: 100%;
+    background: rgba(216, 167, 122, 0.15);
+    border-radius: 8px;
+    font-family: 'PingFang SC';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 8px;
+    margin-bottom: 8px;
+}
+.region-item .region-area-number{
+    font-size: 22px;
+    line-height: 26px;
+}
+
+.region-develop-pie-chart,.city-ecology-pie-chart,.unit-gdp-co2-pie-chart,.green-building-pie-chart,.green-service-pie-chart {
+    width: 120px;
+    height: 120px;
+}
+
+.population-density,.new-building {
+    text-align: center;
+}
+
+.population-density-number,.new-building-number {
+    margin: 28px 0 10px 0;
+    font-family: 'DIN Alternate';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 33px;
+    color: #4F4F4F;
+}
+
+.population-density-unit,.new-building-unit {
+    font-family: 'Microsoft YaHei';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #828282;
+}

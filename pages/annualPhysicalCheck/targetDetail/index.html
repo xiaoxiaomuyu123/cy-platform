@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>指标详情</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+<div class="target-detail-container">
+    <div class="left-operation-container">
+        <div class="layer-list">
+            <span class="operation-icon layer-normal"></span>
+            图层列表
+        </div>
+        <div class="operation-list">
+            <div class="operation ecology">
+                <span class="operation-icon ecology-checked"></span>
+                <span class="operation-text">生态宜居</span>
+            </div>
+            <div class="operation">
+                <span class="operation-icon health-normal"></span>
+                <span class="operation-text">健康舒适</span>
+            </div>
+            <div class="operation">
+                <span class="operation-icon  safety-normal"></span>
+                <span class="operation-text">安全韧性</span>
+            </div>
+            <div class="operation">
+
+                <span class="operation-icon traffic-normal"></span>
+                <span class="operation-text normal">交通便捷</span>
+            </div>
+            <div class="operation">
+                <span class="operation-icon scene-normal"></span>
+                <span class="operation-text">风貌特色</span>
+            </div>
+            <div class="operation">
+                <span class="operation-icon tidy-normal"></span>
+                <span class="operation-text">整洁有序</span>
+            </div>
+            <div class="operation">
+                <span class="operation-icon diversity-normal"></span>
+                <span class="operation-text">多元包容</span>
+            </div>
+            <div class="operation">
+                <span class="operation-icon innovation-normal"></span>
+                <span class="operation-text">创新活力</span>
+            </div>
+        </div>
+    </div>
+    <div class="middle-map-container">
+        <h1>hello world</h1>
+    </div>
+    <div class="right-data-chart-container">
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+                <div class="chart-title">
+                    <span class="chart-title-text">区域开发强度</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content region-develop-pie-chart"></div>
+            </div>
+            <div class="right-chart-content">
+                <div class="chart-title">
+                    <span class="chart-title-text">组团规模</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content">
+
+                    <div class="region-item">
+                        <div class="region-name">阎良区</div>
+                        <div class="region-area">
+                            <span class="region-area-number">36.49</span>
+                            平方公里
+                        </div>
+                    </div>
+                    <div class="region-item">
+                        <div class="region-name">阎良区</div>
+                        <div class="region-area">
+                            <span class="region-area-number">36.49</span>
+                            平方公里
+                        </div>
+                    </div>
+                    <div class="region-item">
+                        <div class="region-name">阎良区</div>
+                        <div class="region-area">
+                            <span class="region-area-number">36.49</span>
+                            平方公里
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+                <div class="chart-title">
+                    <span class="chart-title-text">人口密度超过每平方公里1.5...</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content population-density">
+                    <div class="population-density-number">52</div>
+                    <div class="population-density-unit">平方公里</div>
+                </div>
+            </div>
+            <div class="right-chart-content">
+                <div class="chart-title">
+                    <span class="chart-title-text">新建住宅建筑高度超过80米...</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content new-building">
+                    <div class="new-building-number">409</div>
+                    <div class="new-building-unit">栋</div>
+                </div>
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+                <div class="chart-title">
+                    <span class="chart-title-text">城市生态廊道达标率</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content city-ecology-pie-chart"></div>
+            </div>
+            <div class="right-chart-content">
+                <div class="chart-title">
+                    <span class="chart-title-text">单位GDP二氧化碳排放降低</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content unit-gdp-co2-pie-chart"></div>
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+                <div class="chart-title">
+                    <span class="chart-title-text">新建筑中绿色建筑占比</span>
+                    <span class="chart-title-icon "></span>
+                </div>
+                <div class="chart-content green-building-pie-chart"></div>
+            </div>
+            <div class="right-chart-content">
+                <div class="chart-title">
+                    <span class="chart-title-text">城市绿道服务半径覆盖率</span>
+                    <span class="chart-title-icon "></span>
+                </div>
+                <div class="chart-content green-service-pie-chart"></div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.3.3/echarts.common.js"></script>
+<script>
+    const regionDevelopChartDom = document.querySelector('.region-develop-pie-chart');
+    const cityEcologyChartDom = document.querySelector('.city-ecology-pie-chart');
+    const unitGdpCo2ChartDom = document.querySelector('.unit-gdp-co2-pie-chart');
+    const greenBuildingChartDom = document.querySelector('.green-building-pie-chart');
+    const greenServiceChartDom = document.querySelector('.green-service-pie-chart');
+
+    const regionDevelopChart = echarts.init(regionDevelopChartDom);
+    const cityEcologyChart = echarts.init(cityEcologyChartDom);
+    const unitGdpCo2Chart = echarts.init(unitGdpCo2ChartDom);
+    const greenBuildingChart = echarts.init(greenBuildingChartDom);
+    const greenServiceChart = echarts.init(greenServiceChartDom);
+
+    const option = {
+        // tooltip: {
+        //     trigger: 'item'
+        // },
+        // legend: {
+        //     top: '5%',
+        //     left: 'center'
+        // },
+        series: [
+            {
+                name: 'Access From',
+                type: 'pie',
+                radius: ['40%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '40',
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: false
+                },
+                data: [
+                    { value: 1048, name: 'Search Engine' },
+                    { value: 735, name: 'Direct' },
+                    { value: 580, name: 'Email' },
+                    { value: 484, name: 'Union Ads' },
+                    { value: 300, name: 'Video Ads' }
+                ]
+            }
+        ]
+    };
+
+    regionDevelopChart.setOption(option);
+    cityEcologyChart.setOption(option);
+    unitGdpCo2Chart.setOption(option);
+    greenBuildingChart.setOption(option);
+    greenServiceChart.setOption(option);
+
+</script>
+</html>
