@@ -1,0 +1,30 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 0 17px 0 32px;
+    background: #DBAA78;
+    color: #fff;
+}
+
+.header-left {
+    display: flex;
+    align-content: center;
+}
+
+.header-left .header-image-logo {
+    width: 48px;
+    height: 25px;
+}
+
+.header-left .header-tittle {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    /* identical to box height */
+    letter-spacing: 0.02em;
+    /* 白色 */
+    color: #FFFFFF;
+}
+
