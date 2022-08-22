@@ -168,13 +168,52 @@
     const greenServiceChart = echarts.init(greenServiceChartDom);
 
     const option = {
-        // tooltip: {
-        //     trigger: 'item'
-        // },
+        tooltip: {
+            show: false,
+            // trigger: 'item'
+        },
         // legend: {
         //     top: '5%',
         //     left: 'center'
         // },
+        graphic: [
+            {
+                type: 'group',
+                // rotation: Math.PI / 4,
+                // bounding: 'raw',
+                left: 'center',
+                top: 'center',
+                z: 100,
+                children: [
+                    {
+                        type: 'rect',
+                        left: 'center',
+                        top: 'center',
+                        z: 3,
+                        shape: {
+                            width: 120,
+                            height:120
+                        },
+                        style: {
+                            fill: 'rgba(0,0,0,0.3)'
+                        }
+                    },
+                    {
+                        type: 'text',
+                        left: 'center',
+                        top: 'center',
+                        z: 3,
+                        style: {
+                            fill: '#000',
+                            text: 'ECHARTS LINE CHART',
+                            font: 'bold 18px sans-serif'
+                        }
+                    }
+                ]
+            }
+
+        ],
+
         series: [
             {
                 name: 'Access From',
@@ -185,6 +224,7 @@
                     show: false,
                     position: 'center'
                 },
+                z:4,
                 emphasis: {
                     label: {
                         show: true,
