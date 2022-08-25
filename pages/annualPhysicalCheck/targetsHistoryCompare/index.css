@@ -1,30 +1,255 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
 .header {
     display: flex;
     justify-content: space-between;
-    align-content: center;
+    align-items: center;
     padding: 0 17px 0 32px;
     background: #DBAA78;
     color: #fff;
+    height: 64px;
 }
-
 .header-left {
     display: flex;
-    align-content: center;
+    align-items: center;
 }
-
-.header-left .header-image-logo {
+.header-image-logo-box {
     width: 48px;
     height: 25px;
+    margin-right: 16px;
 }
-
+.header-image-logo {
+    width: 100%;
+    height: 100%;
+}
 .header-left .header-tittle {
     font-family: 'Mulish';
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
-    /* identical to box height */
     letter-spacing: 0.02em;
-    /* 白色 */
     color: #FFFFFF;
 }
+.header-middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 45%;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+}
+.set-box {
+    width: 20px;
+    height: 20px;
+    margin-right: 17px;
+}
+.set-image {
+    width: 100%;
+    height: 100%;
+}
+.header-user-logo-box {
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+}
+.user-logo {
+    width: 100%;
+    height: 100%;
+}
+.navigator {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #DBAA78;
+    font-family: 'Source Han Sans SC';
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: #4F4F4F;
+}
+.navigator-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    font-family: 'Source Han Sans SC';
+    font-size: 14px;
+    align-items: center;
+    letter-spacing: 0.02em;
+    color: #626262;
+}
 
+.content {
+    display: flex;
+    font-family: 'Source Han Sans SC';
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: #4F4F4F;
+}
+.navigator-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 137px;
+    height: 965px;
+    box-shadow: 1px 0px 4px rgba(106, 69, 31, 0.2);
+
+}
+
+.navigator-left-box{
+    width: 89px;
+    height: 597px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url("../../../public/images/backgrounds/pic_navigation_shengtai_bg.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 30px 0px;
+}
+.navigator-left-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 57px;
+    height: 45px;
+}
+.icon-box {
+    width: 22px;
+    height: 22px;
+}
+.icon-image {
+    width: 100%;
+    height: 100%;
+}
+.navigator-left-item-text {
+    font-family: 'Source Han Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+}
+.content-middle {
+    width: 1218px;
+    padding: 0 24px;
+}
+.search-area {
+    display: flex;
+    align-items: center;
+    margin: 26px 0px;
+}
+.start-time-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.label {
+    font-family: 'Source Han Sans SC';
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: #4F4F4F;
+    margin-right: 16px;
+}
+.selector-box {
+    width: 100px;
+    height: 32px;
+    padding: 0px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(219, 170, 120, 0.15);
+    border-radius: 4px;
+}
+.selector-icon-image-box {
+    width: 24px;
+    height: 24px;
+}
+.selector-icon-image {
+    width: 100%;
+    height: 100%;
+}
+.search-middle-line {
+    width: 40px;
+    height: 1px;
+    background: #D8A77A;
+    margin: 0px 16px;
+}
+.end-time-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 16px;
+    margin-right: 16px;
+}
+.search-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 36px;
+    background: #DBAA78;
+    border-radius: 6px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    color: #fff;
+}
+.content-list-item {
+    display: flex;
+    width: 100%;
+    height: 242px;
+    background-image: url("../../../public/images/backgrounds/pic_linianzhibiao bg.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 24px 32px;
+}
+.content-list-item-left {
+    width: 40%;
+}
+.content-list-item-first-box {
+    margin-bottom: 20px;
+}
+.content-list-item-highlight {
+    color:  #DBAA78;
+}
+.content-list-item-right{
+    display: flex;
+    border-left: 1px solid #D8A77A;
+}
+.content-table-box{
+    display: flex;
+    flex-direction: column;
+    margin-left: 32px;
+}
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 320px;
+    height: 48px;
+    background: rgba(219, 170, 120, 0.15);
+    border-radius: 4px;
+    padding: 0 10px;
+}
+.table-header-column1, .table-header-column2, .table-header-column3, .table-content-column1, .table-content-column2, .table-content-column3{
+    width: 30%;
+}
+.table-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 320px;
+    height: 48px;
+    border-radius: 4px;
+    padding: 0 10px;
+}
