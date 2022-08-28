@@ -1,10 +1,13 @@
 body {
     background: #E5E5E5;
-   min-width: 1200px;
+    min-width: 1200px;
+    height: 1080px;
+    min-height: 1080px;
 }
 .target-detail-container {
     display: flex;
     justify-content: space-between;
+    height: 100%;
 }
 
 .target-detail-container .left-operation-container {
@@ -18,7 +21,6 @@ body {
     line-height: 24px;
     letter-spacing: 0.02em;
     color: #828282;
-
     box-shadow: 1px 0px 4px rgba(106, 69, 31, 0.2);
 }
 .layer-list {
@@ -59,32 +61,61 @@ body {
     background: url("../../../public/images/icons/icon_layer_list_normal.png") no-repeat;
 }
 
-.operation-icon.ecology-checked {
-    background: url("../../../public/images/icons/icon_navigation_shengtai_checked.png") no-repeat;
+
+.ecology .operation-icon {
+    background: url("../../../public/images/icons/icon_navigation_shengtai_normal.png") no-repeat;
 }
-.operation-icon.health-normal {
+.health .operation-icon {
+    background: url("../../../public/images/icons/icon_navigation_jiankang_normal.png") no-repeat;
+}
+
+.safety .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_anquan_normal.png") no-repeat;
 }
 
-.operation-icon.safety-normal {
-    background: url("../../../public/images/icons/icon_navigation_jiankang_normal.png") no-repeat;
-}
-
-.operation-icon.traffic-normal {
+.traffic .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_jiaotong_normal.png") no-repeat;
 }
-.operation-icon.scene-normal {
-    background: url("../../../public/images/icons/icon_navigation_jiankang_normal.png") no-repeat;
-}
-.operation-icon.tidy-normal {
-    background: url("../../../public/images/icons/icon_navigation_zhengjie_normal.png") no-repeat;
-}
-.operation-icon.diversity-normal {
+.scene .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_fengmao_normal.png") no-repeat;
 }
-.operation-icon.innovation-normal {
+.tidy .operation-icon {
+    background: url("../../../public/images/icons/icon_navigation_zhengjie_normal.png") no-repeat;
+}
+.diversity .operation-icon {
+    background: url("../../../public/images/icons/icon_navigation_duoyuan_normal.png") no-repeat;
+}
+.innovation .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_chuangxin_normal.png") no-repeat;
 }
+.ecology-checked .operation-icon {
+    background: url("../../../public/images/icons/icon_navigation_shengtai_checked.png") no-repeat;
+}
+
+.health-checked .operation-icon {
+    background: url("../../../public/images/icons/icon_navigation_jiankang_checked.png") no-repeat;
+}
+.safety-checked .operation-icon {
+    background: url("../../../public/images/icons/icon_navigation_anquan_checked.png") no-repeat;
+}
+
+.scene-checked .operation-icon {
+    background: url("../../../public/images/icons/icon_navigation_fengmao_checked.png") no-repeat;
+}
+.traffic-checked .operation-icon {
+    background: url("../../../public/images/icons/icon_navigation_jiaotong_checked.png") no-repeat;
+}
+
+.tidy-checked .operation-icon {
+    background: url("../../../public/images/icons/icon_navigation_zhengjie_checked.png") no-repeat;
+}
+.diversity-checked .operation-icon {
+    background: url("../../../public/images/icons/icon_navigation_duoyuan_checked.png") no-repeat;
+}
+.innovation-checked .operation-icon {
+    background: url("../../../public/images/icons/icon_navigation_chuangxin_checked.png") no-repeat;
+}
+
 .target-detail-container .middle-map-container {
     flex: 1;
 }
@@ -108,7 +139,7 @@ body {
 .operation-list {
     margin: 0 auto;
     width: 89px;
-    /*height: 579px;*/
+    height: 579px;
     margin-top: 82px;
     background: url("../../../public/images/backgrounds/pic_navigation_shengtai_bg.png") no-repeat;
 }
@@ -187,6 +218,13 @@ body {
 .region-develop-pie-chart,.city-ecology-pie-chart,.unit-gdp-co2-pie-chart,.green-building-pie-chart,.green-service-pie-chart {
     width: 120px;
     height: 120px;
+}
+.health-checked,.safety-checked,.safety-checked,.scene-checked,.traffic-checked,.tidy-checked,.diversity-checked,.innovation-checked,.ecology-checked {
+    color: #DBAA78;
+}
+
+.right-chart-content .chart-content.region-group-detail {
+    margin: 23px auto 31px;
 }
 
 .population-density,.new-building {

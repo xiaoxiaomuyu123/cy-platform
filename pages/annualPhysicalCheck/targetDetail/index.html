@@ -13,43 +13,42 @@
             图层列表
         </div>
         <div class="operation-list">
-            <div class="operation ecology">
-                <span class="operation-icon ecology-checked"></span>
+            <div class="operation ecology ecology-checked">
+                <span class="operation-icon"></span>
                 <span class="operation-text">生态宜居</span>
             </div>
-            <div class="operation">
-                <span class="operation-icon health-normal"></span>
+            <div class="operation health">
+                <span class="operation-icon"></span>
                 <span class="operation-text">健康舒适</span>
             </div>
-            <div class="operation">
-                <span class="operation-icon  safety-normal"></span>
+            <div class="operation safety">
+                <span class="operation-icon"></span>
                 <span class="operation-text">安全韧性</span>
             </div>
-            <div class="operation">
-
-                <span class="operation-icon traffic-normal"></span>
-                <span class="operation-text normal">交通便捷</span>
+            <div class="operation traffic">
+                <span class="operation-icon"></span>
+                <span class="operation-text">交通便捷</span>
             </div>
-            <div class="operation">
-                <span class="operation-icon scene-normal"></span>
+            <div class="operation scene">
+                <span class="operation-icon"></span>
                 <span class="operation-text">风貌特色</span>
             </div>
-            <div class="operation">
-                <span class="operation-icon tidy-normal"></span>
-                <span class="operation-text">整洁有序</span>
+            <div class="operation tidy">
+                <span class="operation-icon"></span>
+                <span class="operation-text ">整洁有序</span>
             </div>
-            <div class="operation">
-                <span class="operation-icon diversity-normal"></span>
+            <div class="operation diversity">
+                <span class="operation-icon"></span>
                 <span class="operation-text">多元包容</span>
             </div>
-            <div class="operation">
-                <span class="operation-icon innovation-normal"></span>
+            <div class="operation innovation">
+                <span class="operation-icon"></span>
                 <span class="operation-text">创新活力</span>
             </div>
         </div>
     </div>
     <div class="middle-map-container">
-        <h1>hello world</h1>
+        <h1>高德地图</h1>
     </div>
     <div class="right-data-chart-container">
         <div class="data-chart-container">
@@ -65,8 +64,7 @@
                     <span class="chart-title-text">组团规模</span>
                     <span class="chart-title-icon"></span>
                 </div>
-                <div class="chart-content">
-
+                <div class="chart-content region-group-detail">
                     <div class="region-item">
                         <div class="region-name">阎良区</div>
                         <div class="region-area">
@@ -154,6 +152,7 @@
 
 </body>
 <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.3.3/echarts.common.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts-liquidfill@3.1.0/dist/echarts-liquidfill.min.js"></script>
 <script>
     const regionDevelopChartDom = document.querySelector('.region-develop-pie-chart');
     const cityEcologyChartDom = document.querySelector('.city-ecology-pie-chart');
@@ -167,90 +166,240 @@
     const greenBuildingChart = echarts.init(greenBuildingChartDom);
     const greenServiceChart = echarts.init(greenServiceChartDom);
 
-    const option = {
-        tooltip: {
-            show: false,
-            // trigger: 'item'
-        },
-        // legend: {
-        //     top: '5%',
-        //     left: 'center'
-        // },
-        graphic: [
-            {
-                type: 'group',
-                // rotation: Math.PI / 4,
-                // bounding: 'raw',
-                left: 'center',
-                top: 'center',
-                z: 100,
-                children: [
-                    {
-                        type: 'rect',
-                        left: 'center',
-                        top: 'center',
-                        z: 3,
-                        shape: {
-                            width: 120,
-                            height:120
-                        },
-                        style: {
-                            fill: 'rgba(0,0,0,0.3)'
-                        }
-                    },
-                    {
-                        type: 'text',
-                        left: 'center',
-                        top: 'center',
-                        z: 3,
-                        style: {
-                            fill: '#000',
-                            text: 'ECHARTS LINE CHART',
-                            font: 'bold 18px sans-serif'
-                        }
-                    }
-                ]
-            }
 
-        ],
-
-        series: [
-            {
-                name: 'Access From',
-                type: 'pie',
-                radius: ['40%', '70%'],
-                avoidLabelOverlap: false,
-                label: {
-                    show: false,
-                    position: 'center'
+    const unitGdpCo2Option = {
+        series: [{
+            type: 'liquidFill',
+            radius: 112,
+            data: [0.4],
+            outline: {
+                show: true,
+                borderDistance: 0,
+                itemStyle: {
+                    opacity: 1,
+                    borderWidth: 4,
+                    shadowBlur: 1,
+                    shadowColor: '#fff',
+                    borderColor: '#86C4CA'
                 },
-                z:4,
-                emphasis: {
-                    label: {
-                        show: true,
-                        fontSize: '40',
-                        fontWeight: 'bold'
-                    }
-                },
-                labelLine: {
-                    show: false
-                },
-                data: [
-                    { value: 1048, name: 'Search Engine' },
-                    { value: 735, name: 'Direct' },
-                    { value: 580, name: 'Email' },
-                    { value: 484, name: 'Union Ads' },
-                    { value: 300, name: 'Video Ads' }
-                ]
+            },
+            color: ['#86C4CA'],
+            backgroundStyle: {
+              color: '#FFF'
+            },
+            itemStyle: {
+                opacity: 0.6,
+            },
+            emphasis: {
+                itemStyle: {
+                    opacity: 0.7
+                }
+            },
+            label: {
+                position: ['50%', '50%'],
+                // formatter: function() {
+                //     return 'ECharts\nLiquid Fill';
+                // },
+                fontFamily: 'DIN',
+                fontStyle: 'normal',
+                fontWeight: 500,
+                lineHeight: 34,
+                fontSize: 28,
+                color: '#4F4F4F'
             }
-        ]
+        }]
     };
 
-    regionDevelopChart.setOption(option);
-    cityEcologyChart.setOption(option);
-    unitGdpCo2Chart.setOption(option);
-    greenBuildingChart.setOption(option);
-    greenServiceChart.setOption(option);
+    const commonChartOption = {
+        emphasis: {
+            disabled: true
+        },
+        series: [
+            {
+                name: 'region',
+                type: 'pie',
+                radius: ['90%', '100%'],
+                avoidLabelOverlap: false,
+            }
+        ]
+
+
+    };
+
+    const regionDevelopData =  [
+            {
+                value: 16.99,
+                name: `16.99%`,
+                label: {
+                    show: true,
+                    fontFamily: 'DIN',
+                    fontStyle: 'normal',
+                    fontWeight: 500,
+                    lineHeight: 34,
+                    fontSize: 28,
+                    color: '#4F4F4F',
+                    position: 'center'
+                },
+                itemStyle: {
+                    color: '#FFCF84',
+                    borderRadius: 30,
+                    borderColor: '#fff',
+                    borderWidth: 2
+                }
+            },
+            {
+                value: 83.01,
+                name: `83.01%`,
+                label: {
+                    show: false,
+                },
+                itemStyle: {
+                    color: '#DBAA78',
+                    borderRadius: 30,
+                    borderColor: '#fff',
+                    borderWidth: 2
+                }
+            }
+        ];
+    const cityEcologyData = [
+        {
+            value: 100,
+            name: `100%`,
+            label: {
+                show: true,
+                fontFamily: 'DIN',
+                fontStyle: 'normal',
+                fontWeight: 500,
+                lineHeight: 34,
+                fontSize: 28,
+                color: '#4F4F4F',
+                position: 'center'
+            },
+            itemStyle: {
+                color: '#FFCF84',
+                borderRadius: 30,
+                borderColor: '#fff',
+                borderWidth: 2
+            }
+        },
+        {
+            value: 0,
+            name: `0%`,
+            label: {
+                show: false,
+            },
+            itemStyle: {
+                color: '#DBAA78',
+                borderRadius: 30,
+                borderColor: '#fff',
+                borderWidth: 2
+            }
+        },
+    ]
+    const greenBuildingData = [
+        {
+            value: 53.48,
+            name: `53.48%`,
+            label: {
+                show: true,
+                fontFamily: 'DIN',
+                fontStyle: 'normal',
+                fontWeight: 500,
+                lineHeight: 34,
+                fontSize: 28,
+                color: '#4F4F4F',
+                position: 'center'
+            },
+            itemStyle: {
+                color: '#FFCF84',
+                borderRadius: 30,
+                borderColor: '#fff',
+                borderWidth: 2
+            }
+        },
+        {
+            value: 46.52,
+            name: `46.52%`,
+            label: {
+                show: false,
+            },
+            itemStyle: {
+                color: '#DBAA78',
+                borderRadius: 30,
+                borderColor: '#fff',
+                borderWidth: 2
+            }
+        },
+    ]
+    const greenServiceData = [
+        {
+            value: 57.27,
+            name: `57.27%`,
+            label: {
+                show: true,
+                fontFamily: 'DIN',
+                fontStyle: 'normal',
+                fontWeight: 500,
+                lineHeight: 34,
+                fontSize: 28,
+                color: '#4F4F4F',
+                position: 'center'
+            },
+            itemStyle: {
+                color: '#FFCF84',
+                borderRadius: 30,
+                borderColor: '#fff',
+                borderWidth: 2,
+            }
+        },
+        {
+            value: 42.73,
+            name: `42.73%`,
+            label: {
+                show: false,
+            },
+            itemStyle: {
+                color: '#DBAA78',
+                borderRadius: 30,
+                borderColor: '#fff',
+                borderWidth: 2
+            }
+        },
+    ]
+
+
+    regionDevelopChart.setOption({...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+    cityEcologyChart.setOption({...commonChartOption, series: [{...commonChartOption.series[0], data: cityEcologyData}]});
+    unitGdpCo2Chart.setOption(unitGdpCo2Option);
+    greenBuildingChart.setOption({...commonChartOption, series: [{...commonChartOption.series[0], data: greenBuildingData}]});
+    greenServiceChart.setOption({...commonChartOption, series: [{...commonChartOption.series[0], data: greenServiceData}]});
 
 </script>
+<script>
+
+    let opertionCheckedClass = 'ecology-checked';
+
+    const operationList = Array.from(document.querySelectorAll('.operation'));
+    operationList.forEach(operation => {
+        operation.addEventListener('click', operationIconChecked)
+    });
+
+
+    function operationIconChecked(e) {
+        const target = e.currentTarget;
+        const targetClassList = target.classList;
+
+        operationList.forEach(operation => {
+            const classList = operation.classList;
+            if (classList.contains(opertionCheckedClass)) {
+                classList.remove(opertionCheckedClass);
+            }
+        });
+
+        const checkedClass = `${targetClassList[1]}-checked`;
+        targetClassList.add(checkedClass);
+        opertionCheckedClass = checkedClass;
+    }
+</script>
+
 </html>
