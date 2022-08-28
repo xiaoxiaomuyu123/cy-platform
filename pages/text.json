@@ -1,0 +1,39 @@
+.box_inner6{
+  width: 160px;
+  margin-top: 24px;        /*最外层盒子的外边距, 可自己调*/
+  position: relative;
+}
+
+.box_inner6 .checkbox-wrapper6{
+  cursor: pointer;
+  position: absolute;
+  width: 16px;        /*此处width和height是选框显示出来的大小*/
+  height: 16px;
+  top: 2px;                /*此处top和left是选框显示出来位置, 可根据需求进行调节*/
+  left: 0;
+  background-image: url("../../../public/images/icons/icon_navigation_chuangxin_normal.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.box_inner6 .checkbox-wrapper6:after{
+opacity: 1;        /*选中后样式的透明度, 1是不透明*/
+content: '';    /*选中后的内容 ,此处为空是指把默认的去掉, 下面自定义*/
+position: absolute;
+}
+
+/*取消选中*/
+.box_inner6 input[type=checkbox]:checked + .checkbox-wrapper6:after{
+background: #FFFFFF;
+width: 16px;
+height: 16px;
+background-image: url("../../../public/images/icons/icon_navigation_chuangxin_checked.png");
+background-position: center center;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+}
+.box_inner6 .label-text {
+display: inline-block;
+margin-left: 5px;
+}

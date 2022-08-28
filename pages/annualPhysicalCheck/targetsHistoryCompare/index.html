@@ -41,6 +41,7 @@
             <div class="navigator-item first">体检概览</div>
             <div class="navigator-item second">指标列表</div>
             <div class="navigator-item third">指标详情</div>
+            <div class="navigator-item third navigator-active">历年指标对比</div>
             <div class="navigator-item forth">理念指标对比</div>
             <div class="navigator-item fifth">社会满意度分析</div>
         </div>
@@ -107,22 +108,33 @@
             <div class="search-area">
                 <div class="start-time-box">
                     <div class="label">起始年</div>
-                    <div class="selector-box">
-                        <div class="start-time">2019</div>
-                        <div class="selector-icon-image-box">
-                            <image class="selector-icon-image" src="../../../public/images/icons/icon_arrow_down.png"/>
-                        </div>
-                    </div>
+                        <select name="year" lay-verify="" class="selector-box">
+                            <option value="010">2020</option>
+                            <option value="021">2021</option>
+                            <option value="0571">2022</option>
+                        </select>
+
+<!--                    <div class="selector-box">-->
+<!--                        <div class="start-time">2019</div>-->
+<!--                        <div class="selector-icon-image-box">-->
+<!--                            <image class="selector-icon-image" src="../../../public/images/icons/icon_arrow_down.png"/>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
                 <div class="search-middle-line"></div>
                 <div class="end-time-box">
                     <div class="label">目标年</div>
-                    <div class="selector-box">
-                        <div class="start-time">2019</div>
-                        <div class="selector-icon-image-box">
-                            <image class="selector-icon-image" src="../../../public/images/icons/icon_arrow_down.png"/>
-                        </div>
-                    </div>
+                    <select name="year" lay-verify="" class="selector-box">
+                        <option value="010">2020</option>
+                        <option value="021">2021</option>
+                        <option value="0571">2022</option>
+                    </select>
+<!--                    <div class="selector-box">-->
+<!--                        <div class="start-time">2019</div>-->
+<!--                        <div class="selector-icon-image-box">-->
+<!--                            <image class="selector-icon-image" src="../../../public/images/icons/icon_arrow_down.png"/>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
                 <div class="search-button">查询</div>
 
@@ -139,7 +151,9 @@
                             <div class="content-list-item-description">市辖区建成区面积占辖区总面积的百分比</div>
                         </div>
                     </div>
+
                     <div class="content-list-item-right">
+                        <!--         中间表格          -->
                         <div class="content-table-box">
                             <div class="table-header">
                                 <div class="table-header-column1">年份</div>
@@ -167,8 +181,99 @@
             </div>
         </div>
         <!--    右侧部分    -->
-        <div>
+        <div class="content-right">
+            <div class="content-right-wrapper">
+                <div class="label-list">指标列表</div>
+                <div class="box_inner1">
+                    <input type="checkbox" id="box_innerInput1"/>
+                    <label for="box_innerInput1" class="checkbox-wrapper1"></label>
+                    <span class="label-text">区域开发强度</span>
+                </div>
 
+                <div class="box_inner2">
+                    <input type="checkbox" id="box_innerInput2" />
+                    <label for="box_innerInput2" class="checkbox-wrapper2"></label>
+                    <span class="label-text">区域开发强度</span>
+                </div>
+
+                <div class="box_inner3">
+                    <input type="checkbox" id="box_innerInput3"  />
+                    <label for="box_innerInput3" class="checkbox-wrapper3"></label>
+                    <span class="label-text">区域开发强度</span>
+                </div>
+
+                <div class="box_inner4">
+                    <input type="checkbox" id="box_innerInput4"  />
+                    <label for="box_innerInput4" class="checkbox-wrapper4"></label>
+                    <span class="label-text">区域开发强度</span>
+                </div>
+
+                <div class="box_inner5">
+                    <input type="checkbox" id="box_innerInput5"  />
+                    <label for="box_innerInput5" class="checkbox-wrapper5"></label>
+                    <span class="label-text">区域开发强度</span>
+                </div>
+
+                <div class="box_inner6">
+                    <input type="checkbox" id="box_innerInput6"  />
+                    <label for="box_innerInput6" class="checkbox-wrapper6"></label>
+                    <span class="label-text">区域开发强度</span>
+                </div>
+
+                <div class="box_inner7">
+                    <input type="checkbox" id="box_innerInput7"  />
+                    <label for="box_innerInput7" class="checkbox-wrapper7"></label>
+                    <span class="label-text">区域开发强度</span>
+                </div>
+
+                <div class="box_inner8">
+                    <input type="checkbox" id="box_innerInput8"  />
+                    <label for="box_innerInput8" class="checkbox-wrapper8"></label>
+                    <span class="label-text">区域开发强度</span>
+                </div>
+
+                <div class="box_inner9">
+                    <input type="checkbox" id="box_innerInput9"  />
+                    <label for="box_innerInput9" class="checkbox-wrapper9"></label>
+                    <span class="label-text">区域开发强度</span>
+                </div>
+
+                <div class="box_inner10">
+                    <input type="checkbox" id="box_innerInput10"  />
+                    <label for="box_innerInput10" class="checkbox-wrapper10"></label>
+                    <span class="label-text">区域开发强度</span>
+                </div>
+
+                <div class="box_inner11">
+                    <input type="checkbox" id="box_innerInput11"  />
+                    <label for="box_innerInput11" class="checkbox-wrapper11"></label>
+                    <span class="label-text">区域开发强度</span>
+                </div>
+
+                <div class="box_inner12">
+                    <input type="checkbox" id="box_innerInput12"  />
+                    <label for="box_innerInput12" class="checkbox-wrapper12"></label>
+                    <span class="label-text">区域开发强度</span>
+                </div>
+
+                <div class="box_inner13">
+                    <input type="checkbox" id="box_innerInput13"  />
+                    <label for="box_innerInput13" class="checkbox-wrapper13"></label>
+                    <span class="label-text">区域开发强度</span>
+                </div>
+
+                <div class="box_inner14">
+                    <input type="checkbox" id="box_innerInput14"  />
+                    <label for="box_innerInput14" class="checkbox-wrapper14"></label>
+                    <span class="label-text">区域开发强度</span>
+                </div>
+
+                <div class="box_inner15">
+                    <input type="checkbox" id="box_innerInput15"  />
+                    <label for="box_innerInput15" class="checkbox-wrapper15"></label>
+                    <span class="label-text">区域开发强度</span>
+                </div>
+            </div>
         </div>
     </div>
 
