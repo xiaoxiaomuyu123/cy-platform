@@ -64,12 +64,20 @@
     height: 64px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border-bottom: 1px solid #DBAA78;
     font-family: 'Source Han Sans SC';
     font-size: 14px;
     letter-spacing: 0.02em;
     color: #4F4F4F;
+}
+.navigator-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.select-city {
+    margin-right: 20px;
 }
 .navigator-box {
     display: flex;
@@ -95,7 +103,6 @@
     justify-content: center;
     align-items: center;
     width: 137px;
-    height: 965px;
     box-shadow: 1px 0px 4px rgba(106, 69, 31, 0.2);
 }
 
@@ -219,6 +226,7 @@
     background-size: 100% 100%;
     padding: 24px 32px;
     box-sizing: border-box;
+    margin-bottom: 24px;
 }
 .content-list-item-left {
     width: 40%;

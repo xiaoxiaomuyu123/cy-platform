@@ -5,10 +5,10 @@
     <title>历年指标对比</title>
     <link rel="stylesheet" href="index.css">
     <!-- 引入 layui.css -->
-    <link href="//unpkg.com/layui@2.7.6/dist/css/layui.css" rel="stylesheet">
+<!--    <link href="//unpkg.com/layui@2.7.6/dist/css/layui.css" rel="stylesheet">-->
 
     <!-- 引入 layui.js -->
-    <script src="//unpkg.com/layui@2.7.6/dist/layui.js"></script>
+<!--    <script src="//unpkg.com/layui@2.7.6/dist/layui.js"></script>-->
 </head>
 <body>
     <Header class="header">
@@ -37,13 +37,22 @@
 
     <!--  二级导航栏  -->
     <div class="navigator">
-        <div class="navigator-box">
-            <div class="navigator-item first">体检概览</div>
-            <div class="navigator-item second">指标列表</div>
-            <div class="navigator-item third">指标详情</div>
-            <div class="navigator-item third navigator-active">历年指标对比</div>
-            <div class="navigator-item forth">理念指标对比</div>
-            <div class="navigator-item fifth">社会满意度分析</div>
+        <div class="navigator-container">
+            <div class="navigator-box">
+                <div class="navigator-item first">体检概览</div>
+                <div class="navigator-item second">指标列表</div>
+                <div class="navigator-item third">指标详情</div>
+                <div class="navigator-item third navigator-active">历年指标对比</div>
+                <div class="navigator-item forth">理念指标对比</div>
+                <div class="navigator-item fifth">社会满意度分析</div>
+            </div>
+        </div>
+        <div class="select-city">
+            <select name="year" lay-verify="" class="selector-box">
+                <option value="010">2020</option>
+                <option value="021">2021</option>
+                <option value="0571">2022</option>
+            </select>
         </div>
     </div>
 
@@ -113,13 +122,6 @@
                             <option value="021">2021</option>
                             <option value="0571">2022</option>
                         </select>
-
-<!--                    <div class="selector-box">-->
-<!--                        <div class="start-time">2019</div>-->
-<!--                        <div class="selector-icon-image-box">-->
-<!--                            <image class="selector-icon-image" src="../../../public/images/icons/icon_arrow_down.png"/>-->
-<!--                        </div>-->
-<!--                    </div>-->
                 </div>
                 <div class="search-middle-line"></div>
                 <div class="end-time-box">
@@ -129,12 +131,6 @@
                         <option value="021">2021</option>
                         <option value="0571">2022</option>
                     </select>
-<!--                    <div class="selector-box">-->
-<!--                        <div class="start-time">2019</div>-->
-<!--                        <div class="selector-icon-image-box">-->
-<!--                            <image class="selector-icon-image" src="../../../public/images/icons/icon_arrow_down.png"/>-->
-<!--                        </div>-->
-<!--                    </div>-->
                 </div>
                 <div class="search-button">查询</div>
 
@@ -178,6 +174,121 @@
                         </div>
                     </div>
                 </div>
+                <div class="content-list-item">
+                    <div class="content-list-item-left">
+                        <div class="content-list-item-first-box">
+                            <div class="content-list-item-label">指标名称</div>
+                            <div class="content-list-item-highlight">区域开发强度（%）</div>
+                        </div>
+                        <div class="content-list-item-second-box">
+                            <div class="content-list-item-label">指标解释</div>
+                            <div class="content-list-item-description">市辖区建成区面积占辖区总面积的百分比</div>
+                        </div>
+                    </div>
+
+                    <div class="content-list-item-right">
+                        <!--         中间表格          -->
+                        <div class="content-table-box">
+                            <div class="table-header">
+                                <div class="table-header-column1">年份</div>
+                                <div class="table-header-column2">指标值</div>
+                                <div class="table-header-column3">分档</div>
+                            </div>
+                            <div class="table-content">
+                                <div class="table-content-column1">2019</div>
+                                <div class="table-content-column2">7.39%</div>
+                                <div class="table-content-column3">中等</div>
+                            </div>
+                            <div class="table-content">
+
+                                <div class="table-content-column2">16.99%</div>
+                                <div class="table-content-column3">一般</div>
+                            </div>
+                            <div class="table-content">
+                                <div class="table-content-column1">2021</div>
+                                <div class="table-content-column2">——</div>
+                                <div class="table-content-column3">——</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-list-item">
+                    <div class="content-list-item-left">
+                        <div class="content-list-item-first-box">
+                            <div class="content-list-item-label">指标名称</div>
+                            <div class="content-list-item-highlight">区域开发强度（%）</div>
+                        </div>
+                        <div class="content-list-item-second-box">
+                            <div class="content-list-item-label">指标解释</div>
+                            <div class="content-list-item-description">市辖区建成区面积占辖区总面积的百分比</div>
+                        </div>
+                    </div>
+
+                    <div class="content-list-item-right">
+                        <!--         中间表格          -->
+                        <div class="content-table-box">
+                            <div class="table-header">
+                                <div class="table-header-column1">年份</div>
+                                <div class="table-header-column2">指标值</div>
+                                <div class="table-header-column3">分档</div>
+                            </div>
+                            <div class="table-content">
+                                <div class="table-content-column1">2019</div>
+                                <div class="table-content-column2">7.39%</div>
+                                <div class="table-content-column3">中等</div>
+                            </div>
+                            <div class="table-content">
+
+                                <div class="table-content-column2">16.99%</div>
+                                <div class="table-content-column3">一般</div>
+                            </div>
+                            <div class="table-content">
+                                <div class="table-content-column1">2021</div>
+                                <div class="table-content-column2">——</div>
+                                <div class="table-content-column3">——</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-list-item">
+                    <div class="content-list-item-left">
+                        <div class="content-list-item-first-box">
+                            <div class="content-list-item-label">指标名称</div>
+                            <div class="content-list-item-highlight">区域开发强度（%）</div>
+                        </div>
+                        <div class="content-list-item-second-box">
+                            <div class="content-list-item-label">指标解释</div>
+                            <div class="content-list-item-description">市辖区建成区面积占辖区总面积的百分比</div>
+                        </div>
+                    </div>
+
+                    <div class="content-list-item-right">
+                        <!--         中间表格          -->
+                        <div class="content-table-box">
+                            <div class="table-header">
+                                <div class="table-header-column1">年份</div>
+                                <div class="table-header-column2">指标值</div>
+                                <div class="table-header-column3">分档</div>
+                            </div>
+                            <div class="table-content">
+                                <div class="table-content-column1">2019</div>
+                                <div class="table-content-column2">7.39%</div>
+                                <div class="table-content-column3">中等</div>
+                            </div>
+                            <div class="table-content">
+
+                                <div class="table-content-column2">16.99%</div>
+                                <div class="table-content-column3">一般</div>
+                            </div>
+                            <div class="table-content">
+                                <div class="table-content-column1">2021</div>
+                                <div class="table-content-column2">——</div>
+                                <div class="table-content-column3">——</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
         <!--    右侧部分    -->
