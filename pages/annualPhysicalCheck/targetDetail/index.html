@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>指标详情</title>
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./modal-style.css">
 </head>
 <body>
 <div class="target-detail-container">
@@ -151,6 +152,44 @@
 </div>
 
 </body>
+
+<script>
+    // 弹窗
+    function createModal() {
+        const modalContent = `
+            <div class="modal-container modal-mask">
+
+                 <div class="modal-content">
+                        <div class="modal-header">
+                              <span class="modal-header-title">区域开发强度</span>
+                              <span class="modal-close-icon"><img class="modal-close-icon" src="../../../public/images/icons/close.svg"></span>
+                        </div>
+                        <div class="modal-main-content">
+
+                        </div>
+                 </div>
+            </div>
+        `
+
+        document.body.insertAdjacentHTML('beforeend', modalContent);
+
+        function closeModal(e) {
+            const target = e.target;
+            if (target.classList.contains('modal-close-icon')) {
+                document.body.removeChild(document.querySelector('.modal-container.modal-mask'));
+            }
+        }
+
+        document.body.addEventListener('click', closeModal);
+
+
+    }
+
+
+    const icon = document.querySelector('.chart-title-icon');
+    icon.addEventListener('click', createModal);
+</script>
+
 <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.3.3/echarts.common.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/echarts-liquidfill@3.1.0/dist/echarts-liquidfill.min.js"></script>
 <script>
