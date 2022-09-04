@@ -2,16 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <title>指标详情</title>
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="./modal-style.css">
+    <link rel="stylesheet" href="./tooltip-style.css">
+    <!-- 引入 layui.css -->
+    <link href="//unpkg.com/layui@2.7.6/dist/css/layui.css" rel="stylesheet">
 </head>
 <body>
 <div class="target-detail-container">
     <div class="left-operation-container">
         <div class="layer-list">
-            <span class="operation-icon layer-normal"></span>
-            图层列表
+            <div class="layer-header">
+                <div class="operation-icon layer-icon"></div>
+                <div class="layer-text">图层列表</div>
+            </div>
+            <div class="layer-detail layer-detail-hide">
+                <div class="layer-selector">
+                    <span class="layer-basemap layer-selected">底图</span>
+                    <span class="layer-layermap">图层</span>
+                </div>
+                <div class="layer-basemap-operation layer-operation-selected">
+                    <div class="layer-basemap-checkbox">
+                        <input type="checkbox" id="group-checkbox">
+                        <label for="group-checkbox">组团分布</label>
+                    </div>
+                    <div class="layer-basemap-checkbox">
+                        <input type="checkbox" id="reside-people-density-checkbox">
+                        <label for="reside-people-density-checkbox">中心城区居住人口密度</label>
+                    </div>
+                    <div class="layer-basemap-checkbox">
+                        <input type="checkbox" id="employment-people-density-checkbox">
+                        <label for="employment-people-density-checkbox">中心城区就业人口密度</label>
+                    </div>
+                    <div class="layer-basemap-checkbox green-space">
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="green-space-checkbox">
+                            <label for="green-space-checkbox">现状公园绿地</label>
+                        </div>
+                        <div id="green-space-slide" class="slider custom-slide" ></div>
+                    </div>
+                    <div class="layer-basemap-checkbox">
+                        <input type="checkbox" id="green-space-500-cover-checkbox">
+                        <label for="green-space-500-cover-checkbox">公园绿地500米覆盖</label>
+                    </div>
+                    <div class="layer-basemap-checkbox">
+                        <input type="checkbox" id="city-green-road-checkbox">
+                        <label for="city-green-road-checkbox">城市绿道</label>
+                    </div>
+                    <div class="layer-basemap-checkbox">
+                        <input type="checkbox" id="ecology-checkbox">
+                        <label for="ecology-checkbox">城市生态廊道</label>
+                    </div>
+                    <div class="layer-basemap-checkbox">
+                        <input type="checkbox" id="factory-checkbox">
+                        <label for="factory-checkbox">污水处理厂</label>
+                    </div>
+                    <div class="layer-basemap-checkbox">
+                        <input type="checkbox" id="water-checkbox">
+                        <label for="water-checkbox">水体</label>
+                    </div>
+                </div>
+                <div class="layer-layermap-operation">
+                    <div class="layer-layermap-checkbox">
+                        <input type="checkbox" id="boundary-checkbox">
+                        <label for="boundary-checkbox">建成区边界</label>
+                    </div>
+                    <div class="layer-layermap-checkbox">
+                        <input type="checkbox" id="scope-checkbox">
+                        <label for="scope-checkbox">市域范围</label>
+                    </div>
+                    <div class="layer-layermap-checkbox">
+                        <input type="checkbox" id="city-boundary-checkbox">
+                        <label for="city-boundary-checkbox">各市辖区行政边界</label>
+                    </div>
+                    <div class="layer-layermap-checkbox">
+                        <input type="checkbox" id="community-boundary">
+                        <label for="community-boundary">社区边界</label>
+                    </div>
+                    <div class="layer-layermap-checkbox">
+                        <input type="checkbox" id="street-boundary">
+                        <label for="street-boundary">街道乡镇行政边界</label>
+                    </div>
+                    <div class="layer-layermap-checkbox construct">
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="construct-checkbox">
+                            <label for="construct-checkbox">现状建设用地</label>
+                        </div>
+                        <div id="construct-slide" class="slider custom-slide" ></div>
+                    </div>
+                    <div class="layer-layermap-checkbox live">
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="live-checkbox">
+                            <label for="live-checkbox">居住用地</label>
+                        </div>
+                        <div id="live-slide" class="slider custom-slide" ></div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="operation-list">
             <div class="operation ecology ecology-checked">
@@ -48,17 +137,63 @@
             </div>
         </div>
     </div>
-    <div class="middle-map-container">
-        <h1>高德地图</h1>
+    <div class="amap-style-container">
+        <div class="amap-style-icon">
+            <img src="../../../public/images/icons/layer.svg">
+        </div>
+        <div class="amap-style-list hide-amap-style-list">
+            <div class="style-name style-name-selected" data-mapstyle="normal">高德地图</div>
+            <div class="style-name"  data-mapstyle="macaron">马卡龙地图</div>
+            <div class="style-name"  data-mapstyle="light">月光银地图</div>
+            <div class="style-name"  data-mapstyle="dark">幻影黑地图</div>
+            <div class="style-name"  data-mapstyle="grey">雅士灰地图</div>
+            <div class="style-name"  data-mapstyle="whitesmoke">远山黛地图</div>
+            <div class="style-name"  data-mapstyle="darkblue">蓝色底图</div>
+<!--            <div class="style-name"  data-mapstyle="normal">高德卫星</div>-->
+<!--            <div class="style-name"  data-mapstyle="normal">无地图</div>-->
+        </div>
+    </div>
+    <div class="middle-amap-container" id="middle-amap-container">
+    </div>
+    <div class="amap-toolbox-container amap-toolbox amap-toolbox-normal">
+        <div class="amap-toolbox-operation-icon">
+            <img src="../../../public/images/icons/toolbox.svg">
+        </div>
+        <div class="amap-toolbox-list-container amap-toolbox-list-hide">
+            <ul class="amap-toolbox-list">
+                <li class="toolbox-item zoom-in" title="放大">
+                    <img src="../../../public/images/icons/toolbox-plus.svg">
+                </li>
+                <li class="toolbox-item zoom-out" title="缩小">
+                    <img class="toolbox-item zoom-out" src="../../../public/images/icons/toolbox-minus.svg">
+                </li>
+                <li class="toolbox-item ranging-distance" title="测量距离">
+                    <img src="../../../public/images/icons/toolbox-ruler.svg">
+                </li>
+                <li class="toolbox-item measure-area" title="测量面积">
+                    <img src="../../../public/images/icons/toolbox-rect.svg">
+                </li>
+<!--                <li class="toolbox-item" title="buffer">-->
+<!--                    <img src="../../../public/images/icons/toolbox-search.svg">-->
+<!--                </li>-->
+                <li class="toolbox-item clear-layer" title="清除图层">
+                    <img src="../../../public/images/icons/toolbox-delete.svg">
+                </li>
+            </ul>
+        </div>
     </div>
     <div class="right-data-chart-container">
+
         <div class="data-chart-container">
+
             <div class="left-chart-content">
+
                 <div class="chart-title">
                     <span class="chart-title-text">区域开发强度</span>
                     <span class="chart-title-icon"></span>
                 </div>
                 <div class="chart-content region-develop-pie-chart"></div>
+
             </div>
             <div class="right-chart-content">
                 <div class="chart-title">
@@ -94,74 +229,559 @@
         </div>
         <div class="data-chart-container">
             <div class="left-chart-content">
+
                 <div class="chart-title">
-                    <span class="chart-title-text">人口密度超过每平方公里1.5...</span>
+                    <span class="chart-title-text" title="人口密度超过每平方公里1.5万人的城市用地规模">人口密度超过每平方公里1.5万人的城市用地规模</span>
                     <span class="chart-title-icon"></span>
                 </div>
                 <div class="chart-content population-density">
-                    <div class="population-density-number">52</div>
-                    <div class="population-density-unit">平方公里</div>
+                    <div class="number">52</div>
+                    <div class="unit">平方公里</div>
                 </div>
+
             </div>
             <div class="right-chart-content">
+
                 <div class="chart-title">
-                    <span class="chart-title-text">新建住宅建筑高度超过80米...</span>
+                    <span class="chart-title-text" title="新建住宅建筑高度超过80米的数量">新建住宅建筑高度超过80米的数量</span>
                     <span class="chart-title-icon"></span>
                 </div>
                 <div class="chart-content new-building">
-                    <div class="new-building-number">409</div>
-                    <div class="new-building-unit">栋</div>
+                    <div class="number">409</div>
+                    <div class="unit">栋</div>
                 </div>
+
             </div>
         </div>
         <div class="data-chart-container">
             <div class="left-chart-content">
+
                 <div class="chart-title">
                     <span class="chart-title-text">城市生态廊道达标率</span>
                     <span class="chart-title-icon"></span>
                 </div>
                 <div class="chart-content city-ecology-pie-chart"></div>
+
             </div>
             <div class="right-chart-content">
+
                 <div class="chart-title">
                     <span class="chart-title-text">单位GDP二氧化碳排放降低</span>
                     <span class="chart-title-icon"></span>
                 </div>
                 <div class="chart-content unit-gdp-co2-pie-chart"></div>
+
             </div>
         </div>
         <div class="data-chart-container">
             <div class="left-chart-content">
+
                 <div class="chart-title">
                     <span class="chart-title-text">新建筑中绿色建筑占比</span>
-                    <span class="chart-title-icon "></span>
+                    <span class="chart-title-icon"></span>
                 </div>
                 <div class="chart-content green-building-pie-chart"></div>
+
+            </div>
+            <div class="right-chart-content">
+
+                <div class="chart-title">
+                    <span class="chart-title-text">城市绿道服务半径覆盖率</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content green-service-pie-chart"></div>
+
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+
+                <div class="chart-title">
+                    <span class="chart-title-text">公园绿地服务半径覆盖率</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content green-park-pie-chart"></div>
+
+            </div>
+            <div class="right-chart-content">
+
+                <div class="chart-title">
+                    <span class="chart-title-text">城市环境噪声达标地段覆盖率</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content city-noise-pie-chart"></div>
+
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+
+                <div class="chart-title">
+                    <span class="chart-title-text">空气质量优良天数比率</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content air-quality-well-pie-chart"></div>
+
+            </div>
+            <div class="right-chart-content">
+
+                <div class="chart-title">
+                    <span class="chart-title-text">地表水达到或好于Ⅲ类水体比例</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content surface-water-well-pie-chart"></div>
+
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+
+                <div class="chart-title">
+                    <span class="chart-title-text">城市生活污水集中收集率</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content city-dirty-water-pie-chart"></div>
+
+            </div>
+            <div class="right-chart-content">
+
+                <div class="chart-title">
+                    <span class="chart-title-text">再生水利用率</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content recycled-water-pie-chart"></div>
+
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+
+                <div class="chart-title">
+                    <span class="chart-title-text">城市生活垃圾资源转化利用率</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content city-garbage-pie-chart"></div>
+
+            </div>
+            <div class="right-chart-content">
+
+                <div class="chart-title">
+                    <span class="chart-title-text" title="城市建成区区域噪声平均值">城市建成区区域噪声平均值</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content city-noise-average">
+                    <div class="number">55.9</div>
+                    <div class="unit">分贝</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+
+                <div class="chart-title">
+                    <span class="chart-title-text" title="城市热岛效应强度">城市热岛效应强度</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content city-heat-island">
+                    <div class="number">1.1</div>
+                    <div class="unit">℃</div>
+                </div>
+
+            </div>
+            <div class="right-chart-content">
+
+                <div class="chart-title">
+                    <span class="chart-title-text" title="建设用地地均GDP">建设用地地均GDP</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content building-land-gdp">
+                    <div class="number">712.24</div>
+                    <div class="unit">万元/公顷</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+
+                <div class="chart-title">
+                    <span class="chart-title-text">工业用水重复率</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content industry-water-pie-chart"></div>
+
+            </div>
+            <div class="right-chart-content">
+
+                <div class="chart-title">
+                    <span class="chart-title-text">城市污水处置率</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content city-dirty-handling-pie-chart"></div>
+
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+
+                <div class="chart-title">
+                    <span class="chart-title-text">海绵城市覆盖率</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content sponge-city-pie-chart"></div>
+
             </div>
             <div class="right-chart-content">
                 <div class="chart-title">
-                    <span class="chart-title-text">城市绿道服务半径覆盖率</span>
-                    <span class="chart-title-icon "></span>
+                    <span class="chart-title-text"></span>
+                    <span class="chart-title-icon"></span>
                 </div>
-                <div class="chart-content green-service-pie-chart"></div>
+                <div class="chart-content"></div>
             </div>
         </div>
-
-
+    </div>
+    <div class="data-chart-operation open-status">
+        <img src="../../../public/images/icons/data-chart-close.svg" alt="">
+    </div>
+    <div class="amap-legend-container amap-legend-container-normal">
+        <div class="operation-icon-container">
+            <img class="operation-icon" src="../../../public/images/icons/map-legend.svg" alt="">
+        </div>
+        <div class="legend-content legend-content-hidden">
+            <div class="legend-close">
+                <img class="legend-close-icon" src="../../../public/images/icons/close.svg" alt="">
+            </div>
+            <div class="legend-content-container">
+                <div class="legend-title">居住用地</div>
+                <div class="legend-main-content">
+                    <div class="legend-item">
+                        <span class="item-icon first-level"></span>
+                        <span class="item-content">一类住宅用地（R1）</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="item-icon second-level"></span>
+                        <span class="item-content">二类住宅用地（R2）</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="item-icon third-level"></span>
+                        <span class="item-content">三类住宅用地（R3）</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 </body>
 
 <script>
-    // 弹窗
-    function createModal() {
+    const amapLegendContainer = document.querySelector('.amap-legend-container');
+    const legendContainerClose = document.querySelector('.legend-close');
+    legendContainerClose.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const legendIcon = document.querySelector('.operation-icon-container');
+        const legendContent = document.querySelector('.legend-content');
+        if (legendIcon.classList.contains('legend-content-hidden')) {
+            legendIcon.classList.remove('legend-content-hidden');
+        }
+
+        if (!legendContent.classList.contains('legend-content-hidden')) {
+            legendContent.classList.add('legend-content-hidden');
+        }
+    })
+
+    amapLegendContainer.addEventListener('click', (e) => {
+        const legendIcon = document.querySelector('.operation-icon-container');
+        const legendContent = document.querySelector('.legend-content');
+
+        if (legendIcon.classList.contains('legend-content-hidden')) {
+            return;
+        }
+        if (legendContent.classList.contains('legend-content-hidden')) {
+            legendContent.classList.remove('legend-content-hidden');
+            legendIcon.classList.add('legend-content-hidden');
+        }
+
+    })
+</script>
+
+<!-- 引入 layui.js -->
+<script src="//unpkg.com/layui@2.7.6/dist/layui.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.3.3/echarts.common.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts-liquidfill@3.1.0/dist/echarts-liquidfill.min.js"></script>
+
+<!--高德地图-->
+<script type="text/javascript">
+    window._AMapSecurityConfig = {
+        securityJsCode:'bbf2baef6fb09bb05e20af293ee0a1d9',
+    }
+</script>
+
+<script src="//webapi.amap.com/maps?v=1.4.15&key=a5f58e993c4963f5e563fdc87881fb53&plugin=AMap.RangingTool,AMap.MouseTool"></script>
+
+<!--引入UI组件库（1.1版本） -->
+<script src="//webapi.amap.com/ui/1.1/main.js?v=1.1.1"></script>
+<script src="https://webapi.amap.com/loca?v=1.3.2&key=a5f58e993c4963f5e563fdc87881fb53"></script>
+<script src="//a.amap.com/Loca/static/mock/heatmapData.js"></script>
+
+<!--<script src="https://webapi.amap.com/loader.js"></script>-->
+<!--&lt;!&ndash;引入UI组件库异步版本main-async.js（1.1版本） &ndash;&gt;-->
+<!--<script src="//webapi.amap.com/ui/1.1/main-async.js"></script>-->
+<script type="text/javascript" >
+
+    const amapStyleIcon = document.querySelector('.amap-style-icon');
+    const amapStyleList = document.querySelector('.amap-style-list');
+    const amapToolboxIcon = document.querySelector('.amap-toolbox .amap-toolbox-operation-icon');
+    const amapToolboxList = document.querySelector('.amap-toolbox-list');
+
+    amapStyleIcon.addEventListener('click', (e) => {
+        amapStyleList.classList.toggle('hide-amap-style-list');
+    });
+    amapToolboxIcon.addEventListener('click', (e) => {
+        const amapToolboxList = document.querySelector('.amap-toolbox-list-container');
+        amapToolboxList.classList.toggle('amap-toolbox-list-hide');
+    })
+    const map = new AMap.Map('middle-amap-container', {
+        // center: [108.947,34.1845],
+        // zoom: 11
+        features: ['bg', 'road'],
+        mapStyle: 'amap://styles/db9efe6a1745ac24b7269b862f359536',
+        center: [116.397475, 39.908668],
+        pitch: 0,
+        zoom: 10,
+        viewMode: '2D'
+    });
+
+
+    AMapUI.loadUI(['control/BasicControl'], function(BasicControl) {
+
+         const  zoomCtrl = new BasicControl.Zoom({
+                theme: 'dark',
+                position: 'br',
+                showZoomNum: false
+            });
+
+        map.addControl(zoomCtrl);
+        const zoomInOperation = document.querySelector('.zoom-in');
+        const zoomOutOperation = document.querySelector('.zoom-out');
+
+        zoomInOperation.addEventListener('click', (e) => {
+            zoomCtrl.zoomIn();
+        });
+        zoomOutOperation.addEventListener('click', (e) => {
+            zoomCtrl.zoomOut();
+        });
+
+    });
+
+    //默认样式
+    ruler = new AMap.RangingTool(map);
+    const rangingDistanceOperation = document.querySelector('.ranging-distance');
+
+    rangingDistanceOperation.addEventListener('click', (e) => {
+
+        const target = e.currentTarget;
+        const img = target.children[0];
+        if (target.classList.contains('show-ranging-distance-close-icon')) {
+            img.src = '../../../public/images/icons/toolbox-ruler.svg';
+            target.title = '测量距离';
+            target.classList.remove('show-ranging-distance-close-icon');
+            //关闭，并清除覆盖物
+            ruler.turnOff(true);
+            // ruler.close()
+        } else {
+            img.src = '../../../public/images/icons/close.svg';
+            target.title = '关闭测量距离';
+            target.classList.add('show-ranging-distance-close-icon')
+            ruler.turnOn();
+        }
+    });
+
+
+    const mouseTool = new AMap.MouseTool(map);
+
+    /**
+     * 测量面积
+     * @param type
+     */
+    function draw(){
+        mouseTool.measureArea({
+            strokeColor:'#80d8ff',
+            fillColor:'#80d8ff',
+            fillOpacity:0.5
+            //同 Polygon 的 Option 设置
+        });
+    }
+
+    const measureAreaOperation = document.querySelector('.measure-area');
+
+    measureAreaOperation.addEventListener('click', (e) => {
+        const target = e.currentTarget;
+        const img = target.children[0];
+        if (target.classList.contains('show-measure-area-close-icon')) {
+            img.src = '../../../public/images/icons/toolbox-rect.svg';
+            target.title = '测量面积';
+            target.classList.remove('show-measure-area-close-icon');
+            //关闭，并清除覆盖物
+            mouseTool.close(true);
+        } else {
+            img.src = '../../../public/images/icons/close.svg';
+            target.title = '关闭测量面积';
+            target.classList.add('show-measure-area-close-icon')
+            draw();
+        }
+    });
+
+
+    const clearLayerOperation = document.querySelector('.clear-layer');
+
+    clearLayerOperation.addEventListener('click', (e) => {
+        // 清除地图上所有添加的覆盖物
+        map.clearMap();
+    })
+
+    /**
+     * 渲染热力图
+     * @param map
+     * @param heatmapData
+     */
+    function renderHeatMap(map, heatmapData) {
+        // 创建loca
+        const layer = new Loca.HeatmapLayer({
+            map: map,
+        });
+        console.log('heat', heatmapData);
+        let list = [];
+        let i = -1, length = heatmapData.length;
+        while (++i < length) {
+            let item = heatmapData[i];
+            list.push({
+                coordinate: [item.lng, item.lat],
+                count: item.count
+            })
+        }
+
+        layer.setData(list, {
+            lnglat: 'coordinate',
+            value: 'count'
+        });
+
+        layer.setOptions({
+            style: {
+                radius: 16,
+                color: {
+                    0.5: '#2c7bb6',
+                    0.65: '#abd9e9',
+                    0.7: '#ffffbf',
+                    0.9: '#fde468',
+                    1.0: '#d7191c'
+                }
+            }
+        });
+
+        layer.render();
+    }
+
+    // 渲染热力图
+    renderHeatMap(map, heatmapData);
+
+
+    const allStyleNameList = Array.from(document.querySelectorAll('.style-name'));
+
+    // 切换地图样式
+    amapStyleList.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target.classList.contains('style-name')) {
+            const selected = allStyleNameList.find(item => item.classList.contains('style-name-selected'));
+            selected.classList.remove('style-name-selected');
+            target.classList.add('style-name-selected');
+            const mapstyle = target.dataset.mapstyle;
+            map.setMapStyle(`amap://styles/${mapstyle}`);
+        }
+
+    })
+
+    // AMapLoader.load({
+    //     "key": "a5f58e993c4963f5e563fdc87881fb53",              // 申请好的Web端开发者Key，首次调用 load 时必填
+    //     "version": "2.0",   // 指定要加载的 JSAPI 的版本，缺省时默认为 1.4.15
+    //     "plugins": ['AMap.Scale', 'AMap.MapType', 'AMap.ToolBar', 'AMap.ControlBar'],           // 需要使用的的插件列表，如比例尺'AMap.Scale'等
+    //     "AMapUI": {             // 是否加载 AMapUI，缺省不加载
+    //         "version": '1.1',   // AMapUI 版本
+    //         "plugins":['overlay/SimpleMarker', 'control/BasicControl'],       // 需要加载的 AMapUI ui插件
+    //     },
+    //     "Loca":{                // 是否加载 Loca， 缺省不加载
+    //         "version": '2.0'  // Loca 版本
+    //     },
+    // }).then((AMap)=>{
+    //     console.log(AMap);
+    //     let map = new AMap.Map('middle-amap-container');
+        // map.addControl(new AMap.Scale());
+        // map.addControl(new AMap.MapType());
+        // const toolBar = new AMap.ToolBar({position: 'RT'});
+        // const controlBar = new AMap.ControlBar({showZoomBar: true})
+        // map.addControl(toolBar);
+        // map.addControl(controlBar);
+        // toolBar.addTo(map);
+        // controlBar.addTo(map);
+        // var zoomCtrl1 = new AMap.BasicControl({
+        //     theme: 'dark'
+        // });
+        // map.addControl(zoomCtrl1);
+
+
+    // }).catch((e)=>{
+    //     console.error(e);  //加载错误提示
+    // });
+</script>
+
+<script>
+    const dataChartOperation = document.querySelector('.data-chart-operation');
+
+    dataChartOperation.addEventListener('click', (e) => {
+        const target = e.currentTarget;
+        const img = target.children[0];
+
+        const rightDataChartContainer = document.querySelector('.right-data-chart-container');
+        const amapToolbox = document.querySelector('.amap-toolbox');
+        const amapLegend = document.querySelector('.amap-legend-container');
+
+
+        if (target.classList.contains('open-status')) {
+            img.src = '../../../public/images/icons/data-chart-open.svg';
+            target.classList.remove('open-status');
+            amapToolbox.classList.remove('amap-toolbox-normal');
+            amapLegend.classList.remove('amap-legend-container-normal');
+            rightDataChartContainer.style.display = 'none';
+
+
+        } else {
+            img.src = '../../../public/images/icons/data-chart-close.svg';
+            target.classList.add('open-status');
+            amapToolbox.classList.add('amap-toolbox-normal');
+            amapLegend.classList.add('amap-legend-container-normal');
+            rightDataChartContainer.style.display = 'block';
+        }
+    });
+
+
+</script>
+
+<script>
+
+
+    /**
+     * 模态框组件
+     * @param modalTitle 模态框标题
+     * @param chartOption echarts 配置项
+     */
+    function createModal(modalTitle, chartOption) {
         const modalContent = `
             <div class="modal-container modal-mask">
 
                  <div class="modal-content">
                         <div class="modal-header">
-                              <span class="modal-header-title">区域开发强度</span>
+                              <span class="modal-header-title">${modalTitle}</span>
                               <span class="modal-close-icon"><img class="modal-close-icon" src="../../../public/images/icons/close.svg"></span>
                         </div>
                         <div class="modal-main-content">
@@ -173,39 +793,114 @@
 
         document.body.insertAdjacentHTML('beforeend', modalContent);
 
-        function closeModal(e) {
-            const target = e.target;
-            if (target.classList.contains('modal-close-icon')) {
-                document.body.removeChild(document.querySelector('.modal-container.modal-mask'));
-            }
-        }
-
-        document.body.addEventListener('click', closeModal);
-
+        addBarChart(chartOption);
 
     }
 
+    function closeModal(e) {
+        const target = e.target;
+        if (target.classList.contains('modal-close-icon')) {
+            document.body.removeChild(document.querySelector('.modal-container.modal-mask'));
+        }
+    }
 
-    const icon = document.querySelector('.chart-title-icon');
-    icon.addEventListener('click', createModal);
+    document.body.addEventListener('click', closeModal);
+
+    let timer;
+
+    function addBarChart(option) {
+        const chartContainer = document.querySelector('.modal-main-content');
+        if (chartContainer) {
+            console.log('chartContainer', chartContainer);
+
+            const barChartContainer = echarts.init(chartContainer);
+
+            barChartContainer.setOption(option);
+
+            if (timer) {
+                clearTimeout(timer);
+            }
+        } else {
+            timer = setTimeout(() => {
+                addBarChart(option);
+            }, 0)
+        }
+    }
+
+
+    const modalChartOption = {
+        title: {
+            left: 'center',
+            bottom: '5%',
+            textStyle: {
+                fontFamily: 'Microsoft YaHei',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                fontSize: 12,
+                lineHeight: 18,
+                color: '#4F4F4F',
+            }
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            itemWidth: 8,
+            itemHeight: 8,
+            icon: 'circle',
+        },
+        grid: {
+            // left: 115,
+            // right: 92,
+            containLabel: true
+        },
+        xAxis: [
+            {
+                type: 'category',
+                name: '区域',
+                data: ['灞桥区', '莲湖区', '新城区', '雁塔区', '长安区', '未央区', '碑林区'],
+                axisTick: {
+                    show: false,
+                    alignWithLabel: true,
+                    inside:false,           //坐标轴刻度是否朝内，默认朝外。
+                    length:5,                //坐标轴刻度的长度。
+                }
+            }
+        ],
+        yAxis: [
+            {
+                name: '%',
+                type: 'value',
+                splitLine: {
+                    show: true,
+                    lineStyle:{
+                        color: ['#315070'],
+                        width: 1,
+                        type: 'dashed'
+                    }
+                }
+            }
+        ],
+        series: [
+            {
+                name: '强度',
+                type: 'bar',
+                barWidth: 20,
+                // barCategoryGap: 50,
+                itemStyle: {
+                    color: '#DBAA78'
+                },
+                data: [100, 52, 90, 55, 85, 90, 90]
+            }
+        ]
+    };
+
+
 </script>
-
-<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.3.3/echarts.common.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/echarts-liquidfill@3.1.0/dist/echarts-liquidfill.min.js"></script>
 <script>
-    const regionDevelopChartDom = document.querySelector('.region-develop-pie-chart');
-    const cityEcologyChartDom = document.querySelector('.city-ecology-pie-chart');
-    const unitGdpCo2ChartDom = document.querySelector('.unit-gdp-co2-pie-chart');
-    const greenBuildingChartDom = document.querySelector('.green-building-pie-chart');
-    const greenServiceChartDom = document.querySelector('.green-service-pie-chart');
-
-    const regionDevelopChart = echarts.init(regionDevelopChartDom);
-    const cityEcologyChart = echarts.init(cityEcologyChartDom);
-    const unitGdpCo2Chart = echarts.init(unitGdpCo2ChartDom);
-    const greenBuildingChart = echarts.init(greenBuildingChartDom);
-    const greenServiceChart = echarts.init(greenServiceChartDom);
-
-
     const unitGdpCo2Option = {
         series: [{
             type: 'liquidFill',
@@ -406,23 +1101,1371 @@
         },
     ]
 
+    /**
+     * 生成 echarts 图标
+     * @param container
+     * @param options
+     */
+    function generateChart(container, options) {
+        const chartContainer = document.querySelector(`.${container}`);
+        const chart = echarts.init(chartContainer);
+        chart.setOption(options);
+    }
 
-    regionDevelopChart.setOption({...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
-    cityEcologyChart.setOption({...commonChartOption, series: [{...commonChartOption.series[0], data: cityEcologyData}]});
-    unitGdpCo2Chart.setOption(unitGdpCo2Option);
-    greenBuildingChart.setOption({...commonChartOption, series: [{...commonChartOption.series[0], data: greenBuildingData}]});
-    greenServiceChart.setOption({...commonChartOption, series: [{...commonChartOption.series[0], data: greenServiceData}]});
+    generateChart('region-develop-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]})
+    generateChart('city-ecology-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: cityEcologyData}]})
+    generateChart('unit-gdp-co2-pie-chart', unitGdpCo2Option)
+    generateChart('green-building-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: greenBuildingData}]})
+    generateChart('green-service-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: greenServiceData}]})
+    generateChart('green-park-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: greenServiceData}]})
+    generateChart('city-noise-pie-chart', unitGdpCo2Option)
+    generateChart('air-quality-well-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: greenServiceData}]})
+    generateChart('surface-water-well-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: greenServiceData}]})
+    generateChart('city-dirty-water-pie-chart', unitGdpCo2Option)
+    generateChart('recycled-water-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: greenServiceData}]})
+    generateChart('city-garbage-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: greenServiceData}]})
+    generateChart('industry-water-pie-chart', unitGdpCo2Option)
+    generateChart('city-dirty-handling-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: greenServiceData}]})
+    generateChart('sponge-city-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: greenServiceData}]})
 
 </script>
 <script>
 
-    let opertionCheckedClass = 'ecology-checked';
+
+
+
+
+    const ecologyBasemap = `
+        <div class="layer-basemap-checkbox">
+              <input type="checkbox" id="group-checkbox">
+               <label for="group-checkbox">组团分布</label>
+                    </div>
+                    <div class="layer-basemap-checkbox">
+                        <input type="checkbox" id="reside-people-density-checkbox">
+                        <label for="reside-people-density-checkbox">中心城区居住人口密度</label>
+                    </div>
+                    <div class="layer-basemap-checkbox">
+                        <input type="checkbox" id="employment-people-density-checkbox">
+                        <label for="employment-people-density-checkbox">中心城区就业人口密度</label>
+                    </div>
+                    <div class="layer-basemap-checkbox green-space">
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="green-space-checkbox">
+                            <label for="green-space-checkbox">现状公园绿地</label>
+                        </div>
+                        <div id="green-space-slide" class="slider custom-slide" ></div>
+                    </div>
+                    <div class="layer-basemap-checkbox">
+                        <input type="checkbox" id="green-space-500-cover-checkbox">
+                        <label for="green-space-500-cover-checkbox">公园绿地500米覆盖</label>
+                    </div>
+                    <div class="layer-basemap-checkbox">
+                        <input type="checkbox" id="city-green-road-checkbox">
+                        <label for="city-green-road-checkbox">城市绿道</label>
+                    </div>
+                    <div class="layer-basemap-checkbox">
+                        <input type="checkbox" id="ecology-checkbox">
+                        <label for="ecology-checkbox">城市生态廊道</label>
+                    </div>
+                    <div class="layer-basemap-checkbox">
+                        <input type="checkbox" id="factory-checkbox">
+                        <label for="factory-checkbox">污水处理厂</label>
+                    </div>
+                    <div class="layer-basemap-checkbox">
+                        <input type="checkbox" id="water-checkbox">
+                        <label for="water-checkbox">水体</label>
+                    </div>
+
+    `
+
+    const healthBasemap = `
+        ${generateBasemapLayerCheckbox('商业设施分布', 'commercial-device-checkbox')}
+        ${generateBasemapLayerCheckbox('商业设施覆盖', 'commercial-device-cover-checkbox')}
+        ${generateBasemapLayerCheckbox('幼儿园点位', 'kindergarten-checkbox')}
+        ${generateBasemapLayerCheckbox('幼儿园300m覆盖', 'kindergarten-300-checkbox')}
+        ${generateBasemapLayerCheckbox('幼儿园分区覆盖率', 'kindergarten-cover-checkbox')}
+        ${generateBasemapLayerCheckbox('幼儿园300m覆盖率分区', 'kindergarten-300-cover-checkbox')}
+        ${generateBasemapLayerCheckbox('小学点位', 'primary-school-checkbox')}
+        ${generateBasemapLayerCheckbox('小学500m覆盖', 'primary-school-500-checkbox')}
+        ${generateBasemapLayerCheckbox('小学500m覆盖分区', 'primary-school-500-cover-checkbox')}
+        ${generateBasemapLayerCheckbox('中学点位', 'middle-school-checkbox')}
+        ${generateBasemapLayerCheckbox('中学1000m覆盖', 'middle-school-1000-checkbox')}
+        ${generateBasemapLayerCheckbox('中学1000m覆盖分区', 'middle-school-1000-cover-checkbox')}
+        ${generateBasemapLayerCheckbox('公厕点位', 'public-toilet-checkbox')}
+        ${generateBasemapLayerCheckbox('公厕500m覆盖', 'public-toilet-500-checkbox')}
+        ${generateBasemapLayerCheckbox('公厕500m覆盖分区', 'public-toilet-500-cover-checkbox')}
+    `
+
+    const safetyBasemap = `
+        ${generateBasemapLayerCheckbox('应急避难场所', 'hideaway-area-checkbox')}
+        ${generateBasemapLayerCheckbox('城市二级及以上医院', 'city-hospital-checkbox')}
+        ${generateBasemapLayerCheckbox('城市二级及以上医院4km覆盖', 'city-hospital-4000-cover-checkbox')}
+        ${generateBasemapLayerCheckbox('内涝点点位', 'city-waterlogging-location-checkbox')}
+        ${generateBasemapLayerCheckbox('消防站点', 'firefighting-station-checkbox')}
+        ${generateBasemapLayerCheckbox('消防站点覆盖', 'firefighting-station-cover-checkbox')}
+    `
+
+    const trafficBasemap = `
+            ${generateBasemapLayerCheckbox('路网', 'road-net-checkbox')}
+            ${generateBasemapLayerCheckbox('实时路况', 'real-time-traffic-checkbox')}
+            ${generateBasemapLayerCheckbox('专用自行车道', 'bike-road-checkbox')}
+            ${generateBasemapLayerCheckbox('居住地分布热力', 'residence-heat-checkbox')}
+            ${generateBasemapLayerCheckbox('就业岗位分布热力', 'employment-position-heat-checkbox')}
+            ${generateBasemapLayerCheckbox('工作日早高峰车速', 'workday-morning-peak-checkbox')}
+            ${generateBasemapLayerCheckbox('工作日晚高峰车速', 'workday-evening-peak-checkbox')}
+            ${generateBasemapLayerCheckbox('居民出行空间分布（全天全方式OD）', 'resident-travel-space-checkbox')}
+            ${generateBasemapLayerCheckbox('公交站点', 'bus-stop-checkbox')}
+            ${generateBasemapLayerCheckbox('公交站点500m覆盖', 'bus-stop-500-checkbox')}
+            ${generateBasemapLayerCheckbox('公交线路', 'bus-stop-500-cover-checkbox')}
+    `;
+
+    const sceneBasemap = `
+            ${generateBasemapLayerCheckbox('历史建筑（含已公布和已公示）', 'history-building-checkbox')}
+    `;
+
+
+
+    const ecologyChartAndData = `
+        <div class="data-chart-container">
+
+            <div class="left-chart-content">
+            ${generateChartContent('区域开发强度', 'region-develop-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+                <div class="chart-title">
+                    <span class="chart-title-text">组团规模</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content region-group-detail">
+                    <div class="region-item">
+                        <div class="region-name">阎良区</div>
+                        <div class="region-area">
+                            <span class="region-area-number">36.49</span>
+                            平方公里
+                        </div>
+                    </div>
+                    <div class="region-item">
+                        <div class="region-name">阎良区</div>
+                        <div class="region-area">
+                            <span class="region-area-number">36.49</span>
+                            平方公里
+                        </div>
+                    </div>
+                    <div class="region-item">
+                        <div class="region-name">阎良区</div>
+                        <div class="region-area">
+                            <span class="region-area-number">36.49</span>
+                            平方公里
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('人口密度超过每平方公里1.5万人的城市用地规模', 'population-density', 52, '平方公里')}
+            </div>
+            <div class="right-chart-content">
+            ${generateDataContent('新建住宅建筑高度超过80米的数量', 'new-building', 409, '栋')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('城市生态廊道达标率', 'city-ecology-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('单位GDP二氧化碳排放降低', 'unit-gdp-co2-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('新建筑中绿色建筑占比', 'green-building-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('城市绿道服务半径覆盖率', 'green-service-pie-chart')}
+            </div>
+        </div>
+         <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('公园绿地服务半径覆盖率', 'green-park-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('城市环境噪声达标地段覆盖率', 'city-noise-pie-chart')}
+            </div>
+        </div>
+         <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('空气质量优良天数比率', 'air-quality-well-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('地表水达到或好于Ⅲ类水体比例', 'surface-water-well-pie-chart')}
+            </div>
+        </div>
+         <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('城市生活污水集中收集率', 'city-dirty-water-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('再生水利用率', 'recycled-water-pie-chart')}
+            </div>
+        </div>
+         <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('城市生活垃圾资源转化利用率', 'city-garbage-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateDataContent('城市建成区区域噪声平均值', 'city-noise-average', 55.9, '分贝')}
+            </div>
+        </div>
+         <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('城市热岛效应强度', 'city-heat-island', 1.1, '℃')}
+            </div>
+            <div class="right-chart-content">
+            ${generateDataContent('建设用地地均GDP', 'building-land-gdp', 712.24, '万元/公顷')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('工业用水重复率', 'industry-water-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('城市污水处置率', 'city-dirty-handling-pie-chart')}
+            </div>
+        </div>
+         <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('海绵城市覆盖率', 'sponge-city-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+                <div class="chart-title">
+                    <span class="chart-title-text"></span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content"></div>
+            </div>
+        </div>
+    `;
+
+    const healthChartAndData = `
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('完整居住社区覆盖率', 'live-community-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('社区便民商业服务设施覆盖率', 'community-commercial-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('社区老年服务站覆盖率', 'elderly-service-station-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('普惠性幼儿园覆盖率', 'kindergarten-cover-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('社区卫生服务中心门诊分担率', 'community-health-service-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateDataContent('人均体育场面积', 'stadium-area', 0.45, '平方米/人')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('社区低碳能源设施覆盖率', 'community-low-carbon-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('老旧小区改造达标率', 'old-building-reform-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('新建住宅建筑密度超过30%的比例', 'new-building-density', 15, '%')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('适龄儿童入园率', 'children-enrollment-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('幼儿园300米覆盖率', 'kindergarten-300-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('小学500米覆盖', 'primary-school-500-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('中学1000米覆盖率', 'middle-school-1000-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('市辖区公厕覆盖率', 'public-toilet-cover-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('路灯亮灯率', 'street-light-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            <div class="chart-title">
+                    <span class="chart-title-text" title=""></span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content">
+                <div class="number"></div>
+                <div class="unit"></div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    const safetyChartAndData = `
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+                ${generateDataContent('城市内涝积水点密度', 'waterlogging-density', 0.002, '个/平方公里')}
+
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('城市可渗透地面面积比例', 'city-penetration-area-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('城市道路交通事故万车死亡率', '0.88', 0.002, '人/万车')}
+            </div>
+            <div class="right-chart-content">
+            ${generateDataContent('城市年安全事故死亡率', 'city-safety-accident-ratio', 0.88, '人/万车')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('人均避难场所面积', 'hideaway-area', 0.36, '平方米/人')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('城市二级及以上医院覆盖率', 'city-hospital-cover-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('城市标准消防站及小型普通消防站覆盖率', 'city-firefighting-station-cover-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('建成区防洪堤达标率', 'flood-protection-cover-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('每千人口医疗卫生机构床位数', 'medical-resource-average', 5.79, '张')}
+            </div>
+
+            <div class="right-chart-content">
+                <div class="chart-title">
+                    <span class="chart-title-text" title=""></span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content">
+                <div class="number"></div>
+                <div class="unit"></div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    const trafficChartAndData = `
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('建成区高峰期平均比机动车速度', 'city-vehicle-average-speed', 26.6, '公里/小时')}
+            </div>
+            <div class="right-chart-content">
+                <div class="chart-title">
+                    <span class="chart-title-text">城市道路网密度</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content city-road-net-density">
+                    <div class="number">中心城区5.8公里/平方公里</div>
+                    <div class="number">鄠邑区2.82公里/平方公里</div>
+                    <div class="number">临潼区2.91公里/平方公里</div>
+                    <div class="number">阎良区3.86公里/平方公里</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('城市常驻人口平均单程通勤时间', 'commute-average-time', 38, '分钟')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('通勤距离小于5公里的人口比例', 'commute-distance-ratio-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('轨道站点周边覆盖通勤比例', 'station-cover-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('绿色交通出行分担率', 'green-transportation-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('专用自行车密度', 'bike-road-density', 0.28, '公里/平方公里')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('中心城区公交站点500米覆盖率', 'city-center-bus-stop-cover-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('新增轨道交通里程数', 'railway-traffic', 82.6, '公里')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('实时提供公共汽车来车信息覆盖率', 'real-time-bus-info-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent(' 中心城区轨道交通站点150米范围内全面接驳常规公交线路覆盖率', 'city-center-traffic-station-cover-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent(' 市辖区内停车泊位与机动车保有量的比', 'city-parking-vehicle-ratio-pie-chart')}
+            </div>
+        </div>
+    `;
+
+    const sceneChartAndData = `
+    <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('当年获得国际国内各类建筑奖、文化奖的项目数量', 'award-count', 101, '个')}
+            </div>
+            <div class="right-chart-content">
+            ${generateDataContent('万人城市文化建筑面积', 'culture-building-area', 733.41, '平方米/万人')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('城市历史风貌破坏负面事件数量', 'history-scene-negative-event-count', 0, '个')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('城市历史文化街区保护修缮率', 'history-street-protect-ratio-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('城市历史建筑空置率', 'history-building-empty-ratio-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+               ${generateDataContent('城市国内外游客数量', 'tourists-count', 2339.49, '万人')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('自然和文化遗产数量', 'nature-culture-heritage-count', 3286, '处')}
+            </div>
+            <div class="right-chart-content">
+            ${generateDataContent('博物馆数量', 'museum-count', 116, '个')}
+            </div>
+        </div>
+    `;
+
+    const tidyChartAndData = `
+    <div class="data-chart-container">
+        <div class="left-chart-content">
+        ${generateChartContent('城市门前责任区指定履约率', 'city-front-door-response-area-ratio-pie-chart')}
+        </div>
+        <div class="right-chart-content">
+        ${generateChartContent('城市街道立杆、空中路线规整性', 'city-street-rod-tidy-ratio-pie-chart')}
+        </div>
+    </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('城市街道车辆停放有序性', 'city-street-park-tidy', 50, '%')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('城市重要官网监测监控覆盖率', 'city-pipeline-monitor-cover-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('城市窨井盖完好率', 'city-manhole-cover-ratio-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('实施专业化物业管理的住宅小区占比', 'professional-property-community-pie-chart')}
+            </div>
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('城市住宅小区生活垃圾分类覆盖率', 'community-garbage-classification-cover-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+                <div class="chart-title">
+                    <span class="chart-title-text"></span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content"></div>
+            </div>
+        </div>
+    `;
+
+    const diversityChartAndData = `
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('道路无障碍设施设置率', 'road-accessibility-device-cover-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('城市居民最低生活保障标准占上年度城市居民人均消费支出比例', 'city-resident-minimum-living-standard-ratio-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('常驻人口住房保障服务覆盖率', 'city-resident-house-ratio-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+                <div class="chart-title">
+                    <span class="chart-title-text">住房支出超出家庭收入50%的城市家庭占比</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content housing-spending-high-ratio">
+                    <div class="number">28.9%</div>
+                    <div class="unit">房贷收入比</div>
+                    <div class="number">10.53%</div>
+                    <div class="unit">房租收入比</div>
+                </div>
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('居住在棚户区和城中村的人口数量占比', 'urban-villages-people-ratio', 28.9, '%')}
+            </div>
+            <div class="right-chart-content">
+                <div class="chart-title">
+                    <span class="chart-title-text"></span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content">
+                </div>
+            </div>
+        </div>
+    `;
+
+    const innovationChartAndData = `
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('城市小学生入学增长率', 'student-enrollment-ratio-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateDataContent('城市人口年龄中位数', 'city-people-age-median', 26.6, '岁')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('政府负债率', 'government-debt-ratio-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('城市新增商品住宅与新增人口住房需求比', 'house-people-ratio-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('全社会R&D支出占GDP比重', 'R-D-in-GDP-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+             ${generateDataContent('万人新增中小微企业数量', 'new-enterprise-count', 26.6, '个/万人')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('万人新增个体工商户数量', 'new-private-business-count', 157.09, '个/万人')}
+            </div>
+            <div class="right-chart-content">
+            ${generateDataContent('万人高新技术企业数量', ' high-tech-enterprise-count', 4.28, '个/万人')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('万人上市公司数量', 'listed-company-count', 0.07, '个/万人')}
+            </div>
+            <div class="right-chart-content">
+            ${generateDataContent('城市信贷结构优化比例', 'city-credit-ratio', 179.36, '%')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateChartContent('文化创意产品增加值占GDP比重', 'culture-product-in-gdp-pie-chart')}
+            </div>
+            <div class="right-chart-content">
+            ${generateChartContent('青年人口占比', 'yong-people-ratio-pie-chart')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('年度举办国际会议、展览、体育赛事数量', 'international-conference-games-count', 10, '次')}
+
+            </div>
+            <div class="right-chart-content">
+            ${generateDataContent('对外贸易进出口额', 'foreign-trade-count', 3473.84, '亿元')}
+            </div>
+        </div>
+        <div class="data-chart-container">
+            <div class="left-chart-content">
+            ${generateDataContent('在校大学生数量', 'college-students--count', 91.29, '万人')}
+            </div>
+            <div class="right-chart-content">
+            </div>
+        </div>
+    `;
+
+
+    function generateBasemapLayerCheckbox(name, id) {
+        return `
+            <div class="layer-basemap-checkbox">
+              <input type="checkbox" id="${id}">
+               <label for="${id}">${name}</label>
+            </div>
+        `
+    }
+
+    function generateChartContent(areaTitle, chartContentClass) {
+
+        return `
+                <div class="chart-title">
+                    <span class="chart-title-text">${areaTitle}</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content ${chartContentClass}"></div>
+        `
+    }
+
+    function generateDataContent(areaTitle, dataContentClass, number, unit) {
+        return `
+                <div class="chart-title">
+                    <span class="chart-title-text" title="${areaTitle}">${areaTitle}</span>
+                    <span class="chart-title-icon"></span>
+                </div>
+                <div class="chart-content ${dataContentClass}">
+                <div class="number">${number}</div>
+                <div class="unit">${unit}</div>
+                </div>
+        `
+    }
+
+
+    const layerDataList = [
+        {
+            category: 'ecology',
+            basemap: ecologyBasemap,
+            chartAndData: ecologyChartAndData,
+            tooltipData: [
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+
+            ],
+            modalTitleAndData: [
+                {
+                    modalTitle: '区域开发强度',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '组团规模',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '人口密度超过每平方公里1.5万人的城市用地规模',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '新建住宅建筑高度超过80米的数量',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市生态廊道达标率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '单位GDP二氧化碳排放降低',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '新建筑中绿色建筑占比',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市绿道服务半径覆盖率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '公园绿地服务半径覆盖率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市环境噪声达标地段覆盖率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '空气质量优良天数比率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '地表水达到或好于Ⅲ类水体比例',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市生活污水集中收集率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '再生水利用率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市生活垃圾资源转化利用率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市建成区区域噪声平均值',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市热岛效应强度',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '建设用地地均GDP',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '工业用水重复率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市污水处置率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '海绵城市覆盖率',
+                    chartOption: modalChartOption
+                },
+            ]
+        },
+        {
+            category: 'health',
+            basemap: healthBasemap,
+            chartAndData: healthChartAndData,
+            tooltipData: [
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+
+            ],
+            modalTitleAndData: [
+                {
+                    modalTitle: '完整居住社区覆盖率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '社区便民商业服务设施覆盖率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '社区老年服务站覆盖率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '普惠性幼儿园覆盖率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '社区卫生服务中心门诊分担率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '人均社区体育场地面积',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '新建住宅建筑密度超过30%的比例',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '适龄儿童入园率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '幼儿园300米覆盖率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '小学500米覆盖率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '中学1000米覆盖率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '市辖区公厕覆盖率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '路灯亮灯率',
+                    chartOption: modalChartOption
+                },
+
+
+
+            ]
+        },
+        {
+            category: 'safety',
+            basemap: safetyBasemap,
+            chartAndData: safetyChartAndData,
+            tooltipData: [
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+
+            ],
+            modalTitleAndData: [
+                {
+                    modalTitle: '城市内涝积水点密度',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市可渗透地面面积比例',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市道路交通事故万车死亡率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市年安全事故死亡率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '人均避难场所面积',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市二级及以上医院覆盖率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市标准消防站及小型普通消防站覆盖率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '建成区防洪堤防达标率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '每千人口医疗卫生机构床位数',
+                    chartOption: modalChartOption
+                }
+            ]
+        },
+        {
+            category: 'traffic',
+            basemap: trafficBasemap,
+            chartAndData: trafficChartAndData,
+            tooltipData: [
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+
+            ],
+            modalTitleAndData: [
+                {
+                    modalTitle: '建成区高峰期平均机动车速度',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '建成区高峰期平均机动车速度',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市常住人口平均单程通勤时间',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市常住人口平均单程通勤时间',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '轨道站点周边覆盖通勤比例',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '绿色交通出行分担率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '专用自行车道密度',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '中心城区公交站点500米覆盖率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '新增轨道交通里程数',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '实时提供公共汽车来车信息覆盖率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '中心城区轨道交通站点150米范围内全面接驳常规公交线路覆盖率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '市辖区内停车泊位与机动车保有量的比',
+                    chartOption: modalChartOption
+                }
+            ],
+
+        },
+        {
+            category: 'scene',
+            basemap: sceneBasemap,
+            chartAndData: sceneChartAndData,
+            tooltipData: [
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+
+            ],
+            modalTitleAndData: [
+                {
+                    modalTitle: '当年获得国际国内各类建筑奖、文化奖的项目数量',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '万人城市文化建筑面积',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市历史风貌破坏负面事件数量',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市历史文化街区保护修缮率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市历史建筑空置率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市国内外游客量',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '自然和文化遗产数量',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '博物馆数量',
+                    chartOption: modalChartOption
+                }
+            ]
+        },
+        {
+            category: 'tidy',
+            basemap: '',
+            chartAndData: tidyChartAndData,
+            tooltipData: [
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                }
+
+            ],
+            modalTitleAndData: [
+                {
+                    modalTitle: '城市门前责任区制定履约率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市街道立杆、空中线路规整性',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市街道车辆停放有序性',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市重要管网监测监控覆盖率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市窨井盖完好率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '实施专业化物业管理的住宅小区占比',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '',
+                    chartOption: modalChartOption
+                },
+            ]
+        },
+        {
+            category: 'diversity',
+            basemap: '',
+            chartAndData: diversityChartAndData,
+            tooltipData: [
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                }
+
+            ],
+            modalTitleAndData: [
+                {
+                    modalTitle: '道路无障碍设施设置率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市居民最低生活保障标准占上年度城市居民人均消费支出比例',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '常住人口住房保障服务覆盖率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '住房支出超过家庭收入50%的城市家庭占比',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '居住在棚户区和城中村中的人口数量占比',
+                    chartOption: modalChartOption
+                }
+            ]
+        },
+        {
+            category: 'innovation',
+            basemap: '',
+            chartAndData: innovationChartAndData,
+            tooltipData: [
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+                {
+                    title: '指标拆分详情',
+                    content: '1111111111111111111'
+                },
+
+            ],
+            modalTitleAndData: [
+                {
+                    modalTitle: '城市小学生入学增长率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市人口年龄中位数',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '政府负债率',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市新增商品住宅与新增人口住房需求比',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '全社会R&D支出占GDP比重',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '万人新增中小微企业数量',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '万人新增个体工商户数量',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '万人高新技术企业数量',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '万人上市公司数量',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '城市信贷结构优化比例',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '文化创意产业增加值占GDP比重',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '青年人口占比',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '年度举办国际会议、展览、体育赛事数量',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '对外贸易进出口额',
+                    chartOption: modalChartOption
+                },
+                {
+                    modalTitle: '在校大学生数量',
+                    chartOption: modalChartOption
+                },
+
+            ]
+        },
+
+    ]
+
+
+
+
+
+    const ecologyModalData = layerDataList[0].modalTitleAndData;
+
+    Array.from(document.querySelectorAll('.chart-title-icon')).forEach((item, index) => {
+        item.addEventListener('click', (e) => {
+            if (ecologyModalData[index]) {
+                const title = ecologyModalData[index].modalTitle;
+                const options = ecologyModalData[index].chartOption;
+                createModal(title, options);
+            }
+
+        })
+    })
 
     const operationList = Array.from(document.querySelectorAll('.operation'));
     operationList.forEach(operation => {
         operation.addEventListener('click', operationIconChecked)
     });
 
+    let operationCheckedClass = 'ecology-checked';
 
     function operationIconChecked(e) {
         const target = e.currentTarget;
@@ -430,15 +2473,334 @@
 
         operationList.forEach(operation => {
             const classList = operation.classList;
-            if (classList.contains(opertionCheckedClass)) {
-                classList.remove(opertionCheckedClass);
+            if (classList.contains(operationCheckedClass)) {
+                classList.remove(operationCheckedClass);
             }
         });
 
-        const checkedClass = `${targetClassList[1]}-checked`;
-        targetClassList.add(checkedClass);
-        opertionCheckedClass = checkedClass;
-    }
-</script>
+        const uniqueClass = targetClassList[1];
 
+        const checkedClass = `${uniqueClass}-checked`;
+        targetClassList.add(checkedClass);
+        operationCheckedClass = checkedClass;
+
+        const layerBasemap = document.querySelector('.layer-basemap-operation');
+        const chartAndDataContainer = document.querySelector('.right-data-chart-container');
+
+        const selectedBasemapAndChart = layerDataList.find((item) => {
+            return item.category === uniqueClass;
+        }) || {};
+        debugger
+        const modalTitleAndData = selectedBasemapAndChart.modalTitleAndData;
+        layerBasemap.innerHTML = selectedBasemapAndChart.basemap;
+        chartAndDataContainer.innerHTML = selectedBasemapAndChart.chartAndData;
+        if (uniqueClass === 'ecology') {
+            layui.use('slider', function() {
+                const $ = layui.$;
+                const slider = layui.slider;
+                //默认滑块
+                slider.render({
+                    elem: '#green-space-slide',
+                    theme: '#DBAA78'
+                });
+            });
+
+            // addTooltip(selectedBasemapAndChart.tooltipData);
+            generateChart('region-develop-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]})
+            generateChart('city-ecology-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: cityEcologyData}]})
+            generateChart('unit-gdp-co2-pie-chart', unitGdpCo2Option)
+            generateChart('green-building-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: greenBuildingData}]})
+            generateChart('green-service-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: greenBuildingData}]})
+            generateChart('green-park-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: greenServiceData}]})
+            generateChart('city-noise-pie-chart', unitGdpCo2Option)
+            generateChart('air-quality-well-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: greenServiceData}]})
+            generateChart('surface-water-well-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: greenServiceData}]})
+            generateChart('city-dirty-water-pie-chart', unitGdpCo2Option)
+            generateChart('recycled-water-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: greenServiceData}]})
+            generateChart('city-garbage-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: greenServiceData}]})
+            generateChart('industry-water-pie-chart', unitGdpCo2Option)
+            generateChart('city-dirty-handling-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: greenServiceData}]})
+            generateChart('sponge-city-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: greenServiceData}]})
+
+
+
+            Array.from(document.querySelectorAll('.chart-title-icon')).forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    if (modalTitleAndData[index]) {
+                        const title = modalTitleAndData[index].modalTitle;
+                        const options = modalTitleAndData[index].chartOption;
+                        createModal(title, options);
+                    }
+                })
+            });
+        }
+
+        if (uniqueClass === 'health') {
+            // addTooltip(selectedBasemapAndChart.tooltipData);
+            generateChart('live-community-pie-chart', unitGdpCo2Option);
+            generateChart('community-commercial-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('elderly-service-station-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('kindergarten-cover-pie-chart', unitGdpCo2Option);
+            generateChart('community-health-service-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('community-low-carbon-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('old-building-reform-pie-chart', unitGdpCo2Option);
+            generateChart('children-enrollment-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('kindergarten-300-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('primary-school-500-pie-chart', unitGdpCo2Option);
+            generateChart('middle-school-1000-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('public-toilet-cover-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('street-light-pie-chart', unitGdpCo2Option);
+
+            Array.from(document.querySelectorAll('.chart-title-icon')).forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    if (modalTitleAndData[index]) {
+                        const title = modalTitleAndData[index].modalTitle;
+                        const options = modalTitleAndData[index].chartOption;
+                        createModal(title, options);
+                    }
+                })
+            })
+
+        }
+
+        if (uniqueClass === 'safety') {
+            // addTooltip(selectedBasemapAndChart.tooltipData);
+            generateChart('city-penetration-area-pie-chart', unitGdpCo2Option);
+            generateChart('city-hospital-cover-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('city-firefighting-station-cover-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('flood-protection-cover-pie-chart', unitGdpCo2Option);
+            Array.from(document.querySelectorAll('.chart-title-icon')).forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    if (modalTitleAndData[index]) {
+                        const title = modalTitleAndData[index].modalTitle;
+                        const options = modalTitleAndData[index].chartOption;
+                        createModal(title, options);
+                    }
+                })
+            })
+        }
+
+        if (uniqueClass === 'traffic') {
+            // addTooltip(selectedBasemapAndChart.tooltipData);
+            generateChart('commute-distance-ratio-pie-chart', unitGdpCo2Option);
+            generateChart('station-cover-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('green-transportation-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('city-center-bus-stop-cover-pie-chart', unitGdpCo2Option);
+            generateChart('real-time-bus-info-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('city-center-traffic-station-cover-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('city-parking-vehicle-ratio-pie-chart', unitGdpCo2Option);
+            Array.from(document.querySelectorAll('.chart-title-icon')).forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    if (modalTitleAndData[index]) {
+                        const title = modalTitleAndData[index].modalTitle;
+                        const options = modalTitleAndData[index].chartOption;
+                        createModal(title, options);
+                    }
+                })
+            })
+        }
+
+        if (uniqueClass === 'scene') {
+            // addTooltip(selectedBasemapAndChart.tooltipData);
+            generateChart('history-street-protect-ratio-pie-chart', unitGdpCo2Option);
+            generateChart('history-building-empty-ratio-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            Array.from(document.querySelectorAll('.chart-title-icon')).forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    if (modalTitleAndData[index]) {
+                        const title = modalTitleAndData[index].modalTitle;
+                        const options = modalTitleAndData[index].chartOption;
+                        createModal(title, options);
+                    }
+                })
+            })
+        }
+
+        if (uniqueClass === 'tidy') {
+            // addTooltip(selectedBasemapAndChart.tooltipData);
+            generateChart('city-front-door-response-area-ratio-pie-chart', unitGdpCo2Option);
+            generateChart('city-street-rod-tidy-ratio-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('city-pipeline-monitor-cover-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('city-manhole-cover-ratio-pie-chart', unitGdpCo2Option);
+            generateChart('professional-property-community-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('community-garbage-classification-cover-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+
+            Array.from(document.querySelectorAll('.chart-title-icon')).forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    if (modalTitleAndData[index]) {
+                        const title = modalTitleAndData[index].modalTitle;
+                        const options = modalTitleAndData[index].chartOption;
+                        createModal(title, options);
+                    }
+                })
+            })
+        }
+
+        if (uniqueClass === 'diversity') {
+            // addTooltip(selectedBasemapAndChart.tooltipData);
+            generateChart('road-accessibility-device-cover-pie-chart', unitGdpCo2Option);
+            generateChart('city-resident-minimum-living-standard-ratio-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('city-resident-house-ratio-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            Array.from(document.querySelectorAll('.chart-title-icon')).forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    if (modalTitleAndData[index]) {
+                        const title = modalTitleAndData[index].modalTitle;
+                        const options = modalTitleAndData[index].chartOption;
+                        createModal(title, options);
+                    }
+                })
+            })
+        }
+
+        if (uniqueClass === 'innovation') {
+            // addTooltip(selectedBasemapAndChart.tooltipData);
+            generateChart('student-enrollment-ratio-pie-chart', unitGdpCo2Option);
+            generateChart('government-debt-ratio-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('house-people-ratio-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('R-D-in-GDP-pie-chart', unitGdpCo2Option);
+            generateChart('culture-product-in-gdp-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+            generateChart('yong-people-ratio-pie-chart', {...commonChartOption, series: [{...commonChartOption.series[0], data: regionDevelopData}]});
+
+            Array.from(document.querySelectorAll('.chart-title-icon')).forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    if (modalTitleAndData[index]) {
+                        const title = modalTitleAndData[index].modalTitle;
+                        const options = modalTitleAndData[index].chartOption;
+                        createModal(title, options);
+                    }
+                })
+            })
+        }
+
+    }
+
+    function addTooltip(tooltipInfo) {
+        const chartContentList = document.querySelectorAll('.chart-content');
+        Array.from(chartContentList).forEach((item, index) => {
+            item.addEventListener('mouseenter', (e) => {
+                const target = e.target;
+                handleShowTooltip(target, tooltipInfo[index].title, tooltipInfo[index].content);
+
+            });
+            item.addEventListener('mouseleave', (e) => {
+                const target = e.target;
+                const classList = target.classList;
+                hideTooltip(target);
+
+            })
+        });
+    }
+
+    function handleShowTooltip(target, title, content) {
+        target.style.position = 'relative';
+        target.insertAdjacentHTML('beforeend', toolTip(title, content));
+
+        const tooltip = document.querySelector('.custom-tooltip-wrapper');
+        const targetHeight = target.offsetHeight;
+        const targetWidth = target.offsetWidth;
+        const tooltipHeight = tooltip.offsetHeight;
+        const tooltipWidth = tooltip.offsetWidth;
+
+        // console.log(tooltipHeight, tooltipWidth);
+        tooltip.style.top = `${targetHeight / 2 - tooltipHeight / 2}px`
+        tooltip.style.left = `-${tooltipWidth + 15}px`;
+        // const arrow = tooltip.querySelector('.tooltip-arrow');
+        // arrow.style.top = `${tooltipHeight / 2 - 3}px`
+        // arrow.style.left = `${tooltipWidth - 4}px`
+    }
+
+    function hideTooltip(target) {
+        const tooltip = document.querySelector('.custom-tooltip-wrapper');
+        target.removeChild(tooltip);
+    }
+
+    function toolTip(title, content) {
+        return `
+            <div class="custom-tooltip-wrapper">
+                <div class="tooltip-title">${title}</div>
+                <div class="tooltip-content">${content}</div>
+<!--                <div class="tooltip-arrow"></div>-->
+            </div>
+        `
+    }
+
+
+    // addTooltip(layerDataList[0].tooltipData);
+
+</script>
+<script>
+
+    const selectedLayer = 'layer-selected';
+
+    const basemap = document.querySelector('.layer-basemap');
+    const layermap = document.querySelector('.layer-layermap');
+    basemap.addEventListener('click', (e) => {
+        e.stopPropagation()
+        const target = e.target;
+        singleSelected(target, layermap, selectedLayer);
+        const basemapOperation = document.querySelector('.layer-basemap-operation');
+        const layermapOperation = document.querySelector('.layer-layermap-operation');
+        if (!basemapOperation.classList.contains('layer-operation-selected')) {
+            basemapOperation.classList.add('layer-operation-selected');
+            layermapOperation.classList.remove('layer-operation-selected');
+        }
+    });
+    layermap.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const target = e.target;
+        singleSelected(target, basemap, selectedLayer);
+        const basemapOperation = document.querySelector('.layer-basemap-operation');
+        const layermapOperation = document.querySelector('.layer-layermap-operation');
+        if (!layermapOperation.classList.contains('layer-operation-selected')) {
+            layermapOperation.classList.add('layer-operation-selected');
+            basemapOperation.classList.remove('layer-operation-selected');
+        }
+    });
+
+    function singleSelected(target, theOther, slectedClass) {
+        if (target.classList.contains(slectedClass)) {
+            target.classList.remove(slectedClass);
+            theOther.classList.add(slectedClass);
+        } else {
+            target.classList.add(slectedClass);
+            theOther.classList.remove(slectedClass);
+        }
+    }
+
+
+    const layerHeader = document.querySelector('.layer-header');
+    layerHeader.addEventListener('click', (e) => {
+        const layerDetail = document.querySelector('.layer-detail');
+        const layerIcon = document.querySelector('.layer-icon');
+        const layerText = document.querySelector('.layer-text');
+
+        layerIcon.classList.toggle('layer-icon-selected');
+        layerText.classList.toggle('layer-text-selected');
+        layerDetail.classList.toggle('layer-detail-hide');
+    });
+
+
+
+</script>
+<script>
+    layui.use('slider', function() {
+        const $ = layui.$;
+        const slider = layui.slider;
+        //默认滑块
+        slider.render({
+            elem: '#green-space-slide',
+            theme: '#DBAA78'
+        });
+
+        slider.render({
+            elem: '#construct-slide',
+            theme: '#DBAA78'
+        });
+        slider.render({
+            elem: '#live-slide',
+            theme: '#DBAA78'
+        });
+
+
+    })
+</script>
 </html>

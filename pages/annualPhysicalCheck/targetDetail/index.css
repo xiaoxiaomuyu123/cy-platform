@@ -1,18 +1,218 @@
-body {
-    background: #E5E5E5;
-    min-width: 1200px;
-    height: 1080px;
-    min-height: 1080px;
+html {
+    height: 100%;
 }
-.target-detail-container {
-    display: flex;
-    justify-content: space-between;
+body {
+    /*background: #E5E5E5;*/
+    min-width: 1200px;
+    /*height: 1080px;*/
+    min-height: 1200px;
     height: 100%;
 }
 
-.target-detail-container .left-operation-container {
-    width: 138px;
+.target-detail-container {
+    /*display: flex;*/
+    /*justify-content: space-between;*/
     height: 100%;
+}
+
+.target-detail-container .amap-style-container {
+    z-index: 10000;
+    position: fixed;
+    left: 150px;
+    bottom: 10%;
+
+}
+
+.amap-style-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(216, 167, 122, 0.05);
+    border: 1px solid #DBAA78;
+    border-radius: 4px;
+    display: flex;
+}
+
+.amap-style-icon img {
+    margin: auto;
+}
+
+.amap-style-list.hide-amap-style-list {
+    display: none;
+}
+
+.amap-style-list {
+    background: #FFFFFF;
+    position: absolute;
+    top: -164px;
+    left: 60px;
+    width: 96px;
+    border: 1px solid #DBAA78;
+    box-shadow: 0px 4px 16px -4px rgba(177, 106, 84, 0.1);
+    border-radius: 4px;
+}
+.amap-style-list .style-name {
+    height: 32px;
+    line-height: 32px;
+    padding: 4px 0 4px 8px;
+    cursor: default;
+}
+
+.amap-style-list .style-name.style-name-selected {
+    background: rgba(219, 170, 120, 0.15);
+}
+
+.amap-toolbox-list-container {
+    position: absolute;
+    top: 60px;
+    background: #FFFFFF;
+    border: 1px solid #DBAA78;
+    box-shadow: 0px 4px 16px rgba(177, 106, 84, 0.1);
+    border-radius: 4px;
+}
+
+.amap-toolbox-list-container li.toolbox-item {
+    list-style: none;
+    width: 48px;
+    box-sizing: border-box;
+    padding: 10px 8px;
+    border-bottom: 1px solid #DBAA78;
+    text-align: center;
+}
+
+.amap-toolbox-list-container.amap-toolbox-list-hide {
+    display: none;
+}
+
+.amap-toolbox-list-container li.toolbox-item:last-child {
+    border: none;
+}
+
+.amap-toolbox-container {
+    position: fixed;
+    top: 10%;
+    width: 48px;
+    height: 48px;
+    background: rgba(216, 167, 122, 0.05);
+    border: 1px solid #DBAA78;
+    border-radius: 4px;
+    display: flex;
+}
+.amap-toolbox.amap-toolbox-normal {
+    right: calc(600px + 5%);
+
+}
+.amap-toolbox {
+    right: 5%;
+
+}
+
+.amap-legend-container.amap-legend-container-normal {
+    position: fixed;
+    bottom: 10%;
+    right: calc(600px + 5%);
+    background: rgba(216, 167, 122, 0.05);
+    border: 1px solid #DBAA78;
+    border-radius: 4px;
+}
+
+.amap-legend-container {
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    background: rgba(216, 167, 122, 0.05);
+    border: 1px solid #DBAA78;
+    border-radius: 4px;
+}
+
+.operation-icon-container {
+    display: flex;
+    width: 48px;
+    height: 48px;
+}
+
+.operation-icon-container .operation-icon {
+    margin: auto;
+}
+
+
+.amap-toolbox .amap-toolbox-operation-icon {
+    margin: auto;
+}
+
+.legend-content {
+    padding: 16px;
+}
+
+.operation-icon-container.legend-content-hidden {
+    display: none;
+}
+
+.legend-close {
+    display: flex;
+    justify-content: flex-end;
+}
+.legend-content.legend-content-hidden {
+    display: none;
+}
+.legend-content-container {
+    font-family: 'Source Han Sans SC';
+    font-style: normal;
+}
+
+.legend-content-container .legend-title {
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    color: #4F4F4F;
+}
+.legend-main-content .legend-item span.item-icon {
+    display: block;
+    width: 32px;
+    height: 20px;
+    margin-right: 8px;
+
+}
+.legend-main-content .legend-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-family: 'DIN';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #87888C;
+
+
+}
+.legend-main-content .legend-item:last-child {
+    margin-bottom: 0;
+}
+
+.first-level {
+    background: #C8E8FF;
+    border-radius: 2px;
+}
+.second-level {
+    background: #7EBBED;
+    opacity: 0.7;
+    border-radius: 2px;
+}
+.third-level {
+    background: #7EBBED;
+    border-radius: 2px;
+}
+
+
+
+.target-detail-container .left-operation-container {
+    position: absolute;
+    top: 25px;
+    z-index: 10000;
+    width: 138px;
+    /*height: 100%;*/
     padding-top: 24px;
     font-family: 'Source Han Sans SC';
     font-style: normal;
@@ -24,26 +224,264 @@ body {
     box-shadow: 1px 0px 4px rgba(106, 69, 31, 0.2);
 }
 .layer-list {
+    position: relative;
     width: 89px;
     height: 89px;
     margin: 0 auto;
     padding-top: 22.5px;
     text-align: center;
     background: url("../../../public/images/backgrounds/pic_navigation_layer_list_bg.png") no-repeat;
+
 }
+
+.layer-detail-hide {
+    display: none;
+}
+
+.layer-text.layer-text-selected {
+    color: #DBAA78;
+}
+
+.layer-list .layer-detail {
+    position: absolute;
+    z-index: 1000;
+    box-sizing: border-box;
+    top: 0px;
+    left: 105px;
+    width: 252px;
+    background-color: #fff;
+    border: 1px solid #D8A77A;
+
+}
+.layer-detail::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    left: -6px;
+    top: 40px;
+    border-right: 1px solid #D8A77A;
+    border-bottom: 1px solid #D8A77A;
+    transform: rotate(136deg);
+}
+.layer-detail .layer-selector {
+    margin: 16px;
+    width: 194px;
+    height: 40px;
+    margin: 16px auto;
+    background: rgba(209, 165, 120, 0.15);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.layer-basemap,.layer-layermap {
+    width: 45%;
+    display: inline-block;
+    text-align: center;
+    line-height: 32px;
+}
+
+.layer-basemap {
+    margin-left: 5px;
+}
+
+.layer-layermap {
+    margin-right: 5px;
+}
+
+.layer-basemap:hover {
+    cursor: default;
+}
+.layer-layermap:hover {
+    cursor: default;
+}
+
+.chart-title .chart-title-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.layer-selected {
+    height: 32px;
+    background: #FFFFFF;
+    border-radius: 4px;
+}
+
 
 .operation-list {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 25px;
+}
+
+.layer-basemap-operation,.layer-layermap-operation {
+    display: none;
+}
+
+.layer-operation-selected .layer-basemap-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.layer-operation-selected .layer-layermap-checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.layer-operation-selected {
+    display: block;
+    margin: 0 16px;
+    width: 194px;
+    margin: 0 auto;
+}
+
+.layer-basemap-checkbox label {
+    margin-left: 10px;
+}
+
+
+.layer-basemap-checkbox {
+    position: relative;
+    margin-bottom: 16px;
+    text-align: left;
 }
 
 .operation-list .operation {
     width: 60px;
     height: 40px;
     margin-bottom: 26px;
-    ;
 }
+
+.layer-basemap-checkbox input[type='checkbox'] {
+    opacity: 0;
+}
+
+.layer-basemap-checkbox label:before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+}
+
+.layer-basemap-checkbox label:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff;
+    transition: all 0.3s ease;
+}
+
+
+.layer-basemap-checkbox input[type='checkbox']:checked + label:before {
+    background:#D8A77A;
+}
+.layer-basemap-checkbox input[type='checkbox']:checked + label:after {
+    background:  #fff;
+}
+
+
+.layer-layermap-checkbox {
+    position: relative;
+    margin-bottom: 16px;
+    text-align: left;
+}
+.layer-layermap-checkbox label {
+    margin-left: 10px;
+}
+
+.layer-layermap-checkbox input[type='checkbox'] {
+    opacity: 0;
+}
+
+.layer-layermap-checkbox label:before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.layer-layermap-checkbox label:after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    width: 4px;
+    height: 8px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+}
+
+
+.layer-layermap-checkbox input[type='checkbox']:checked + label:before {
+    background: #D8A77A;
+    border-color: #fff;
+}
+
+.layer-layermap-checkbox input[type='checkbox']:checked + label:after {
+    background:#D8A77A;
+}
+
+.layer-basemap-checkbox.green-space {
+    display: flex;
+    flex-direction: column;
+}
+
+.layer-basemap-checkbox.green-space .checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.layer-layermap-checkbox .checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.layer-layermap-checkbox.construct {
+    display: flex;
+    flex-direction: column;
+}
+
+.layer-layermap-checkbox.live {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-slide {
+    width: 80%;
+}
+
 .operation.ecology {
     margin-top: 32px;
 }
@@ -56,11 +494,14 @@ body {
     margin-bottom: 5px;
 }
 
-.operation-icon.layer-normal {
+.operation-icon.layer-icon {
     margin-bottom: 0px;
     background: url("../../../public/images/icons/icon_layer_list_normal.png") no-repeat;
 }
 
+.operation-icon.layer-icon.layer-icon-selected {
+    background: url("../../../public/images/icons/icon_layer_list_checked.png") no-repeat;
+}
 
 .ecology .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_shengtai_normal.png") no-repeat;
@@ -116,12 +557,17 @@ body {
     background: url("../../../public/images/icons/icon_navigation_chuangxin_checked.png") no-repeat;
 }
 
-.target-detail-container .middle-map-container {
-    flex: 1;
+.target-detail-container .middle-amap-container {
+    width: 100%;
+    height: 100%;
 }
 .right-data-chart-container {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 1000;
     width: 600px;
-    /*height: 920px;*/
+    height: 760px;
     margin-right: 24px;
     padding: 16px;
     font-family: 'Source Han Sans SC';
@@ -134,7 +580,27 @@ body {
     /*box-sizing: border-box;*/
     background: url("../../../public/images/backgrounds/pic_zhibiaoxiangqing_bg.png") no-repeat;
     background-size: 100% 100%;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
 }
+.right-data-chart-container::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+}
+
+.data-chart-operation.open-status {
+    position: absolute;
+    top: 45%;
+    right: 673px;
+    z-index: 1000;
+}
+
+.data-chart-operation {
+    position: absolute;
+    top: 60%;
+    right: 25px;
+    z-index: 1000;
+}
+
 
 .operation-list {
     margin: 0 auto;
@@ -214,10 +680,16 @@ body {
     font-size: 22px;
     line-height: 26px;
 }
-
-.region-develop-pie-chart,.city-ecology-pie-chart,.unit-gdp-co2-pie-chart,.green-building-pie-chart,.green-service-pie-chart {
+.right-chart-content div.chart-content.region-group-detail {
+    width: 100%;
+    height: 100%;
+}
+.chart-content {
     width: 120px;
     height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .health-checked,.safety-checked,.safety-checked,.scene-checked,.traffic-checked,.tidy-checked,.diversity-checked,.innovation-checked,.ecology-checked {
     color: #DBAA78;
@@ -227,11 +699,27 @@ body {
     margin: 23px auto 31px;
 }
 
-.population-density,.new-building {
+.chart-content.city-road-net-density .number {
+    font-weight: 500;
+    font-size: 15px;
+    margin: 0;
+}
+
+.chart-content.city-road-net-density {
+    width: 200px;
+
+
+}
+
+.chart-content {
     text-align: center;
 }
 
-.population-density-number,.new-building-number {
+.chart-content.housing-spending-high-ratio {
+    display: block;
+}
+
+.number {
     margin: 28px 0 10px 0;
     font-family: 'DIN Alternate';
     font-style: normal;
@@ -241,7 +729,7 @@ body {
     color: #4F4F4F;
 }
 
-.population-density-unit,.new-building-unit {
+.unit {
     font-family: 'Microsoft YaHei';
     font-style: normal;
     font-weight: 400;

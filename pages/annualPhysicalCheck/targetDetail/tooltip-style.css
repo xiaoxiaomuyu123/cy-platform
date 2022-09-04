@@ -1,0 +1,28 @@
+.custom-tooltip-wrapper {
+    /*display: none;*/
+    position: absolute;
+    z-index: 99000;
+    width: 200px;
+    min-height: 50px;
+    /*border: 0!important;*/
+    border-radius: 8px;
+    padding: 16px;
+    background-color: rgba(18,23,29,.7);
+    /*background-size: 100% 100% !important;*/
+    /*background-attachment: fixed;*/
+    color: #fff;
+    font-size: 12px;
+}
+.custom-tooltip-wrapper .tooltip-content {
+    /*text-wrap: ;*/
+    margin-top: 15px;
+    word-break: break-all;
+}
+.custom-tooltip-wrapper .tooltip-arrow {
+    position: absolute;
+    display: block;
+    width: 8px;
+    height: 8px;
+    background:  rgba(18,23,29,.7);
+    transform: rotate(45deg);
+}
