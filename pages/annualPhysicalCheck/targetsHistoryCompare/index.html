@@ -4,11 +4,6 @@
     <meta charset="UTF-8">
     <title>历年指标对比</title>
     <link rel="stylesheet" href="index.css">
-    <!-- 引入 layui.css -->
-<!--    <link href="//unpkg.com/layui@2.7.6/dist/css/layui.css" rel="stylesheet">-->
-
-    <!-- 引入 layui.js -->
-<!--    <script src="//unpkg.com/layui@2.7.6/dist/layui.js"></script>-->
 </head>
 <body>
     <Header class="header">
@@ -61,53 +56,37 @@
         <!--    左侧导航    -->
         <div class="navigator-left">
             <div class="navigator-left-box">
-                <div class="navigator-left-item first">
-                    <div class="icon-box">
-                        <image class="icon-image" src="../../../public/images/icons/icon_navigation_shengtai_normal.png"/>
-                    </div>
-                    <div class="navigator-left-item-text">生态宜居</div>
+                <div class="operation ecology ecology-checked">
+                    <span class="operation-icon"></span>
+                    <span class="operation-text">生态宜居</span>
                 </div>
-                <div class="navigator-left-item second">
-                    <div class="icon-box">
-                        <image class="icon-image" src="../../../public/images/icons/icon_navigation_jiankang_normal.png"/>
-                    </div>
-                    <div class="navigator-left-item-text">健康舒适</div>
+                <div class="operation health">
+                    <span class="operation-icon"></span>
+                    <span class="operation-text">健康舒适</span>
                 </div>
-                <div class="navigator-left-item third">
-                    <div class="icon-box">
-                        <image class="icon-image" src="../../../public/images/icons/icon_navigation_anquan_normal.png"/>
-                    </div>
-                    <div class="navigator-left-item-text">安全韧性</div>
+                <div class="operation safety">
+                    <span class="operation-icon"></span>
+                    <span class="operation-text">安全韧性</span>
                 </div>
-                <div class="navigator-left-item forth">
-                    <div class="icon-box">
-                        <image class="icon-image" src="../../../public/images/icons/icon_navigation_jiaotong_normal.png"/>
-                    </div>
-                    <div class="navigator-left-item-text">交通便捷</div>
+                <div class="operation traffic">
+                    <span class="operation-icon"></span>
+                    <span class="operation-text">交通便捷</span>
                 </div>
-                <div class="navigator-left-item fifth">
-                    <div class="icon-box">
-                        <image class="icon-image" src="../../../public/images/icons/icon_navigation_fengmao_normal.png"/>
-                    </div>
-                    <div class="navigator-left-item-text">风貌特色</div>
+                <div class="operation scene">
+                    <span class="operation-icon"></span>
+                    <span class="operation-text">风貌特色</span>
                 </div>
-                <div class="navigator-left-item sixth">
-                    <div class="icon-box">
-                        <image class="icon-image" src="../../../public/images/icons/icon_navigation_zhengjie_normal.png"/>
-                    </div>
-                    <div class="navigator-left-item-text">整洁有序</div>
+                <div class="operation tidy">
+                    <span class="operation-icon"></span>
+                    <span class="operation-text ">整洁有序</span>
                 </div>
-                <div class="navigator-left-item seventh">
-                    <div class="icon-box">
-                        <image class="icon-image" src="../../../public/images/icons/icon_navigation_duoyuan_normal.png"/>
-                    </div>
-                    <div class="navigator-left-item-text">多元包容</div>
+                <div class="operation diversity">
+                    <span class="operation-icon"></span>
+                    <span class="operation-text">多元包容</span>
                 </div>
-                <div class="navigator-left-item eighth">
-                    <div class="icon-box">
-                        <image class="icon-image" src="../../../public/images/icons/icon_navigation_chuangxin_normal.png"/>
-                    </div>
-                    <div class="navigator-left-item-text">创新活力</div>
+                <div class="operation innovation">
+                    <span class="operation-icon"></span>
+                    <span class="operation-text">创新活力</span>
                 </div>
             </div>
 
@@ -173,12 +152,14 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="content-list-item-chart region-chart"></div>
                 </div>
                 <div class="content-list-item">
                     <div class="content-list-item-left">
                         <div class="content-list-item-first-box">
                             <div class="content-list-item-label">指标名称</div>
-                            <div class="content-list-item-highlight">区域开发强度（%）</div>
+                            <div class="content-list-item-highlight">城市生活污水集中收集率(%)</div>
                         </div>
                         <div class="content-list-item-second-box">
                             <div class="content-list-item-label">指标解释</div>
@@ -211,12 +192,13 @@
                             </div>
                         </div>
                     </div>
+                    <div class="content-list-item-chart city-dirty-water-collect-chart"></div>
                 </div>
                 <div class="content-list-item">
                     <div class="content-list-item-left">
                         <div class="content-list-item-first-box">
                             <div class="content-list-item-label">指标名称</div>
-                            <div class="content-list-item-highlight">区域开发强度（%）</div>
+                            <div class="content-list-item-highlight">公园绿地服务半径覆盖率(%)</div>
                         </div>
                         <div class="content-list-item-second-box">
                             <div class="content-list-item-label">指标解释</div>
@@ -249,12 +231,13 @@
                             </div>
                         </div>
                     </div>
+                    <div class="content-list-item-chart green-park-chart"></div>
                 </div>
                 <div class="content-list-item">
                     <div class="content-list-item-left">
                         <div class="content-list-item-first-box">
                             <div class="content-list-item-label">指标名称</div>
-                            <div class="content-list-item-highlight">区域开发强度（%）</div>
+                            <div class="content-list-item-highlight">新建建筑中绿色建筑占比(%)</div>
                         </div>
                         <div class="content-list-item-second-box">
                             <div class="content-list-item-label">指标解释</div>
@@ -287,6 +270,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class="content-list-item-chart green-new-building-chart"></div>
                 </div>
 
             </div>
@@ -295,99 +279,138 @@
         <div class="content-right">
             <div class="content-right-wrapper">
                 <div class="label-list">指标列表</div>
-                <div class="box_inner1">
-                    <input type="checkbox" id="box_innerInput1"/>
-                    <label for="box_innerInput1" class="checkbox-wrapper1"></label>
-                    <span class="label-text">区域开发强度</span>
+                <div class="target-checkbox">
+                    <input type="checkbox" id="region-develop-checkbox">
+                    <label for="region-develop-checkbox">区域开发强度（%）</label>
                 </div>
-
-                <div class="box_inner2">
-                    <input type="checkbox" id="box_innerInput2" />
-                    <label for="box_innerInput2" class="checkbox-wrapper2"></label>
-                    <span class="label-text">区域开发强度</span>
+                <div class="target-checkbox">
+                    <input type="checkbox" id="city-dirty-water-checkbox">
+                    <label for="city-dirty-water-checkbox">城市生活污水集中收集率</label>
                 </div>
-
-                <div class="box_inner3">
-                    <input type="checkbox" id="box_innerInput3"  />
-                    <label for="box_innerInput3" class="checkbox-wrapper3"></label>
-                    <span class="label-text">区域开发强度</span>
+                <div class="target-checkbox">
+                    <input type="checkbox" id="green-park-checkbox">
+                    <label for="green-park-checkbox">公园绿地服务半径覆盖率(%)</label>
                 </div>
-
-                <div class="box_inner4">
-                    <input type="checkbox" id="box_innerInput4"  />
-                    <label for="box_innerInput4" class="checkbox-wrapper4"></label>
-                    <span class="label-text">区域开发强度</span>
+                <div class="target-checkbox">
+                    <input type="checkbox" id="green-building-checkbox">
+                    <label for="green-building-checkbox">新建建筑中绿色建筑占比(%)</label>
                 </div>
-
-                <div class="box_inner5">
-                    <input type="checkbox" id="box_innerInput5"  />
-                    <label for="box_innerInput5" class="checkbox-wrapper5"></label>
-                    <span class="label-text">区域开发强度</span>
+                <div class="target-checkbox">
+                    <input type="checkbox" id="group-level-checkbox">
+                    <label for="group-level-checkbox">组团规模(平方公里)</label>
+                </div> <div class="target-checkbox">
+                    <input type="checkbox" id="population-density-checkbox">
+                    <label for="population-density-checkbox">人口密度超过每平方公里1.5万人的城市建设用地规模(平方公里)</label>
+                </div> <div class="target-checkbox">
+                    <input type="checkbox" id="new-building-80-count-checkbox">
+                    <label for="new-building-80-count-checkbox">新建住宅建筑高度超过80米的数量(栋)</label>
+                </div> <div class="target-checkbox">
+                    <input type="checkbox" id="city-ecology-street-checkbox">
+                    <label for="city-ecology-street-checkbox">城市生态廊道达标率(%)</label>
+                </div> <div class="target-checkbox">
+                    <input type="checkbox" id="unit-gdp-co2-checkbox">
+                    <label for="unit-gdp-co2-checkbox">单位GDP二氧化碳排放降低(%)</label>
+                </div> <div class="target-checkbox">
+                    <input type="checkbox" id="city-green-space-checkbox">
+                    <label for="city-green-space-checkbox">城市绿道服务半径覆盖率(%)</label>
+                </div> <div class="target-checkbox">
+                    <input type="checkbox" id="city-noise-checkbox">
+                    <label for="city-noise-checkbox">城市环境噪声达标地段覆盖率(%)</label>
+                </div> <div class="target-checkbox">
+                    <input type="checkbox" id="air-quality-well-checkbox">
+                    <label for="air-quality-well-checkbox">空气质量优良天数比率(%)</label>
                 </div>
-
-                <div class="box_inner6">
-                    <input type="checkbox" id="box_innerInput6"  />
-                    <label for="box_innerInput6" class="checkbox-wrapper6"></label>
-                    <span class="label-text">区域开发强度</span>
+                <div class="target-checkbox">
+                    <input type="checkbox" id="surface-water-well-checkbox">
+                    <label for="surface-water-well-checkbox">地表水达到或好于Ⅲ类水体比例(%)</label>
                 </div>
-
-                <div class="box_inner7">
-                    <input type="checkbox" id="box_innerInput7"  />
-                    <label for="box_innerInput7" class="checkbox-wrapper7"></label>
-                    <span class="label-text">区域开发强度</span>
+                <div class="target-checkbox">
+                    <input type="checkbox" id="recycle-water-checkbox">
+                    <label for="recycle-water-checkbox">再生水利用率(%)</label>
                 </div>
-
-                <div class="box_inner8">
-                    <input type="checkbox" id="box_innerInput8"  />
-                    <label for="box_innerInput8" class="checkbox-wrapper8"></label>
-                    <span class="label-text">区域开发强度</span>
-                </div>
-
-                <div class="box_inner9">
-                    <input type="checkbox" id="box_innerInput9"  />
-                    <label for="box_innerInput9" class="checkbox-wrapper9"></label>
-                    <span class="label-text">区域开发强度</span>
-                </div>
-
-                <div class="box_inner10">
-                    <input type="checkbox" id="box_innerInput10"  />
-                    <label for="box_innerInput10" class="checkbox-wrapper10"></label>
-                    <span class="label-text">区域开发强度</span>
-                </div>
-
-                <div class="box_inner11">
-                    <input type="checkbox" id="box_innerInput11"  />
-                    <label for="box_innerInput11" class="checkbox-wrapper11"></label>
-                    <span class="label-text">区域开发强度</span>
-                </div>
-
-                <div class="box_inner12">
-                    <input type="checkbox" id="box_innerInput12"  />
-                    <label for="box_innerInput12" class="checkbox-wrapper12"></label>
-                    <span class="label-text">区域开发强度</span>
-                </div>
-
-                <div class="box_inner13">
-                    <input type="checkbox" id="box_innerInput13"  />
-                    <label for="box_innerInput13" class="checkbox-wrapper13"></label>
-                    <span class="label-text">区域开发强度</span>
-                </div>
-
-                <div class="box_inner14">
-                    <input type="checkbox" id="box_innerInput14"  />
-                    <label for="box_innerInput14" class="checkbox-wrapper14"></label>
-                    <span class="label-text">区域开发强度</span>
-                </div>
-
-                <div class="box_inner15">
-                    <input type="checkbox" id="box_innerInput15"  />
-                    <label for="box_innerInput15" class="checkbox-wrapper15"></label>
-                    <span class="label-text">区域开发强度</span>
+                <div class="target-checkbox">
+                    <input type="checkbox" id="city-garbage-checkbox">
+                    <label for="city-garbage-checkbox">城市生活垃圾资源化利用率(%)</label>
                 </div>
             </div>
         </div>
     </div>
 
     <script type="text/javascript" src="index.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.3.3/echarts.common.js"></script>
+    <script>
+        const regionChartContainer = document.querySelector('.region-chart');
+        const cityDirtyWaterCollectChartContainer = document.querySelector('.city-dirty-water-collect-chart');
+        const greenParkChartContainer = document.querySelector('.green-park-chart');
+        const greenNewBuildingChartContainer = document.querySelector('.green-new-building-chart');
+        const regionLineChart = echarts.init(regionChartContainer);
+        const cityDirtyWaterCollectLineChart = echarts.init(cityDirtyWaterCollectChartContainer);
+        const greenParkLineChart = echarts.init(greenParkChartContainer);
+        const greenNewBuildingLineChart = echarts.init(greenNewBuildingChartContainer);
+
+        const options = option = {
+            grid: {
+                top: 45,
+                left: 45,
+                right: 15,
+                bottom: 30
+            },
+            xAxis: {
+                type: 'category',
+                axisTick: { show: false },
+                axisLabel: {
+                    fontSize: 10
+                },
+                data: [2019, 2020, 2021]
+            },
+            yAxis: {
+                name: '%',
+                type: 'value',
+                splitNumber: 5,
+                splitLine: {
+                    lineStyle:{
+                        color: 'rgba(0, 0, 0, 0.15)',
+                        type: 'dashed'
+                    }
+                }
+            },
+            series: [
+                {
+                    data: [10, 18],
+                    type: 'line',
+                    itemStyle : {
+                        normal : {
+                            color:'#E7B271'
+                        },
+                        borderWidth: 1
+                    },
+                    symbolSize: 8,
+                    lineStyle: {
+                        color: 'rgba(231, 178, 113, 1)'
+                    },
+                    areaStyle: {
+                        color: {
+                            type: 'linear',
+                            x: 0,
+                            y: 0,
+                            x2: 0,
+                            y2: 1,
+                            colorStops: [{
+                                offset: 0.43, color: 'rgba(231, 178, 113, 0.7)' // 0% 处的颜色
+                            }, {
+                                offset: 1, color: 'rgba(209, 165, 120, 0)' // 100% 处的颜色
+                            }],
+                            global: false // 缺省为 false
+                        }
+                    }
+                }
+            ]
+        }
+
+        regionLineChart.setOption(options);
+        cityDirtyWaterCollectLineChart.setOption(options);
+        greenParkLineChart.setOption(options);
+        greenNewBuildingLineChart.setOption(options);
+    </script>
 </body>
 </html>

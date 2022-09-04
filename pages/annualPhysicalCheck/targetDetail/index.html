@@ -148,7 +148,7 @@
             <div class="style-name"  data-mapstyle="dark">幻影黑地图</div>
             <div class="style-name"  data-mapstyle="grey">雅士灰地图</div>
             <div class="style-name"  data-mapstyle="whitesmoke">远山黛地图</div>
-            <div class="style-name"  data-mapstyle="darkblue">蓝色底图</div>
+            <div class="style-name"  data-mapstyle="darkblue">蓝色地图</div>
 <!--            <div class="style-name"  data-mapstyle="normal">高德卫星</div>-->
 <!--            <div class="style-name"  data-mapstyle="normal">无地图</div>-->
         </div>
@@ -2490,7 +2490,6 @@
         const selectedBasemapAndChart = layerDataList.find((item) => {
             return item.category === uniqueClass;
         }) || {};
-        debugger
         const modalTitleAndData = selectedBasemapAndChart.modalTitleAndData;
         layerBasemap.innerHTML = selectedBasemapAndChart.basemap;
         chartAndDataContainer.innerHTML = selectedBasemapAndChart.chartAndData;
