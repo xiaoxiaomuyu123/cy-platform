@@ -165,29 +165,52 @@ body {
 .ecology-checked .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_shengtai_checked.png") no-repeat;
 }
+.ecology-checked {
+    color: #DBAA78;
+}
 
 .health-checked .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_jiankang_checked.png") no-repeat;
 }
+.health-checked {
+    color: #DBAA78;
+}
 .safety-checked .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_anquan_checked.png") no-repeat;
 }
-
+.safety-checked {
+    color: #DBAA78;
+}
 .scene-checked .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_fengmao_checked.png") no-repeat;
 }
+.scene-checked {
+    color: #DBAA78;
+}
 .traffic-checked .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_jiaotong_checked.png") no-repeat;
+}
+.traffic-checked {
+    color: #DBAA78;
 }
 
 .tidy-checked .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_zhengjie_checked.png") no-repeat;
 }
+.tidy-checked {
+    color: #DBAA78;
+}
 .diversity-checked .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_duoyuan_checked.png") no-repeat;
 }
+.diversity-checked {
+    color: #DBAA78;
+}
 .innovation-checked .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_chuangxin_checked.png") no-repeat;
+}
+.innovation-checked {
+    color: #DBAA78;
 }
 
 
@@ -376,6 +399,7 @@ body {
 }
 .content-list-item-left {
     width: 30%;
+    margin-right: 24px;
 }
 .content-list-item-first-box {
     margin-bottom: 20px;
