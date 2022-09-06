@@ -19,8 +19,7 @@ body {
     z-index: 10000;
     position: fixed;
     left: 150px;
-    bottom: 25%;
-
+    bottom: 24px;
 }
 
 .amap-style-icon {
@@ -43,7 +42,7 @@ body {
 .amap-style-list {
     background: #FFFFFF;
     position: absolute;
-    top: -260px;
+    bottom: 0px;
     left: 60px;
     width: 96px;
     border: 1px solid #DBAA78;
@@ -123,6 +122,11 @@ body {
     border: 1px solid #DBAA78;
     box-shadow: 0px 4px 16px rgba(177, 106, 84, 0.1);
     border-radius: 4px;
+}
+
+.custom-select-icon, .custom-select-icon-image {
+    width: 24px;
+    height: 24px;
 }
 
 .buffer-container.buffer-container-hide {
@@ -220,7 +224,7 @@ body {
 
 .amap-legend-container.amap-legend-container-normal {
     position: fixed;
-    bottom: 10%;
+    bottom: 24px;
     right: calc(600px + 5%);
     background: rgba(216, 167, 122, 0.05);
     border: 1px solid #DBAA78;
@@ -334,6 +338,7 @@ body {
     letter-spacing: 0.02em;
     color: #828282;
     box-shadow: 1px 0px 4px rgba(106, 69, 31, 0.2);
+    background: #FFFFFF;
 }
 .layer-list {
     position: relative;
@@ -675,8 +680,18 @@ body {
 }
 .right-data-chart-container {
     position: absolute;
+    width: 35%;
+    top: 0;
+    right: 0;
+    background: #ffffff;
+    height: 100%;
+    z-index: 1000;
+}
+
+.right-data-chart-container-wrapper {
+    position: absolute;
     top: 25px;
-    right: 25px;
+    left: 0px;
     z-index: 1000;
     width: 600px;
     height: 760px;
@@ -695,6 +710,7 @@ body {
     overflow-y: scroll;
     scrollbar-width: none; /* Firefox */
 }
+
 .right-data-chart-container::-webkit-scrollbar {
     display: none; /* Chrome Safari */
 }
@@ -702,13 +718,13 @@ body {
 .data-chart-operation.open-status {
     position: absolute;
     top: 45%;
-    right: 673px;
+    right: 34.5%;
     z-index: 1000;
 }
 
 .data-chart-operation {
     position: absolute;
-    top: 60%;
+    top:45%;
     right: 25px;
     z-index: 1000;
 }
@@ -792,6 +808,10 @@ body {
     font-size: 22px;
     line-height: 26px;
 }
+.region-item .region-name{
+    text-align: center;
+    width: 100%;
+}
 .right-chart-content div.chart-content.region-group-detail {
     width: 100%;
     height: 100%;
@@ -805,6 +825,7 @@ body {
 }
 .health-checked,.safety-checked,.safety-checked,.scene-checked,.traffic-checked,.tidy-checked,.diversity-checked,.innovation-checked,.ecology-checked {
     color: #DBAA78;
+    font-weight: 500;
 }
 
 .right-chart-content .chart-content.region-group-detail {

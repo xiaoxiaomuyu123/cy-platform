@@ -55,362 +55,152 @@
     <div class="content">
         <!--    左侧导航    -->
         <div class="navigator-left">
-            <div class="navigator-left-box">
-                <div class="operation ecology ecology-checked">
-                    <span class="operation-icon"></span>
-                    <span class="operation-text">生态宜居</span>
-                </div>
-                <div class="operation health">
-                    <span class="operation-icon"></span>
-                    <span class="operation-text">健康舒适</span>
-                </div>
-                <div class="operation safety">
-                    <span class="operation-icon"></span>
-                    <span class="operation-text">安全韧性</span>
-                </div>
-                <div class="operation traffic">
-                    <span class="operation-icon"></span>
-                    <span class="operation-text">交通便捷</span>
-                </div>
-                <div class="operation scene">
-                    <span class="operation-icon"></span>
-                    <span class="operation-text">风貌特色</span>
-                </div>
-                <div class="operation tidy">
-                    <span class="operation-icon"></span>
-                    <span class="operation-text ">整洁有序</span>
-                </div>
-                <div class="operation diversity">
-                    <span class="operation-icon"></span>
-                    <span class="operation-text">多元包容</span>
-                </div>
-                <div class="operation innovation">
-                    <span class="operation-icon"></span>
-                    <span class="operation-text">创新活力</span>
+            <div class="navigator-left-wrapper">
+                <div class="navigator-left-box">
+                    <div class="operation ecology ecology-checked" data-thirdnavigate="ecology">
+                        <span class="operation-icon"></span>
+                        <span class="operation-text">生态宜居</span>
+                    </div>
+                    <div class="operation health" data-thirdnavigate="health">
+                        <span class="operation-icon"></span>
+                        <span class="operation-text">健康舒适</span>
+                    </div>
+                    <div class="operation safety" data-thirdnavigate="safety">
+                        <span class="operation-icon"></span>
+                        <span class="operation-text">安全韧性</span>
+                    </div>
+                    <div class="operation traffic" data-thirdnavigate="traffic">
+                        <span class="operation-icon"></span>
+                        <span class="operation-text">交通便捷</span>
+                    </div>
+                    <div class="operation scene" data-thirdnavigate="scene">
+                        <span class="operation-icon"></span>
+                        <span class="operation-text">风貌特色</span>
+                    </div>
+                    <div class="operation tidy" data-thirdnavigate="tidy">
+                        <span class="operation-icon"></span>
+                        <span class="operation-text ">整洁有序</span>
+                    </div>
+                    <div class="operation diversity" data-thirdnavigate="diversity">
+                        <span class="operation-icon"></span>
+                        <span class="operation-text">多元包容</span>
+                    </div>
+                    <div class="operation innovation" data-thirdnavigate="innovation">
+                        <span class="operation-icon"></span>
+                        <span class="operation-text">创新活力</span>
+                    </div>
                 </div>
             </div>
+
 
         </div>
         <!--    中间部分    -->
         <div class="content-middle">
             <div class="search-area">
-                <div class="start-time-box">
-                    <div class="label">起始年</div>
-                        <select name="year" lay-verify="" class="selector-box">
-                            <option value="010">2020</option>
-                            <option value="021">2021</option>
-                            <option value="0571">2022</option>
-                        </select>
+
+                <div class=" start-time-box buffer-container-hide">
+                    <div class="input-container">
+                        <div class="label">起始年</div>
+                        <div class="form-input-select-container">
+                            <div class="custom-select">
+                                <div class="custom-select-header">
+                                    <div class="custom-select-header-value"></div>
+                                    <div class="custom-select-icon">
+                                        <img class="custom-select-icon-image" src="../../../public/images/icons/icon_arrow_down.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="custom-option custom-option-hide">
+                                    <div class="custom-option-item" data-value="2020" data-key="2020">2020</div>
+                                    <div class="custom-option-item" data-value="2021" data-key="2021">2021</div>
+                                    <div class="custom-option-item" data-value="2022" data-key="2022">2022</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="search-middle-line"></div>
-                <div class="end-time-box">
-                    <div class="label">目标年</div>
-                    <select name="year" lay-verify="" class="selector-box">
-                        <option value="010">2020</option>
-                        <option value="021">2021</option>
-                        <option value="0571">2022</option>
-                    </select>
+                <div class="start-time-box buffer-container-hide">
+                    <div class="input-container">
+                        <div class="label">目标年</div>
+                        <div class="form-input-select-container">
+                            <div class="custom-select">
+                                <div class="custom-select-header end-time-select-header">
+                                    <div class="custom-select-header-value end-time-select-header-value"></div>
+                                    <div class="custom-select-icon">
+                                        <img class="custom-select-icon-image" src="../../../public/images/icons/icon_arrow_down.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="custom-option custom-option-hide end-time-option">
+                                    <div class="custom-option-item" data-value="2020" data-key="2020">2020</div>
+                                    <div class="custom-option-item" data-value="2021" data-key="2021">2021</div>
+                                    <div class="custom-option-item" data-value="2022" data-key="2022">2022</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="search-button">查询</div>
 
             </div>
             <div class="content-main">
-                <div class="content-list-item">
-                    <div class="content-list-item-left">
-                        <div class="content-list-item-first-box">
-                            <div class="content-list-item-label">指标名称：</div>
-                            <div class="content-list-item-highlight">区域开发强度（%）</div>
-                        </div>
-                        <div class="content-list-item-second-box">
-                            <div class="content-list-item-label">指标解释：</div>
-                            <div class="content-list-item-description">市辖区建成区面积占辖区总面积的百分比</div>
-                        </div>
-                    </div>
+<!--                <div class="content-list-item">-->
+<!--                    <div class="content-list-item-left">-->
+<!--                        <div class="content-list-item-first-box">-->
+<!--                            <div class="content-list-item-label">指标名称：</div>-->
+<!--                            <div class="content-list-item-highlight">区域开发强度（%）</div>-->
+<!--                        </div>-->
+<!--                        <div class="content-list-item-second-box">-->
+<!--                            <div class="content-list-item-label">指标解释：</div>-->
+<!--                            <div class="content-list-item-description">市辖区建成区面积占辖区总面积的百分比</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
-                    <div class="content-list-item-right">
-                        <!--         中间表格          -->
-                        <div class="content-table-box">
-                            <div class="table-header">
-                                <div class="table-header-column1">年份</div>
-                                <div class="table-header-column2">指标值</div>
-                                <div class="table-header-column3">分档</div>
-                            </div>
-                            <div class="table-content">
-                                <div class="table-content-column1">2019</div>
-                                <div class="table-content-column2">7.39%</div>
-                                <div class="table-content-column3">中等</div>
-                            </div>
-                            <div class="table-content">
+<!--                    <div class="content-list-item-right">-->
+<!--                        &lt;!&ndash;         中间表格          &ndash;&gt;-->
+<!--                        <div class="content-table-box">-->
+<!--                            <div class="table-header">-->
+<!--                                <div class="table-header-column1">年份</div>-->
+<!--                                <div class="table-header-column2">指标值</div>-->
+<!--                                <div class="table-header-column3">分档</div>-->
+<!--                            </div>-->
+<!--                            <div class="table-content">-->
+<!--                                <div class="table-content-column1">2019</div>-->
+<!--                                <div class="table-content-column2">7.39%</div>-->
+<!--                                <div class="table-content-column3">-->
+<!--                                    <div class="middle-data">中等</div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="table-content">-->
 
-                                <div class="table-content-column2">16.99%</div>
-                                <div class="table-content-column3">一般</div>
-                            </div>
-                            <div class="table-content">
-                                <div class="table-content-column1">2021</div>
-                                <div class="table-content-column2">——</div>
-                                <div class="table-content-column3">——</div>
-                            </div>
-                        </div>
-                    </div>
+<!--                                <div class="table-content-column2">16.99%</div>-->
+<!--                                <div class="table-content-column3">-->
+<!--                                    <div class="general-data">一般</div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="table-content">-->
+<!--                                <div class="table-content-column1">2021</div>-->
+<!--                                <div class="table-content-column2">——</div>-->
+<!--                                <div class="table-content-column3">——</div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
 
-                    <div class="content-list-item-chart region-chart"></div>
-                </div>
-                <div class="content-list-item">
-                    <div class="content-list-item-left">
-                        <div class="content-list-item-first-box">
-                            <div class="content-list-item-label">指标名称：</div>
-                            <div class="content-list-item-highlight">城市生活污水集中收集率(%)</div>
-                        </div>
-                        <div class="content-list-item-second-box">
-                            <div class="content-list-item-label">指标解释：</div>
-                            <div class="content-list-item-description">市辖区内建成区内通过集中式和分散式午睡处理设施手机的生活污染物量占生活污染物排放总量的比例，不宜小雨70%</div>
-                        </div>
-                    </div>
+<!--                    <div class="content-list-item-chart region-chart"></div>-->
+<!--                </div>-->
 
-                    <div class="content-list-item-right">
-                        <!--         中间表格          -->
-                        <div class="content-table-box">
-                            <div class="table-header">
-                                <div class="table-header-column1">年份</div>
-                                <div class="table-header-column2">指标值</div>
-                                <div class="table-header-column3">分档</div>
-                            </div>
-                            <div class="table-content">
-                                <div class="table-content-column1">2019</div>
-                                <div class="table-content-column2">7.39%</div>
-                                <div class="table-content-column3">中等</div>
-                            </div>
-                            <div class="table-content">
-
-                                <div class="table-content-column2">16.99%</div>
-                                <div class="table-content-column3">一般</div>
-                            </div>
-                            <div class="table-content">
-                                <div class="table-content-column1">2021</div>
-                                <div class="table-content-column2">——</div>
-                                <div class="table-content-column3">——</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content-list-item-chart city-dirty-water-collect-chart"></div>
-                </div>
-                <div class="content-list-item">
-                    <div class="content-list-item-left">
-                        <div class="content-list-item-first-box">
-                            <div class="content-list-item-label">指标名称：</div>
-                            <div class="content-list-item-highlight">公园绿地服务半径覆盖率(%)</div>
-                        </div>
-                        <div class="content-list-item-second-box">
-                            <div class="content-list-item-label">指标解释：</div>
-                            <div class="content-list-item-description">市辖区建成区面积占辖区总面积的百分比</div>
-                        </div>
-                    </div>
-
-                    <div class="content-list-item-right">
-                        <!--         中间表格          -->
-                        <div class="content-table-box">
-                            <div class="table-header">
-                                <div class="table-header-column1">年份</div>
-                                <div class="table-header-column2">指标值</div>
-                                <div class="table-header-column3">分档</div>
-                            </div>
-                            <div class="table-content">
-                                <div class="table-content-column1">2019</div>
-                                <div class="table-content-column2">7.39%</div>
-                                <div class="table-content-column3">中等</div>
-                            </div>
-                            <div class="table-content">
-
-                                <div class="table-content-column2">16.99%</div>
-                                <div class="table-content-column3">一般</div>
-                            </div>
-                            <div class="table-content">
-                                <div class="table-content-column1">2021</div>
-                                <div class="table-content-column2">——</div>
-                                <div class="table-content-column3">——</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content-list-item-chart green-park-chart"></div>
-                </div>
-                <div class="content-list-item">
-                    <div class="content-list-item-left">
-                        <div class="content-list-item-first-box">
-                            <div class="content-list-item-label">指标名称：</div>
-                            <div class="content-list-item-highlight">新建建筑中绿色建筑占比(%)</div>
-                        </div>
-                        <div class="content-list-item-second-box">
-                            <div class="content-list-item-label">指标解释：</div>
-                            <div class="content-list-item-description">市辖区建成区面积占辖区总面积的百分比</div>
-                        </div>
-                    </div>
-
-                    <div class="content-list-item-right">
-                        <!--         中间表格          -->
-                        <div class="content-table-box">
-                            <div class="table-header">
-                                <div class="table-header-column1">年份</div>
-                                <div class="table-header-column2">指标值</div>
-                                <div class="table-header-column3">分档</div>
-                            </div>
-                            <div class="table-content">
-                                <div class="table-content-column1">2019</div>
-                                <div class="table-content-column2">7.39%</div>
-                                <div class="table-content-column3">中等</div>
-                            </div>
-                            <div class="table-content">
-
-                                <div class="table-content-column2">16.99%</div>
-                                <div class="table-content-column3">一般</div>
-                            </div>
-                            <div class="table-content">
-                                <div class="table-content-column1">2021</div>
-                                <div class="table-content-column2">——</div>
-                                <div class="table-content-column3">——</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="content-list-item-chart green-new-building-chart"></div>
-                </div>
 
             </div>
         </div>
         <!--    右侧部分    -->
         <div class="content-right">
-            <div class="content-right-wrapper">
-                <div class="label-list">指标列表</div>
-                <div class="target-checkbox">
-                    <input type="checkbox" id="region-develop-checkbox">
-                    <label for="region-develop-checkbox">区域开发强度（%）</label>
-                </div>
-                <div class="target-checkbox">
-                    <input type="checkbox" id="city-dirty-water-checkbox">
-                    <label for="city-dirty-water-checkbox">城市生活污水集中收集率</label>
-                </div>
-                <div class="target-checkbox">
-                    <input type="checkbox" id="green-park-checkbox">
-                    <label for="green-park-checkbox">公园绿地服务半径覆盖率(%)</label>
-                </div>
-                <div class="target-checkbox">
-                    <input type="checkbox" id="green-building-checkbox">
-                    <label for="green-building-checkbox">新建建筑中绿色建筑占比(%)</label>
-                </div>
-                <div class="target-checkbox">
-                    <input type="checkbox" id="group-level-checkbox">
-                    <label for="group-level-checkbox">组团规模(平方公里)</label>
-                </div> <div class="target-checkbox">
-                    <input type="checkbox" id="population-density-checkbox">
-                    <label for="population-density-checkbox">人口密度超过每平方公里1.5万人的城市建设用地规模(平方公里)</label>
-                </div> <div class="target-checkbox">
-                    <input type="checkbox" id="new-building-80-count-checkbox">
-                    <label for="new-building-80-count-checkbox">新建住宅建筑高度超过80米的数量(栋)</label>
-                </div> <div class="target-checkbox">
-                    <input type="checkbox" id="city-ecology-street-checkbox">
-                    <label for="city-ecology-street-checkbox">城市生态廊道达标率(%)</label>
-                </div> <div class="target-checkbox">
-                    <input type="checkbox" id="unit-gdp-co2-checkbox">
-                    <label for="unit-gdp-co2-checkbox">单位GDP二氧化碳排放降低(%)</label>
-                </div> <div class="target-checkbox">
-                    <input type="checkbox" id="city-green-space-checkbox">
-                    <label for="city-green-space-checkbox">城市绿道服务半径覆盖率(%)</label>
-                </div> <div class="target-checkbox">
-                    <input type="checkbox" id="city-noise-checkbox">
-                    <label for="city-noise-checkbox">城市环境噪声达标地段覆盖率(%)</label>
-                </div> <div class="target-checkbox">
-                    <input type="checkbox" id="air-quality-well-checkbox">
-                    <label for="air-quality-well-checkbox">空气质量优良天数比率(%)</label>
-                </div>
-                <div class="target-checkbox">
-                    <input type="checkbox" id="surface-water-well-checkbox">
-                    <label for="surface-water-well-checkbox">地表水达到或好于Ⅲ类水体比例(%)</label>
-                </div>
-                <div class="target-checkbox">
-                    <input type="checkbox" id="recycle-water-checkbox">
-                    <label for="recycle-water-checkbox">再生水利用率(%)</label>
-                </div>
-                <div class="target-checkbox">
-                    <input type="checkbox" id="city-garbage-checkbox">
-                    <label for="city-garbage-checkbox">城市生活垃圾资源化利用率(%)</label>
-                </div>
-            </div>
+
         </div>
     </div>
 
     <script type="text/javascript" src="index.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.3.3/echarts.common.js"></script>
     <script>
-        const regionChartContainer = document.querySelector('.region-chart');
-        const cityDirtyWaterCollectChartContainer = document.querySelector('.city-dirty-water-collect-chart');
-        const greenParkChartContainer = document.querySelector('.green-park-chart');
-        const greenNewBuildingChartContainer = document.querySelector('.green-new-building-chart');
-        const regionLineChart = echarts.init(regionChartContainer);
-        const cityDirtyWaterCollectLineChart = echarts.init(cityDirtyWaterCollectChartContainer);
-        const greenParkLineChart = echarts.init(greenParkChartContainer);
-        const greenNewBuildingLineChart = echarts.init(greenNewBuildingChartContainer);
 
-        const options = option = {
-            grid: {
-                top: 45,
-                left: 45,
-                right: 15,
-                bottom: 30
-            },
-            xAxis: {
-                type: 'category',
-                axisTick: { show: false },
-                axisLabel: {
-                    fontSize: 10
-                },
-                data: [2019, 2020, 2021]
-            },
-            yAxis: {
-                name: '%',
-                type: 'value',
-                splitNumber: 5,
-                splitLine: {
-                    lineStyle:{
-                        color: 'rgba(0, 0, 0, 0.15)',
-                        type: 'dashed'
-                    }
-                }
-            },
-            series: [
-                {
-                    data: [10, 18],
-                    type: 'line',
-                    itemStyle : {
-                        normal : {
-                            color:'#E7B271'
-                        },
-                        borderWidth: 1
-                    },
-                    symbolSize: 8,
-                    lineStyle: {
-                        color: 'rgba(231, 178, 113, 1)'
-                    },
-                    areaStyle: {
-                        color: {
-                            type: 'linear',
-                            x: 0,
-                            y: 0,
-                            x2: 0,
-                            y2: 1,
-                            colorStops: [{
-                                offset: 0.43, color: 'rgba(231, 178, 113, 0.7)' // 0% 处的颜色
-                            }, {
-                                offset: 1, color: 'rgba(209, 165, 120, 0)' // 100% 处的颜色
-                            }],
-                            global: false // 缺省为 false
-                        }
-                    }
-                }
-            ]
-        }
-
-        regionLineChart.setOption(options);
-        cityDirtyWaterCollectLineChart.setOption(options);
-        greenParkLineChart.setOption(options);
-        greenNewBuildingLineChart.setOption(options);
     </script>
 </body>
 </html>
