@@ -262,6 +262,8 @@ body {
     /*height: 1000000px;*/
     /*overflow: scroll;*/
     position: fixed;
+    flex-shrink: 0;
+    padding: 0 24px;
 /*    display: flex;*/
 /*    justify-content: center;*/
 /*    align-items: center;*/
@@ -408,7 +410,7 @@ body {
     margin-bottom: 24px;
 }
 .content-list-item:last-child {
-    margin-bottom: 100px;
+    margin-bottom: 300px;
 }
 .content-list-item-left {
     width: 30%;

@@ -867,6 +867,9 @@
             itemWidth: 8,
             itemHeight: 8,
             icon: 'circle',
+            textStyle: {
+                color: '#828282'
+            }
         },
         grid: {
             // left: 115,
@@ -883,6 +886,12 @@
                     alignWithLabel: true,
                     inside:false,           //坐标轴刻度是否朝内，默认朝外。
                     length:5,                //坐标轴刻度的长度。
+                },
+                nameTextStyle: {
+                    color: '#BDBDBD'
+                },
+                axisLabel: {
+                    color: '#828282'
                 }
             }
         ],
@@ -893,10 +902,16 @@
                 splitLine: {
                     show: true,
                     lineStyle:{
-                        color: ['#315070'],
+                        color: ['rgba(0, 0, 0, 0.15)'],
                         width: 1,
                         type: 'dashed'
                     }
+                },
+                nameTextStyle: {
+                    color: '#BDBDBD'
+                },
+                axisLabel: {
+                    color: '#828282'
                 }
             }
         ],
@@ -968,7 +983,7 @@
             {
                 name: 'region',
                 type: 'pie',
-                radius: ['90%', '100%'],
+                radius: ['85%', '100%'],
                 avoidLabelOverlap: false,
             }
         ]
@@ -2471,6 +2486,7 @@
             if (ecologyModalData[index]) {
                 const title = ecologyModalData[index].modalTitle;
                 const options = ecologyModalData[index].chartOption;
+                options.title.text = title;
                 createModal(title, options);
             }
 
@@ -2545,6 +2561,7 @@
                     if (modalTitleAndData[index]) {
                         const title = modalTitleAndData[index].modalTitle;
                         const options = modalTitleAndData[index].chartOption;
+                        options.title.text = title;
                         createModal(title, options);
                     }
                 })
@@ -2572,6 +2589,7 @@
                     if (modalTitleAndData[index]) {
                         const title = modalTitleAndData[index].modalTitle;
                         const options = modalTitleAndData[index].chartOption;
+                        options.title.text = title;
                         createModal(title, options);
                     }
                 })
@@ -2590,6 +2608,7 @@
                     if (modalTitleAndData[index]) {
                         const title = modalTitleAndData[index].modalTitle;
                         const options = modalTitleAndData[index].chartOption;
+                        options.title.text = title;
                         createModal(title, options);
                     }
                 })
@@ -2610,6 +2629,7 @@
                     if (modalTitleAndData[index]) {
                         const title = modalTitleAndData[index].modalTitle;
                         const options = modalTitleAndData[index].chartOption;
+                        options.title.text = title;
                         createModal(title, options);
                     }
                 })
@@ -2625,6 +2645,7 @@
                     if (modalTitleAndData[index]) {
                         const title = modalTitleAndData[index].modalTitle;
                         const options = modalTitleAndData[index].chartOption;
+                        options.title.text = title;
                         createModal(title, options);
                     }
                 })
@@ -2645,6 +2666,7 @@
                     if (modalTitleAndData[index]) {
                         const title = modalTitleAndData[index].modalTitle;
                         const options = modalTitleAndData[index].chartOption;
+                        options.title.text = title;
                         createModal(title, options);
                     }
                 })
@@ -2661,6 +2683,7 @@
                     if (modalTitleAndData[index]) {
                         const title = modalTitleAndData[index].modalTitle;
                         const options = modalTitleAndData[index].chartOption;
+                        options.title.text = title;
                         createModal(title, options);
                     }
                 })
@@ -2681,6 +2704,7 @@
                     if (modalTitleAndData[index]) {
                         const title = modalTitleAndData[index].modalTitle;
                         const options = modalTitleAndData[index].chartOption;
+                        options.title.text = title;
                         createModal(title, options);
                     }
                 })

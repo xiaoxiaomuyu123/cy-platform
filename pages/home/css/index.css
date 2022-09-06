@@ -1,0 +1,211 @@
+html {
+	height: 100%;
+}
+body {
+	min-width: 1625px;
+	min-height: 912px;
+	height: 100%;
+	margin: 0;
+	font-size: 16px;
+	font-family: 'Source Han Sans';
+	font-style: normal;
+	letter-spacing: 0.02em;
+}
+
+img {
+	display: block;
+}
+
+.container {
+	/*overflow: hidden;*/
+	/*height: 100vh;*/
+	height: 100%;
+}
+
+.header {
+	width: 100%;
+}
+
+.content {
+	height: calc(100% - 50px);
+}
+
+.top-tab {
+	display: -webkit-box;
+	height: 64px;
+	padding-right: 24px;
+	background-color: #DBAA78;
+}
+
+.logo-info {
+}
+
+.side-div {
+	width: 375px;
+	min-width: 375px;
+}
+
+.logo-img {
+	width: 375px;
+	height: 64px;
+}
+
+.tab-list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 700px;
+	margin: auto;
+}
+
+.tab-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 16px;
+	margin: 0 22px;
+	padding: 9px;
+	line-height: 16px;
+	color: #ffffff;
+}
+
+.tab-item:hover {
+	cursor: pointer;
+}
+
+.tab-item-checked {
+	padding: 0;
+	color: #DBAA78;
+	background-color: #FFFFFF;
+	box-sizing: border-box;
+	border: 9px solid transparent;
+	border-image-source: url('../img/common/tag-cheked-bg.png');
+	border-image-slice: 18;
+	border-image-width: 9px;
+	border-image-outset: 9px;
+	border-image-repeat: repeat;
+}
+
+.user-info {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.icon-20 {
+	width: 20px;
+	height: 20px;
+	margin: 16px;
+}
+
+.icon-24 {
+	width: 24px;
+	height: 24px;
+}
+
+.profile-img {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+
+.sub-tab {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 20px;
+	border-bottom: 1px solid rgba(219, 170, 120, 0.3);
+}
+
+.subtab-list {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 48px;
+	margin-left: 375px;
+	line-height: 48px;
+}
+
+.subtab-item {
+	height: 100%;
+	margin: 0 36px;
+	font-size: 14px;
+	color: #4F4F4F;
+	white-space: nowrap;
+}
+
+.subtab-item:hover {
+	cursor: pointer;
+}
+
+.subtab-item-checked {
+	color: #DBAA78;
+	border-bottom: 2px solid #DBAA78;
+}
+
+.right-selector {
+	float: right;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	width: 375px;
+	min-width: 375px;
+	padding: 8px 0;
+}
+
+.selector-option {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 96px;
+	padding: 0px;
+	box-sizing: border-box;
+	background: #FFFFFF;
+	border: 1px solid #DBAA78;
+	border-radius: 4px;
+	display: none;
+}
+
+.option-item {
+	width: 100%;
+	height: 32px;
+	padding: 4px 8px;
+	box-sizing: border-box;
+	line-height: 24px;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.option-item-selected {
+	color: #DBAA78;
+	background: rgba(219, 170, 120, 0.15);
+}
+
+.option-item:hover {
+	color: #DBAA78;
+	background: rgba(219, 170, 120, 0.15);
+}
+
+.selector-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 96px;
+	height: 32px;
+	margin: 0 4px;
+	padding: 5px 8px;
+	background-color: rgba(219, 170, 120, 0.2);
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.select-text {
+	height: 24px;
+	width: 56px;
+	line-height: 24px;
+	font-size: 14px;
+	border: none;
+	white-space: nowrap;
+}

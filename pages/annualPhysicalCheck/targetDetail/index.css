@@ -717,7 +717,7 @@ body {
 
 .data-chart-operation.open-status {
     position: absolute;
-    top: 45%;
+    top: 44%;
     right: 34.5%;
     z-index: 1000;
 }

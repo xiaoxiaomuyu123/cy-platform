@@ -4730,29 +4730,83 @@ let data = {
     ],
 }
 
+const options = {
+    grid: {
+        top: 45,
+        left: 45,
+        right: 15,
+        bottom: 30
+    },
+    xAxis: {
+        type: 'category',
+        axisTick: { show: false },
+        axisLabel: {
+            fontSize: 10
+        },
+        data: [2019, 2020, 2021]
+    },
+    yAxis: {
+        name: '%',
+        type: 'value',
+        splitNumber: 5,
+        splitLine: {
+            lineStyle:{
+                color: 'rgba(0, 0, 0, 0.15)',
+                type: 'dashed'
+            }
+        }
+    },
+    series: [
+        {
+            data: [10, 18],
+            type: 'line',
+            itemStyle : {
+                normal : {
+                    color:'#E7B271'
+                },
+                borderWidth: 1
+            },
+            symbolSize: 8,
+            lineStyle: {
+                color: 'rgba(231, 178, 113, 1)'
+            },
+            areaStyle: {
+                color: {
+                    type: 'linear',
+                    x: 0,
+                    y: 0,
+                    x2: 0,
+                    y2: 1,
+                    colorStops: [{
+                        offset: 0.43, color: 'rgba(231, 178, 113, 0.7)' // 0% 处的颜色
+                    }, {
+                        offset: 1, color: 'rgba(209, 165, 120, 0)' // 100% 处的颜色
+                    }],
+                    global: false // 缺省为 false
+                }
+            }
+        }
+    ]
+}
 /* 选择右侧的 checkbox 渲染数据 */
 let chosenLabelType = []
 function chooseLabelType(checkbox) {
-    console.log("222, chosenLabelType", chosenLabelType)
     if(checkbox.checked === true) {
         chosenLabelType.push(checkbox.id)
     } else {
         chosenLabelType = chosenLabelType.filter((item) => item !== checkbox.id)
     }
-    console.log("333 chosenLabelType", chosenLabelType)
     let filterShowDataAll = [];
     let showData = data[chooseThirdNavigate]
     for(let i=0; i<showData.length; i++ ) {
         for(let j=0; j<chosenLabelType.length; j++) {
             if(showData[i].id === chosenLabelType[j])
-            filterShowDataAll.push(showData[i])
+                filterShowDataAll.push(showData[i])
         }
     }
 
     let contentListDiv = ``;
     filterShowDataAll = filterShowDataAll.length ? filterShowDataAll : showData;
-    console.log("chooseThirdNavigate", chooseThirdNavigate)
-    console.log("filterShowDataAll", filterShowDataAll)
     for (let i=0; i < filterShowDataAll.length; i++ ) {
         let tableData = filterShowDataAll[i].tableData;
         let tableHeader = tableData.header;
@@ -4795,18 +4849,22 @@ function chooseLabelType(checkbox) {
                             ${tableDataColumnDiv}
                         </div>
                     </div>
-         <div class="content-list-item-chart region-chart"></div>
+         <div class="content-list-item-chart ${filterShowDataAll[i].id}"></div>
     </div>
     `
+        setTimeout(() => {
+            showEcharts(`.${filterShowDataAll[i].id}`, options)
+        }, 0)
     }
     document.querySelector('.content-main').innerHTML = contentListDiv;
 
 }
 
-
-
-
-
+function initEcharts () {
+    showData.forEach((item) => {
+        showEcharts(`.${item.id}`, options)
+    })
+}
 
 let operationCheckedClass = 'ecology-checked';
 const operationList = Array.from(document.querySelectorAll('.operation'));
@@ -4816,7 +4874,6 @@ operationList.forEach(operation => {
 operationIconChecked()
 function operationIconChecked(e) {
     chosenLabelType = []
-    console.log("111, chosenLabelType", chosenLabelType)
     let target;
     if(e) {
         target = e.currentTarget;
@@ -4883,7 +4940,7 @@ function operationIconChecked(e) {
                             ${tableDataColumnDiv}
                         </div>
                     </div>
-         <div class="content-list-item-chart region-chart"></div>
+        <div class="content-list-item-chart ${showData[i].id}"></div>
     </div>
     `
 
@@ -4904,7 +4961,6 @@ function operationIconChecked(e) {
             </div>
     `
     document.querySelector('.content-right').innerHTML = labelListDiv;
-
 }
 
 
@@ -4943,80 +4999,20 @@ function select(customSelectHeader, customOption, customSelectHeaderValue) {
 select(customSelectHeader, customOption, customSelectHeaderValue)
 select(endTimeSelectHeader, endTimeSelectOption, endTimeSelectHeaderValue)
 
+const showData = data[chooseThirdNavigate]
 
-/* 表中插入 echarts */
-// const regionChartContainer = document.querySelector('.region-chart');
-// const cityDirtyWaterCollectChartContainer = document.querySelector('.city-dirty-water-collect-chart');
-// const greenParkChartContainer = document.querySelector('.green-park-chart');
-// const greenNewBuildingChartContainer = document.querySelector('.green-new-building-chart');
-// const regionLineChart = echarts.init(regionChartContainer);
-// const cityDirtyWaterCollectLineChart = echarts.init(cityDirtyWaterCollectChartContainer);
-// const greenParkLineChart = echarts.init(greenParkChartContainer);
-// const greenNewBuildingLineChart = echarts.init(greenNewBuildingChartContainer);
-//
-// const options = option = {
-//     grid: {
-//         top: 45,
-//         left: 45,
-//         right: 15,
-//         bottom: 30
-//     },
-//     xAxis: {
-//         type: 'category',
-//         axisTick: { show: false },
-//         axisLabel: {
-//             fontSize: 10
-//         },
-//         data: [2019, 2020, 2021]
-//     },
-//     yAxis: {
-//         name: '%',
-//         type: 'value',
-//         splitNumber: 5,
-//         splitLine: {
-//             lineStyle:{
-//                 color: 'rgba(0, 0, 0, 0.15)',
-//                 type: 'dashed'
-//             }
-//         }
-//     },
-//     series: [
-//         {
-//             data: [10, 18],
-//             type: 'line',
-//             itemStyle : {
-//                 normal : {
-//                     color:'#E7B271'
-//                 },
-//                 borderWidth: 1
-//             },
-//             symbolSize: 8,
-//             lineStyle: {
-//                 color: 'rgba(231, 178, 113, 1)'
-//             },
-//             areaStyle: {
-//                 color: {
-//                     type: 'linear',
-//                     x: 0,
-//                     y: 0,
-//                     x2: 0,
-//                     y2: 1,
-//                     colorStops: [{
-//                         offset: 0.43, color: 'rgba(231, 178, 113, 0.7)' // 0% 处的颜色
-//                     }, {
-//                         offset: 1, color: 'rgba(209, 165, 120, 0)' // 100% 处的颜色
-//                     }],
-//                     global: false // 缺省为 false
-//                 }
-//             }
-//         }
-//     ]
-// }
-//
-// regionLineChart.setOption(options);
-// cityDirtyWaterCollectLineChart.setOption(options);
-// greenParkLineChart.setOption(options);
-// greenNewBuildingLineChart.setOption(options);
+
+function showEcharts(selector, options) {
+    /* 表中插入 echarts */
+
+    let regionChartContainer = document.querySelector(selector);
+    const regionLineChart = echarts.init(regionChartContainer);
+    regionLineChart.setOption(options);
+}
+
+setTimeout(() => {
+    initEcharts()
+}, 0)
 
 
 /* 点击查询 */
