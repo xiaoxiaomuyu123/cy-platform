@@ -10,6 +10,10 @@ body {
     height: 100%;
 }
 
+/*隐藏高德地图的缩放图标*/
+.amap-ui-control-container.amap-ui-control-theme-custom-control-zoom {
+    display: none;
+}
 .target-detail-container {
     /*display: flex;*/
     /*justify-content: space-between;*/

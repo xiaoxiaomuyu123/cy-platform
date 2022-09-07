@@ -610,7 +610,7 @@
     }
 </script>
 
-<script src="https://webapi.amap.com/maps?v=2.0&key=a5f58e993c4963f5e563fdc87881fb53&plugin=AMap.RangingTool,AMap.MouseTool,AMap.Visual"></script>
+<script src="https://webapi.amap.com/maps?v=2.0&key=a5f58e993c4963f5e563fdc87881fb53&plugin=AMap.RangingTool,AMap.MouseTool,AMap.Visual,AMap.ToolBar"></script>
 <!--引入UI组件库（1.1版本） -->
 <script src="//webapi.amap.com/ui/1.1/main.js?v=1.1.1"></script>
 <script type="text/javascript" >
@@ -629,18 +629,21 @@
     })
 
 
-    var map = new AMap.Map('middle-amap-container',{
+    const map = new AMap.Map('middle-amap-container',{
         zoom: 12,
-        center: [116.39,39.9]
+        center: [116.39,39.9],
+
     });
-    var visual = new AMap.Visual('amap://visual/04bb9a09bc060f3f6daac9bb37780ec9', map);
+
+
+    const visual = new AMap.Visual('amap://visual/04bb9a09bc060f3f6daac9bb37780ec9', map);
 
     AMapUI.loadUI(['control/BasicControl'], function(BasicControl) {
 
          const  zoomCtrl = new BasicControl.Zoom({
-                theme: 'dark',
+                theme: 'custom-control-zoom',
                 position: 'br',
-                showZoomNum: false
+                showZoomNum: false,
             });
 
         map.addControl(zoomCtrl);
@@ -1184,11 +1187,6 @@
 
 </script>
 <script>
-
-
-
-
-
     const ecologyBasemap = `
         <div class="layer-basemap-checkbox">
               <input type="checkbox" id="group-checkbox">
