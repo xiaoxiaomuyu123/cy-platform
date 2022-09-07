@@ -553,6 +553,7 @@
         const img = target.children[0];
         if (target.classList.contains('show-buffer-close-icon')) {
             img.src = '../../../public/images/icons/toolbox-search.svg';
+            img.classList.remove("tool-box-icon-close")
             target.title = 'buffer';
             target.classList.remove('show-buffer-close-icon');
             bufferContainer.classList.add('buffer-container-hide');
@@ -669,6 +670,7 @@
         const img = target.children[0];
         if (target.classList.contains('show-ranging-distance-close-icon')) {
             img.src = '../../../public/images/icons/toolbox-ruler.svg';
+            img.classList.remove("tool-box-icon-close")
             target.title = '测量距离';
             target.classList.remove('show-ranging-distance-close-icon');
             //关闭，并清除覆盖物
@@ -706,6 +708,7 @@
         const img = target.children[0];
         if (target.classList.contains('show-measure-area-close-icon')) {
             img.src = '../../../public/images/icons/toolbox-area.svg';
+            img.classList.remove("tool-box-icon-close")
             target.title = '测量面积';
             target.classList.remove('show-measure-area-close-icon');
             //关闭，并清除覆盖物
