@@ -489,6 +489,13 @@
                 <img class="legend-close-icon" src="../../../public/images/icons/close.svg" alt="">
             </div>
             <div class="legend-content-container">
+                <div class="legend-title">水体</div>
+                <div class="legend-main-content">
+                    <div class="legend-item" id="zero-level-box">
+                        <span class="item-icon zero-level"></span>
+                        <span class="item-content">水体</span>
+                    </div>
+                </div>
                 <div class="legend-title">居住用地</div>
                 <div class="legend-main-content">
                     <div class="legend-item">
@@ -551,6 +558,7 @@
             bufferContainer.classList.add('buffer-container-hide');
         } else {
             img.src = '../../../public/images/icons/close.svg';
+            img.classList.add("tool-box-icon-close");
             target.title = '关闭buffer';
             target.classList.add('show-buffer-close-icon');
             bufferContainer.classList.remove('buffer-container-hide');
@@ -665,6 +673,7 @@
             // ruler.close()
         } else {
             img.src = '../../../public/images/icons/close.svg';
+            img.classList.add("tool-box-icon-close");
             target.title = '关闭测量距离';
             target.classList.add('show-ranging-distance-close-icon')
             ruler.turnOn();
@@ -700,6 +709,7 @@
             mouseTool.close(true);
         } else {
             img.src = '../../../public/images/icons/close.svg';
+            img.classList.add("tool-box-icon-close");
             target.title = '关闭测量面积';
             target.classList.add('show-measure-area-close-icon')
             draw();
@@ -751,6 +761,19 @@
 <!--<script src="https://webapi.amap.com/loader.js"></script>-->
 <!--&lt;!&ndash;引入UI组件库异步版本main-async.js（1.1版本） &ndash;&gt;-->
 <!--<script src="//webapi.amap.com/ui/1.1/main-async.js"></script>-->
+<script type="text/javascript">
+    function resizeCount() {
+        let documentElement = document.documentElement;
+        let clientWidth = documentElement.clientWidth;
+        documentElement.style.fontSize = 100 * (clientWidth / 1920) + 'px'
+    }
+
+    // 初始化
+    resizeCount()
+    window.addEventListener('resize', () => {
+        resizeCount()
+    })
+</script>
 <script>
     const dataChartOperation = document.querySelector('.data-chart-operation');
 
@@ -936,7 +959,7 @@
         series: [{
             type: 'liquidFill',
             radius: 112,
-            data: [0.4],
+            data: [0.11111],
             outline: {
                 show: true,
                 borderDistance: 0,
@@ -969,7 +992,7 @@
                 fontStyle: 'normal',
                 fontWeight: 500,
                 lineHeight: 34,
-                fontSize: 28,
+                fontSize: 25,
                 color: '#4F4F4F'
             }
         }]
@@ -1001,7 +1024,7 @@
                     fontStyle: 'normal',
                     fontWeight: 500,
                     lineHeight: 34,
-                    fontSize: 28,
+                    fontSize: 25,
                     color: '#4F4F4F',
                     position: 'center'
                 },
@@ -1036,7 +1059,7 @@
                 fontStyle: 'normal',
                 fontWeight: 500,
                 lineHeight: 34,
-                fontSize: 28,
+                fontSize: 25,
                 color: '#4F4F4F',
                 position: 'center'
             },
@@ -1071,7 +1094,7 @@
                 fontStyle: 'normal',
                 fontWeight: 500,
                 lineHeight: 34,
-                fontSize: 28,
+                fontSize: 25,
                 color: '#4F4F4F',
                 position: 'center'
             },
@@ -1098,15 +1121,15 @@
     ]
     const greenServiceData = [
         {
-            value: 57.27,
-            name: `57.27%`,
+            value: 57,
+            name: `57%`,
             label: {
                 show: true,
                 fontFamily: 'DIN',
                 fontStyle: 'normal',
                 fontWeight: 500,
                 lineHeight: 34,
-                fontSize: 28,
+                fontSize: 25,
                 color: '#4F4F4F',
                 position: 'center'
             },
@@ -1118,8 +1141,8 @@
             }
         },
         {
-            value: 42.73,
-            name: `42.73%`,
+            value: 43,
+            name: `43%`,
             label: {
                 show: false,
             },
@@ -1257,8 +1280,8 @@
 
 
     const ecologyChartAndData = `
-        <div class="data-chart-container">
-
+        <div class="right-data-chart-container-wrapper">
+            <div class="data-chart-container">
             <div class="left-chart-content">
             ${generateChartContent('区域开发强度', 'region-develop-pie-chart')}
             </div>
@@ -1295,7 +1318,7 @@
 
             </div>
         </div>
-        <div class="data-chart-container">
+            <div class="data-chart-container">
             <div class="left-chart-content">
             ${generateDataContent('人口密度超过每平方公里1.5万人的城市用地规模', 'population-density', 52, '平方公里')}
             </div>
@@ -1303,7 +1326,7 @@
             ${generateDataContent('新建住宅建筑高度超过80米的数量', 'new-building', 409, '栋')}
             </div>
         </div>
-        <div class="data-chart-container">
+            <div class="data-chart-container">
             <div class="left-chart-content">
             ${generateChartContent('城市生态廊道达标率', 'city-ecology-pie-chart')}
             </div>
@@ -1311,7 +1334,7 @@
             ${generateChartContent('单位GDP二氧化碳排放降低', 'unit-gdp-co2-pie-chart')}
             </div>
         </div>
-        <div class="data-chart-container">
+            <div class="data-chart-container">
             <div class="left-chart-content">
             ${generateChartContent('新建筑中绿色建筑占比', 'green-building-pie-chart')}
             </div>
@@ -1319,7 +1342,7 @@
             ${generateChartContent('城市绿道服务半径覆盖率', 'green-service-pie-chart')}
             </div>
         </div>
-         <div class="data-chart-container">
+            <div class="data-chart-container">
             <div class="left-chart-content">
             ${generateChartContent('公园绿地服务半径覆盖率', 'green-park-pie-chart')}
             </div>
@@ -1327,7 +1350,7 @@
             ${generateChartContent('城市环境噪声达标地段覆盖率', 'city-noise-pie-chart')}
             </div>
         </div>
-         <div class="data-chart-container">
+            <div class="data-chart-container">
             <div class="left-chart-content">
             ${generateChartContent('空气质量优良天数比率', 'air-quality-well-pie-chart')}
             </div>
@@ -1335,7 +1358,7 @@
             ${generateChartContent('地表水达到或好于Ⅲ类水体比例', 'surface-water-well-pie-chart')}
             </div>
         </div>
-         <div class="data-chart-container">
+            <div class="data-chart-container">
             <div class="left-chart-content">
             ${generateChartContent('城市生活污水集中收集率', 'city-dirty-water-pie-chart')}
             </div>
@@ -1343,7 +1366,7 @@
             ${generateChartContent('再生水利用率', 'recycled-water-pie-chart')}
             </div>
         </div>
-         <div class="data-chart-container">
+            <div class="data-chart-container">
             <div class="left-chart-content">
             ${generateChartContent('城市生活垃圾资源转化利用率', 'city-garbage-pie-chart')}
             </div>
@@ -1351,7 +1374,7 @@
             ${generateDataContent('城市建成区区域噪声平均值', 'city-noise-average', 55.9, '分贝')}
             </div>
         </div>
-         <div class="data-chart-container">
+            <div class="data-chart-container">
             <div class="left-chart-content">
             ${generateDataContent('城市热岛效应强度', 'city-heat-island', 1.1, '℃')}
             </div>
@@ -1359,7 +1382,7 @@
             ${generateDataContent('建设用地地均GDP', 'building-land-gdp', 712.24, '万元/公顷')}
             </div>
         </div>
-        <div class="data-chart-container">
+            <div class="data-chart-container">
             <div class="left-chart-content">
             ${generateChartContent('工业用水重复率', 'industry-water-pie-chart')}
             </div>
@@ -1367,7 +1390,7 @@
             ${generateChartContent('城市污水处置率', 'city-dirty-handling-pie-chart')}
             </div>
         </div>
-         <div class="data-chart-container">
+            <div class="data-chart-container">
             <div class="left-chart-content">
             ${generateChartContent('海绵城市覆盖率', 'sponge-city-pie-chart')}
             </div>
@@ -1379,9 +1402,12 @@
                 <div class="chart-content"></div>
             </div>
         </div>
+        </div>
+
     `;
 
     const healthChartAndData = `
+    <div class="right-data-chart-container-wrapper">
         <div class="data-chart-container">
             <div class="left-chart-content">
             ${generateChartContent('完整居住社区覆盖率', 'live-community-pie-chart')}
@@ -1453,9 +1479,11 @@
                 </div>
             </div>
         </div>
+    </div>
     `;
 
     const safetyChartAndData = `
+    <div class="right-data-chart-container-wrapper">
         <div class="data-chart-container">
             <div class="left-chart-content">
                 ${generateDataContent('城市内涝积水点密度', 'waterlogging-density', 0.002, '个/平方公里')}
@@ -1505,9 +1533,11 @@
                 </div>
             </div>
         </div>
+    </div>
     `;
 
     const trafficChartAndData = `
+    <div class="right-data-chart-container-wrapper">
         <div class="data-chart-container">
             <div class="left-chart-content">
             ${generateDataContent('建成区高峰期平均比机动车速度', 'city-vehicle-average-speed', 26.6, '公里/小时')}
@@ -1566,9 +1596,11 @@
             ${generateChartContent(' 市辖区内停车泊位与机动车保有量的比', 'city-parking-vehicle-ratio-pie-chart')}
             </div>
         </div>
+        </div>
     `;
 
     const sceneChartAndData = `
+<div class="right-data-chart-container-wrapper">
     <div class="data-chart-container">
             <div class="left-chart-content">
             ${generateDataContent('当年获得国际国内各类建筑奖、文化奖的项目数量', 'award-count', 101, '个')}
@@ -1601,10 +1633,12 @@
             ${generateDataContent('博物馆数量', 'museum-count', 116, '个')}
             </div>
         </div>
+        </div>
     `;
 
     const tidyChartAndData = `
-    <div class="data-chart-container">
+<div class="right-data-chart-container-wrapper">
+     <div class="data-chart-container">
         <div class="left-chart-content">
         ${generateChartContent('城市门前责任区指定履约率', 'city-front-door-response-area-ratio-pie-chart')}
         </div>
@@ -1627,7 +1661,6 @@
             <div class="right-chart-content">
             ${generateChartContent('实施专业化物业管理的住宅小区占比', 'professional-property-community-pie-chart')}
             </div>
-            </div>
         </div>
         <div class="data-chart-container">
             <div class="left-chart-content">
@@ -1641,9 +1674,12 @@
                 <div class="chart-content"></div>
             </div>
         </div>
+    </div>
+</div>
     `;
 
     const diversityChartAndData = `
+    <div class="right-data-chart-container-wrapper">
         <div class="data-chart-container">
             <div class="left-chart-content">
             ${generateChartContent('道路无障碍设施设置率', 'road-accessibility-device-cover-pie-chart')}
@@ -1682,9 +1718,11 @@
                 </div>
             </div>
         </div>
+   </div>
     `;
 
     const innovationChartAndData = `
+    <div class="right-data-chart-container-wrapper">
         <div class="data-chart-container">
             <div class="left-chart-content">
             ${generateChartContent('城市小学生入学增长率', 'student-enrollment-ratio-pie-chart')}
@@ -1749,6 +1787,7 @@
             <div class="right-chart-content">
             </div>
         </div>
+    </div>
     `;
 
 
@@ -2843,4 +2882,5 @@
 
     })
 </script>
+
 </html>

@@ -313,6 +313,19 @@ function postSelectorData() {
 	iframe.postMessage(JSON.stringify(json));
 }
 
+function setContentHeight() {
+	let header = document.querySelector('.header');
+	let headerHeight = header.offsetHeight;
+	let content = document.querySelector('.content');
+	// content.style.height = `calc(100%-${headerHeight}px)`;
+	// content.setAttribute("style", `height: calc(100%-${headerHeight}px)`);
+	console.log("content", content)
+}
+
 init();
+setContentHeight();
+
+// 获取 header 高度，计算 content iframe 的高度
+
 
 window.onclick = function() {hideOptions();}

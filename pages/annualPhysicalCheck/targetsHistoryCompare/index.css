@@ -1,29 +1,32 @@
+.html {
+    font-size: 100px;
+}
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0rem;
+    padding: 0rem;
 }
 
 body {
-    min-width: 1200px;
+    min-width: 12rem;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 17px 0 32px;
+    padding: 0 0.17rem 0 0.32rem;
     background: #DBAA78;
     color: #fff;
-    height: 64px;
+    height: 0.64rem;
 }
 .header-left {
     display: flex;
     align-items: center;
 }
 .header-image-logo-box {
-    width: 48px;
-    height: 25px;
-    margin-right: 16px;
+    width: 0.48rem;
+    height: 0.25rem;
+    margin-right: 0.16rem;
 }
 .header-image-logo {
     width: 100%;
@@ -33,7 +36,7 @@ body {
     font-family: 'Mulish';
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 0.16rem;
     letter-spacing: 0.02em;
     color: #FFFFFF;
 }
@@ -48,17 +51,17 @@ body {
     align-items: center;
 }
 .set-box {
-    width: 20px;
-    height: 20px;
-    margin-right: 17px;
+    width: 0.20rem;
+    height: 0.20rem;
+    margin-right: 0.17rem;
 }
 .set-image {
     width: 100%;
     height: 100%;
 }
 .header-user-logo-box {
-    width: 29px;
-    height: 29px;
+    width: 0.29rem;
+    height: 0.29rem;
     border-radius: 50%;
 }
 .user-logo {
@@ -66,13 +69,13 @@ body {
     height: 100%;
 }
 .navigator {
-    height: 64px;
+    height: 0.64rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #DBAA78;
+    border-bottom: 0.01rem solid #DBAA78;
     font-family: 'Source Han Sans SC';
-    font-size: 14px;
+    font-size: 0.14rem;
     letter-spacing: 0.02em;
     color: #4F4F4F;
 }
@@ -82,7 +85,7 @@ body {
     width: 100%;
 }
 .select-city {
-    margin-right: 20px;
+    margin-right: 0.20rem;
 }
 .navigator-box {
     display: flex;
@@ -90,7 +93,7 @@ body {
     align-items: center;
     width: 50%;
     font-family: 'Source Han Sans SC';
-    font-size: 14px;
+    font-size: 0.14rem;
     align-items: center;
     letter-spacing: 0.02em;
     color: #626262;
@@ -99,70 +102,79 @@ body {
 .content {
     display: flex;
     font-family: 'Source Han Sans SC';
-    font-size: 14px;
+    font-size: 0.14rem;
     letter-spacing: 0.02em;
     color: #4F4F4F;
 }
 .navigator-left {
     display: flex;
     justify-content: center;
-    width: 137px;
-    box-shadow: 1px 0px 4px rgba(106, 69, 31, 0.2);
+    width: 1.37rem;
+    box-shadow: 0.01rem 0rem 0.04rem rgba(106, 69, 31, 0.2);
 }
 
 .operation-list {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 25px;
+    padding-bottom: 0.25rem;
 }
 
 .operation.ecology {
-    margin-top: 32px;
+    margin-top: 0.32rem;
 }
 
 .operation-icon {
-    width: 24px;
-    height: 24px;
+    width: 0.24rem;
+    height: 0.24rem;
     display: block;
     margin: 0 auto;
-    margin-bottom: 5px;
+    margin-bottom: 0.05rem;
 }
 
 .operation-list .operation {
-    width: 60px;
-    height: 40px;
-    margin-bottom: 26px;
+    width: 0.60rem;
+    height: 0.40rem;
+    margin-bottom: 0.26rem;
 }
 
 .ecology .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_shengtai_normal.png") no-repeat;
+    background-size: 100% 100%;
 }
 .health .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_jiankang_normal.png") no-repeat;
+    background-size: 100% 100%;
 }
 
 .safety .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_anquan_normal.png") no-repeat;
+    background-size: 100% 100%;
 }
 
 .traffic .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_jiaotong_normal.png") no-repeat;
+    background-size: 100% 100%;
 }
 .scene .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_fengmao_normal.png") no-repeat;
+    background-size: 100% 100%;
 }
 .tidy .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_zhengjie_normal.png") no-repeat;
+    background-size: 100% 100%;
 }
 .diversity .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_duoyuan_normal.png") no-repeat;
+    background-size: 100% 100%;
 }
 .innovation .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_chuangxin_normal.png") no-repeat;
+    background-size: 100% 100%;
 }
 .ecology-checked .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_shengtai_checked.png") no-repeat;
+    background-size: 100% 100%;
 }
 .ecology-checked, .health-checked, .safety-checked, .scene-checked, .traffic-checked, .tidy-checked, .diversity-checked, .innovation-checked {
     color: #DBAA78;
@@ -171,46 +183,48 @@ body {
 
 .health-checked .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_jiankang_checked.png") no-repeat;
+    background-size: 100% 100%;
 }
 
 .safety-checked .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_anquan_checked.png") no-repeat;
+    background-size: 100% 100%;
 }
 
 .scene-checked .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_fengmao_checked.png") no-repeat;
+    background-size: 100% 100%;
 }
 
 .traffic-checked .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_jiaotong_checked.png") no-repeat;
+    background-size: 100% 100%;
 }
 
 .tidy-checked .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_zhengjie_checked.png") no-repeat;
+    background-size: 100% 100%;
 }
 .diversity-checked .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_duoyuan_checked.png") no-repeat;
+    background-size: 100% 100%;
 }
 
 .innovation-checked .operation-icon {
     background: url("../../../public/images/icons/icon_navigation_chuangxin_checked.png") no-repeat;
+    background-size: 100% 100%;
 }
-
-
 
 .target-checkbox {
     display: flex;
     align-items: center;
-}
-
-.target-checkbox {
     position: relative;
-    margin-top: 32px;
+    margin-top: 0.3rem;
     text-align: left;
 }
 .target-checkbox label {
-    margin-left: 16px;
-    margin-top: 1px;
+    margin-left: 0.16rem;
+    margin-top: 0.01rem;
 }
 
 .target-checkbox input[type='checkbox'] {
@@ -220,24 +234,24 @@ body {
 .target-checkbox label:before {
     content: '';
     position: absolute;
-    left: 0px;
-    top: 2px;
-    width: 16px;
-    height: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    left: 0rem;
+    top: 0.02rem;
+    width: 0.16rem;
+    height: 0.16rem;
+    border: 0.01rem solid #ddd;
+    border-radius: 0.04rem;
     transition: all 0.3s ease;
 }
 
 .target-checkbox label:after {
     content: '';
     position: absolute;
-    left: 6px;
-    top: 5px;
-    width: 4px;
-    height: 8px;
-    border-bottom: 2px solid #fff;
-    border-right: 2px solid #fff;
+    left: 0.06rem;
+    top: 0.05rem;
+    width: 0.04rem;
+    height: 0.08rem;
+    border-bottom: 0.02rem solid #fff;
+    border-right: 0.02rem solid #fff;
 
     transform: rotate(45deg);
     transition: all 0.3s ease;
@@ -259,21 +273,16 @@ body {
     flex: 1;
 }
 .navigator-left-wrapper {
-    /*height: 1000000px;*/
-    /*overflow: scroll;*/
     position: fixed;
     flex-shrink: 0;
-    padding: 0 24px;
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    padding-top: 40px;*/
+    padding: 0 0.24rem;
+    color: #828282;;
 }
 
 .navigator-left-box{
-    width: 89px;
-    height: 597px;
-    margin-top: 62px;
+    width: 0.89rem;
+    height: 5.97rem;
+    margin-top: 0.62rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -282,20 +291,20 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    padding: 30px 0px;
+    padding: 0.30rem 0rem;
 }
 .navigator-left-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 45px;
+    height: 0.45rem;
 }
 .navigator-item{
-    padding: 22px 0px;
+    padding: 0.22rem 0rem;
 }
 .icon-box {
-    width: 22px;
-    height: 22px;
+    width: 0.22rem;
+    height: 0.22rem;
 }
 .icon-image {
     width: 100%;
@@ -305,17 +314,17 @@ body {
     font-family: 'Source Han Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.14rem;
     text-align: center;
 }
 .navigator-active {
     color: #DBAA78;
-    border-bottom: 2px solid #DBAA78;
+    border-bottom: 0.02rem solid #DBAA78;
 }
 .content-middle {
-    width: 1218px;
+    width: 12.18rem;
     height: 100vh;
-    padding: 0 24px;
+    padding: 0 0.24rem;
     overflow: hidden;
 }
 .content-main {
@@ -323,73 +332,75 @@ body {
     height: 100%;
     scrollbar-width: none; /* Firefox */
 }
-::-webkit-scrollbar-thumb {
+.content-main::-webkit-scrollbar {
     background: transparent;
+    display: none;
 }
-::-webkit-scrollbar-thumb:window-inactive {
+.content-main::-webkit-scrollbar {
     background: transparent;
+    display: none;
 }
 .search-area {
     display: flex;
     align-items: center;
-    margin: 26px 0px;
+    margin: 0.26rem 0rem;
 }
 .label {
     font-family: 'Source Han Sans SC';
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 0.14rem;
+    line-height: 0.24rem;
     letter-spacing: 0.02em;
     color: #4F4F4F;
-    margin-right: 16px;
+    margin-right: 0.16rem;
 }
 .selector-box {
-    width: 96px;
-    height: 32px;
+    width: 0.96rem;
+    height: 0.32rem;
     box-sizing: border-box;
-    padding: 0px 8px;
+    padding: 0rem 0.08rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: rgba(219, 170, 120, 0.15);
-    border-radius: 4px;
+    border-radius: 0.04rem;
     border: none;
 }
 .selector-icon-image-box, .custom-select-icon-image {
-    width: 24px;
-    height: 24px;
+    width: 0.24rem;
+    height: 0.24rem;
 }
 .selector-icon-image {
     width: 100%;
     height: 100%;
 }
 .search-middle-line {
-    width: 40px;
-    height: 1px;
+    width: 0.40rem;
+    height: 0.01rem;
     background: #D8A77A;
-    margin: 0px 16px;
+    margin: 0rem 0.16rem;
 }
 .end-time-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-right: 16px;
-    margin-right: 16px;
+    margin-right: 0.16rem;
+    margin-right: 0.16rem;
 }
 .search-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 120px;
-    height: 36px;
+    width: 1.20rem;
+    height: 0.36rem;
     background: #DBAA78;
-    border-radius: 6px;
+    border-radius: 0.06rem;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 0.14rem;
+    line-height: 0.24rem;
     color: #fff;
-    margin-left: 48px;
+    margin-left: 0.48rem;
 }
 .search-button:hover {
     background: #E7B271;
@@ -400,53 +411,53 @@ body {
 .content-list-item {
     display: flex;
     width: 100%;
-    height: 242px;
+    height: 2.42rem;
     background-image: url("../../../public/images/backgrounds/pic_linianzhibiao_bg.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    padding: 24px 32px;
+    padding: 0.24rem 0.32rem;
     box-sizing: border-box;
-    margin-bottom: 24px;
+    margin-bottom: 0.24rem;
 }
 .content-list-item:last-child {
-    margin-bottom: 300px;
+    margin-bottom: 3rem;
 }
 .content-list-item-left {
     width: 30%;
-    margin-right: 24px;
+    margin-right: 0.24rem;
 }
 .content-list-item-first-box {
-    margin-bottom: 20px;
+    margin-bottom: 0.20rem;
 }
 .content-list-item-highlight {
-    margin-top: 10px;
+    margin-top: 0.10rem;
     color:  #DBAA78;
     font-weight: 700;
 }
 
 .content-list-item-description {
-    margin-top: 10px;
+    margin-top: 0.10rem;
 }
 
 .content-list-item-right{
     display: flex;
-    border-left: 1px solid #F3E5D7;
+    border-left: 0.01rem solid #F3E5D7;
 }
 .content-table-box{
     display: flex;
     flex-direction: column;
-    margin-left: 32px;
+    margin-left: 0.32rem;
 }
 .table-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 320px;
-    height: 48px;
+    width: 3.20rem;
+    height: 0.48rem;
     background: rgba(219, 170, 120, 0.15);
-    border-radius: 4px;
-    padding: 0 10px;
+    border-radius: 0.04rem;
+    padding: 0 0.10rem;
 }
 .table-header-column, .table-content-column {
     width: 30%;
@@ -455,23 +466,26 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 320px;
-    height: 48px;
-    border-radius: 4px;
-    padding: 0 10px;
-    border-bottom: 1px solid #F3E5D7;
+    width: 3.20rem;
+    height: 0.48rem;
+    border-radius: 0.04rem;
+    padding: 0 0.10rem;
+    border-bottom: 0.01rem solid #F3E5D7;
 }
-.content-right-wrapper {
-    width: 493px;
-    height: 920px;
+.content-right {
+    height: 97vh;
+    width: 4.93rem;
     background-image: url("../../../public/images/backgrounds/pic_zhibiaoliebiao bg.png");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    margin-top: 24px;
+    margin-top: 0.24rem;
+    overflow: scroll;
     box-sizing: border-box;
-    padding-left: 24px;
-    padding-top: 32px;
+}
+.content-right-wrapper {
+    /*padding: 32rem 24rem;*/
+    margin: 0.32rem 0.24rem;
     color: #828282;
     font-family: 'Source Han Sans SC';
 }
@@ -479,16 +493,16 @@ body {
     font-family: 'Source Han Sans SC';
     font-style: normal;
     font-weight: 700;
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 0.14rem;
+    line-height: 0.24rem;
     letter-spacing: 0.02em;
 }
 
 .middle, .general, .good, .lack {
-    width: 68px;
-    height: 22px;
+    width: 0.68rem;
+    height: 0.22rem;
     text-align: center;
-    line-height: 23px;
+    line-height: 0.23rem;
     font-family: 'Microsoft YaHei';
     font-style: normal;
     font-weight: 400;
@@ -515,35 +529,35 @@ body {
 }
 
 .custom-select-icon {
-    width: 24px;
-    height: 24px;
+    width: 0.24rem;
+    height: 0.24rem;
 }
 
 .start-time-box .custom-select .custom-select-header {
-    width: 96px;
-    height: 32px;
+    width: 0.96rem;
+    height: 0.32rem;
     background: rgba(219, 170, 120, 0.15);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 4px;
+    border-radius: 0.04rem;
     box-sizing: border-box;
-    padding: 0 8px;
+    padding: 0 0.08rem;
 }
 .custom-select .custom-select-header .custom-select-header-value {
-    padding-left: 8px;
+    padding-left: 0.08rem;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.14rem;
     color: #4F4F4F;
 }
 .start-time-box .custom-select .custom-option {
     position: absolute;
-    top: 34px;
-    width: 96px;
-    border: 1px solid #DBAA78;
-    border-radius: 4px;
+    top: 0.34rem;
+    width: 0.96rem;
+    border: 0.01rem solid #DBAA78;
+    border-radius: 0.04rem;
     background: #FFFFFF;
 }
 
@@ -560,20 +574,20 @@ body {
 .custom-option .custom-option-item {
     text-align: left;
     cursor: default;
-    height: 32px;
-    line-height: 32px;
-    /*margin-top: 5px;*/
+    height: 0.32rem;
+    line-height: 0.32rem;
+    /*margin-top: 5rem;*/
     box-sizing: border-box;
-    padding-left: 8px;
+    padding-left: 0.08rem;
 }
 .custom-option .custom-option-item:last-child {
     text-align: left;
     cursor: default;
-    height: 32px;
-    line-height: 32px;
-    /*margin-bottom: 5px;*/
+    height: 0.32rem;
+    line-height: 0.32rem;
+    /*margin-bottom: 5rem;*/
     box-sizing: border-box;
-    padding-left: 8px;
+    padding-left: 0.08rem;
 }
 .custom-option .custom-option-item:hover {
     background: rgba(219, 170, 120, 0.15);

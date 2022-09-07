@@ -4961,6 +4961,9 @@ function operationIconChecked(e) {
             </div>
     `
     document.querySelector('.content-right').innerHTML = labelListDiv;
+    setTimeout(() => {
+        initEcharts()
+    }, 0)
 }
 
 
@@ -5027,4 +5030,16 @@ searchButton.addEventListener('mouseup', (e) => {
 
 })
 
+// 适配 pc 端各个屏幕
+function resizeCount() {
+    let documentElement = document.documentElement;
+    let clientWidth = documentElement.clientWidth;
+    documentElement.style.fontSize = 100 * (clientWidth / 1920) + 'px'
+}
+
+// 初始化
+resizeCount()
+window.addEventListener('resize', () => {
+    resizeCount()
+})
 
