@@ -139,7 +139,7 @@
     </div>
     <div class="amap-style-container">
         <div class="amap-style-icon">
-            <img src="../../../public/images/icons/layer.svg">
+            <img src="./images/icons/layer.svg">
         </div>
         <div class="amap-style-list hide-amap-style-list">
             <div class="style-name style-name-selected" data-mapstyle="default">默认地图</div>
@@ -158,27 +158,27 @@
     </div>
     <div class="amap-toolbox-container amap-toolbox amap-toolbox-normal">
         <div class="amap-toolbox-operation-icon">
-            <img src="../../../public/images/icons/toolbox.svg">
+            <img src="./images/icons/toolbox.svg">
         </div>
         <div class="amap-toolbox-list-container amap-toolbox-list-hide">
             <ul class="amap-toolbox-list">
                 <li class="toolbox-item zoom-in" title="放大">
-                    <img src="../../../public/images/icons/toolbox-plus.svg">
+                    <img src="./images/icons/toolbox-plus.svg">
                 </li>
                 <li class="toolbox-item zoom-out" title="缩小">
-                    <img class="toolbox-item zoom-out" src="../../../public/images/icons/toolbox-minus.svg">
+                    <img class="toolbox-item zoom-out" src="./images/icons/toolbox-minus.svg">
                 </li>
                 <li class="toolbox-item ranging-distance" title="测量距离">
-                    <img src="../../../public/images/icons/toolbox-ruler.svg">
+                    <img src="./images/icons/toolbox-ruler.svg">
                 </li>
                 <li class="toolbox-item measure-area" title="测量面积">
-                    <img src="../../../public/images/icons/toolbox-area.svg">
+                    <img src="./images/icons/toolbox-area.svg">
                 </li>
                 <li class="toolbox-item buffer" title="buffer">
-                    <img src="../../../public/images/icons/toolbox-search.svg">
+                    <img src="./images/icons/toolbox-search.svg">
                 </li>
                 <li class="toolbox-item clear-layer" title="清除图层">
-                    <img src="../../../public/images/icons/toolbox-delete.svg">
+                    <img src="./images/icons/toolbox-delete.svg">
                 </li>
             </ul>
             <div class="buffer-container buffer-container-hide">
@@ -190,7 +190,7 @@
                             <div class="custom-select-header">
                                 <span class="custom-select-header-value"></span>
                                 <span class="custom-select-icon">
-                                <img class="custom-select-icon-image" src="../../../public/images/icons/icon_arrow_down.png" alt="">
+                                <img class="custom-select-icon-image" src="./images/icons/icon_arrow_down.png" alt="">
                             </span>
                             </div>
                             <ul class="custom-option custom-option-hide">
@@ -202,16 +202,16 @@
                 </div>
                 <div class="operation-container">
                     <div class="operation-item">
-                        <img src="../../../public/images/icons/toolbox-pushpin.svg" alt="">
+                        <img src="./images/icons/toolbox-pushpin.svg" alt="">
                     </div>
                     <div class="operation-item">
-                        <img src="../../../public/images/icons/toolbox-line.svg" alt="">
+                        <img src="./images/icons/toolbox-line.svg" alt="">
                     </div>
                     <div class="operation-item">
-                        <img src="../../../public/images/icons/toolbox-polygon.svg" alt="">
+                        <img src="./images/icons/toolbox-polygon.svg" alt="">
                     </div>
                     <div class="operation-item">
-                        <img src="../../../public/images/icons/toolbox-rect.svg" alt="">
+                        <img src="./images/icons/toolbox-rect.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -478,15 +478,15 @@
         </div>
     </div>
     <div class="data-chart-operation open-status">
-        <img src="../../../public/images/icons/data-chart-close.svg" alt="">
+        <img src="./images/icons/data-chart-close.svg" alt="">
     </div>
     <div class="amap-legend-container amap-legend-container-normal">
         <div class="operation-icon-container">
-            <img class="operation-icon" src="../../../public/images/icons/map-legend.svg" alt="">
+            <img class="operation-icon" src="./images/icons/map-legend.svg" alt="">
         </div>
         <div class="legend-content legend-content-hidden">
             <div class="legend-close">
-                <img class="legend-close-icon" src="../../../public/images/icons/close.svg" alt="">
+                <img class="legend-close-icon" src="./images/icons/close.svg" alt="">
             </div>
             <div class="legend-content-container">
                 <div class="legend-title">水体</div>
@@ -552,13 +552,13 @@
         const target = e.currentTarget;
         const img = target.children[0];
         if (target.classList.contains('show-buffer-close-icon')) {
-            img.src = '../../../public/images/icons/toolbox-search.svg';
+            img.src = './images/icons/toolbox-search.svg';
             img.classList.remove("tool-box-icon-close")
             target.title = 'buffer';
             target.classList.remove('show-buffer-close-icon');
             bufferContainer.classList.add('buffer-container-hide');
         } else {
-            img.src = '../../../public/images/icons/close.svg';
+            img.src = './images/icons/close.svg';
             img.classList.add("tool-box-icon-close");
             target.title = '关闭buffer';
             target.classList.add('show-buffer-close-icon');
@@ -669,7 +669,7 @@
         const target = e.currentTarget;
         const img = target.children[0];
         if (target.classList.contains('show-ranging-distance-close-icon')) {
-            img.src = '../../../public/images/icons/toolbox-ruler.svg';
+            img.src = './images/icons/toolbox-ruler.svg';
             img.classList.remove("tool-box-icon-close")
             target.title = '测量距离';
             target.classList.remove('show-ranging-distance-close-icon');
@@ -677,7 +677,7 @@
             ruler.turnOff(true);
             // ruler.close()
         } else {
-            img.src = '../../../public/images/icons/close.svg';
+            img.src = './images/icons/close.svg';
             img.classList.add("tool-box-icon-close");
             target.title = '关闭测量距离';
             target.classList.add('show-ranging-distance-close-icon')
@@ -707,14 +707,14 @@
         const target = e.currentTarget;
         const img = target.children[0];
         if (target.classList.contains('show-measure-area-close-icon')) {
-            img.src = '../../../public/images/icons/toolbox-area.svg';
+            img.src = './images/icons/toolbox-area.svg';
             img.classList.remove("tool-box-icon-close")
             target.title = '测量面积';
             target.classList.remove('show-measure-area-close-icon');
             //关闭，并清除覆盖物
             mouseTool.close(true);
         } else {
-            img.src = '../../../public/images/icons/close.svg';
+            img.src = './images/icons/close.svg';
             img.classList.add("tool-box-icon-close");
             target.title = '关闭测量面积';
             target.classList.add('show-measure-area-close-icon')
@@ -793,7 +793,7 @@
 
 
         if (target.classList.contains('open-status')) {
-            img.src = '../../../public/images/icons/data-chart-open.svg';
+            img.src = './images/icons/data-chart-open.svg';
             target.classList.remove('open-status');
             amapToolbox.classList.remove('amap-toolbox-normal');
             amapLegend.classList.remove('amap-legend-container-normal');
@@ -801,7 +801,7 @@
 
 
         } else {
-            img.src = '../../../public/images/icons/data-chart-close.svg';
+            img.src = './images/icons/data-chart-close.svg';
             target.classList.add('open-status');
             amapToolbox.classList.add('amap-toolbox-normal');
             amapLegend.classList.add('amap-legend-container-normal');
@@ -827,7 +827,7 @@
                  <div class="modal-content">
                         <div class="modal-header">
                               <span class="modal-header-title">${modalTitle}</span>
-                              <span class="modal-close-icon"><img class="modal-close-icon" src="../../../public/images/icons/close.svg"></span>
+                              <span class="modal-close-icon"><img class="modal-close-icon" src="./images/icons/close.svg"></span>
                         </div>
                         <div class="modal-main-content">
 

@@ -49,7 +49,7 @@ body {
     position: absolute;
     bottom: 0rem;
     left: 0.60rem;
-    width: 0.96rem;
+    width: 96px;
     border: 0.01rem solid #DBAA78;
     box-shadow: 0rem 0.04rem 0.16rem -0.04rem rgba(177, 106, 84, 0.1);
     border-radius: 0.04rem;
@@ -361,7 +361,7 @@ body {
     padding-top: 0.18rem;
     box-sizing: border-box;
     text-align: center;
-    background: url("../../../public/images/backgrounds/pic_navigation_layer_list_bg.png") no-repeat;
+    background: url("./images/backgrounds/pic_navigation_layer_list_bg.png") no-repeat;
     background-size: 100% 100%;
 }
 
@@ -626,82 +626,82 @@ body {
 
 .operation-icon.layer-icon {
     margin-bottom: 0rem;
-    background: url("../../../public/images/icons/icon_layer_list_normal.png") no-repeat;
+    background: url("./images/icons/icon_layer_list_normal.png") no-repeat;
     background-size: 100% 100%;
 }
 
 .operation-icon.layer-icon.layer-icon-selected {
-    background: url("../../../public/images/icons/icon_layer_list_checked.png") no-repeat;
+    background: url("./images/icons/icon_layer_list_checked.png") no-repeat;
     background-size: 100% 100%;
 }
 
 .ecology .operation-icon {
-    background: url("../../../public/images/icons/icon_navigation_shengtai_normal.png") no-repeat;
+    background: url("./images/icons/icon_navigation_shengtai_normal.png") no-repeat;
     background-size: 100% 100%;
 }
 .health .operation-icon {
-    background: url("../../../public/images/icons/icon_navigation_jiankang_normal.png") no-repeat;
+    background: url("./images/icons/icon_navigation_jiankang_normal.png") no-repeat;
     background-size: 100% 100%;
 }
 
 .safety .operation-icon {
-    background: url("../../../public/images/icons/icon_navigation_anquan_normal.png") no-repeat;
+    background: url("./images/icons/icon_navigation_anquan_normal.png") no-repeat;
     background-size: 100% 100%;
 }
 
 .traffic .operation-icon {
-    background: url("../../../public/images/icons/icon_navigation_jiaotong_normal.png") no-repeat;
+    background: url("./images/icons/icon_navigation_jiaotong_normal.png") no-repeat;
     background-size: 100% 100%;
 }
 .scene .operation-icon {
-    background: url("../../../public/images/icons/icon_navigation_fengmao_normal.png") no-repeat;
+    background: url("./images/icons/icon_navigation_fengmao_normal.png") no-repeat;
     background-size: 100% 100%;
 }
 .tidy .operation-icon {
-    background: url("../../../public/images/icons/icon_navigation_zhengjie_normal.png") no-repeat;
+    background: url("./images/icons/icon_navigation_zhengjie_normal.png") no-repeat;
     background-size: 100% 100%;
 }
 .diversity .operation-icon {
-    background: url("../../../public/images/icons/icon_navigation_duoyuan_normal.png") no-repeat;
+    background: url("./images/icons/icon_navigation_duoyuan_normal.png") no-repeat;
     background-size: 100% 100%;
 }
 .innovation .operation-icon {
-    background: url("../../../public/images/icons/icon_navigation_chuangxin_normal.png") no-repeat;
+    background: url("./images/icons/icon_navigation_chuangxin_normal.png") no-repeat;
     background-size: 100% 100%;
 }
 .ecology-checked .operation-icon {
-    background: url("../../../public/images/icons/icon_navigation_shengtai_checked.png") no-repeat;
+    background: url("./images/icons/icon_navigation_shengtai_checked.png") no-repeat;
     background-size: 100% 100%;
 }
 
 .health-checked .operation-icon {
-    background: url("../../../public/images/icons/icon_navigation_jiankang_checked.png") no-repeat;
+    background: url("./images/icons/icon_navigation_jiankang_checked.png") no-repeat;
     background-size: 100% 100%;
 }
 .safety-checked .operation-icon {
-    background: url("../../../public/images/icons/icon_navigation_anquan_checked.png") no-repeat;
+    background: url("./images/icons/icon_navigation_anquan_checked.png") no-repeat;
     background-size: 100% 100%;
 }
 
 .scene-checked .operation-icon {
-    background: url("../../../public/images/icons/icon_navigation_fengmao_checked.png") no-repeat;
+    background: url("./images/icons/icon_navigation_fengmao_checked.png") no-repeat;
     background-size: 100% 100%;
 }
 .traffic-checked .operation-icon {
-    background: url("../../../public/images/icons/icon_navigation_jiaotong_checked.png") no-repeat;
+    background: url("./images/icons/icon_navigation_jiaotong_checked.png") no-repeat;
     background-size: 100% 100%;
 }
 
 .tidy-checked .operation-icon {
-    background: url("../../../public/images/icons/icon_navigation_zhengjie_checked.png") no-repeat;
+    background: url("./images/icons/icon_navigation_zhengjie_checked.png") no-repeat;
     background-size: 100% 100%;
 }
 .diversity-checked .operation-icon {
-    background: url("../../../public/images/icons/icon_navigation_duoyuan_checked.png") no-repeat;
+    background: url("./images/icons/icon_navigation_duoyuan_checked.png") no-repeat;
     background-size: 100% 100%;
 }
 .innovation-checked .operation-icon {
-    background: url("../../../public/images/icons/icon_navigation_chuangxin_checked.png") no-repeat;
+    background: url("./images/icons/icon_navigation_chuangxin_checked.png") no-repeat;
     background-size: 100% 100%;
 }
 
@@ -736,7 +736,7 @@ body {
     letter-spacing: 0.02em;
     color: #4F4F4F;
     /*box-sizing: border-box;*/
-    background: url("../../../public/images/backgrounds/pic_zhibiaoxiangqing_bg.png") no-repeat;
+    background: url("./images/backgrounds/pic_zhibiaoxiangqing_bg.png") no-repeat;
     background-size: 100% 100%;
     overflow-y: scroll;
     scrollbar-width: none; /* Firefox */
@@ -775,7 +775,7 @@ body {
     width: 0.89rem;
     height: 5.79rem;
     margin-top: 0.32rem;
-    background: url("../../../public/images/backgrounds/pic_navigation_shengtai_bg.png") no-repeat;
+    background: url("./images/backgrounds/pic_navigation_shengtai_bg.png") no-repeat;
     background-size: 100% 100%;
 }
 
@@ -815,7 +815,7 @@ body {
     width: 0.24rem;
     height: 0.24rem;
     display: block;
-    background: url("../../../public/images/icons/icon_chart.png") no-repeat;
+    background: url("./images/icons/icon_chart.png") no-repeat;
     background-size: 100% 100%;
 }
 
