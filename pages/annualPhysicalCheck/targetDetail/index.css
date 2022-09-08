@@ -3,11 +3,26 @@ html {
     font-size: 100px;
 }
 body {
-    /*background: #E5E5E5;*/
     min-width: 12rem;
-    /*height: 1080rem;*/
-    /*min-height: 1200rem;*/
     height: 100%;
+}
+
+body::-webkit-scrollbar {
+    background: transparent;
+    display: none;
+}
+body::-webkit-scrollbar {
+    background: transparent;
+    display: none;
+}
+
+html::-webkit-scrollbar {
+    background: transparent;
+    display: none;
+}
+html::-webkit-scrollbar {
+    background: transparent;
+    display: none;
 }
 
 /*隐藏高德地图的缩放图标*/
@@ -15,8 +30,6 @@ body {
     display: none;
 }
 .target-detail-container {
-    /*display: flex;*/
-    /*justify-content: space-between;*/
     height: 100%;
 }
 

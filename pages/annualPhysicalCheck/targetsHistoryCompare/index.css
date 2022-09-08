@@ -482,7 +482,39 @@ body {
     margin-top: 0.24rem;
     overflow: scroll;
     box-sizing: border-box;
+    scrollbar-width: none; /* Firefox */
 }
+
+.content-right::-webkit-scrollbar {
+    background: transparent;
+    display: none;
+}
+.content-right::-webkit-scrollbar {
+    background: transparent;
+    display: none;
+}
+
+
+
+body::-webkit-scrollbar {
+    background: transparent;
+    display: none;
+}
+body::-webkit-scrollbar {
+    background: transparent;
+    display: none;
+}
+
+html::-webkit-scrollbar {
+    background: transparent;
+    display: none;
+}
+html::-webkit-scrollbar {
+    background: transparent;
+    display: none;
+}
+
+
 .content-right-wrapper {
     /*padding: 32rem 24rem;*/
     margin: 0.32rem 0.24rem;
